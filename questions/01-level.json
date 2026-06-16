@@ -1,0 +1,29 @@
+{
+  "id": "level",
+  "order": 1,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "水平",
+  "en": "LEVEL",
+  "difficulty": "入门",
+  "tags": [
+    "水平线",
+    "端平",
+    "风光",
+    "海景",
+    "基础",
+    "新手必看"
+  ],
+  "title": "哪一张更稳？",
+  "hint": "同一片落日海面,只差一个动作。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><rect y=\"260\" width=\"600\" height=\"140\" fill=\"url(#seaDusk)\"/><circle cx=\"430\" cy=\"205\" r=\"46\" fill=\"#fce6ad\"/><g stroke=\"#f6cf8a\" stroke-width=\"3\" opacity=\"0.7\"><line x1=\"408\" y1=\"278\" x2=\"452\" y2=\"278\"/><line x1=\"400\" y1=\"300\" x2=\"460\" y2=\"300\"/><line x1=\"412\" y1=\"322\" x2=\"448\" y2=\"322\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><g transform=\"rotate(-6 300 200)\"><rect x=\"-120\" y=\"260\" width=\"840\" height=\"220\" fill=\"url(#seaDusk)\"/><circle cx=\"430\" cy=\"205\" r=\"46\" fill=\"#fce6ad\"/><g stroke=\"#f6cf8a\" stroke-width=\"3\" opacity=\"0.7\"><line x1=\"408\" y1=\"278\" x2=\"452\" y2=\"278\"/><line x1=\"400\" y1=\"300\" x2=\"460\" y2=\"300\"/></g></g>${grain}"
+  },
+  "verdict": "更稳的是地平线水平的一张。",
+  "points": [
+    "风光里歪斜的海/地平线会让整幅画失衡,观者第一眼读到的是「没端平」,而不是风格。",
+    "要倾斜就得倾斜得彻底——大角度、有明确动感意图的「荷兰角」才成立;几度的小歪只会像失误。"
+  ],
+  "soft": null
+}

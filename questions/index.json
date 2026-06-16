@@ -1,0 +1,706 @@
+{
+  "title": "摄影审美对比测验 · 题库",
+  "count": 38,
+  "schema": "questions/<order>-<id>.json",
+  "directions": [
+    "取景",
+    "构图",
+    "用光",
+    "色彩",
+    "镜头",
+    "影调",
+    "视角",
+    "时机"
+  ],
+  "difficulties": [
+    "入门",
+    "进阶",
+    "高阶"
+  ],
+  "questions": [
+    {
+      "order": 1,
+      "id": "level",
+      "file": "01-level.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "水平",
+      "difficulty": "入门",
+      "tags": [
+        "水平线",
+        "端平",
+        "风光",
+        "海景",
+        "基础",
+        "新手必看"
+      ],
+      "title": "哪一张更稳？"
+    },
+    {
+      "order": 2,
+      "id": "thirds",
+      "file": "02-thirds.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "三分法",
+      "difficulty": "入门",
+      "tags": [
+        "三分法",
+        "九宫格",
+        "构图",
+        "风光",
+        "落日",
+        "黄金分割"
+      ],
+      "title": "哪一张落日更耐看？"
+    },
+    {
+      "order": 3,
+      "id": "gaze",
+      "file": "03-gaze.json",
+      "direction": "构图",
+      "category": "留白",
+      "subcategory": "视线空间",
+      "difficulty": "入门",
+      "tags": [
+        "视线空间",
+        "留白",
+        "引导视线",
+        "人像",
+        "朝向",
+        "lead-room"
+      ],
+      "title": "人物该往哪边站？"
+    },
+    {
+      "order": 4,
+      "id": "lead",
+      "file": "04-lead.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "引导线",
+      "difficulty": "入门",
+      "tags": [
+        "引导线",
+        "纵深",
+        "视线引导",
+        "风光",
+        "道路",
+        "透视"
+      ],
+      "title": "哪条路把你带进画里？"
+    },
+    {
+      "order": 5,
+      "id": "negative",
+      "file": "05-negative.json",
+      "direction": "构图",
+      "category": "留白",
+      "subcategory": "负空间",
+      "difficulty": "进阶",
+      "tags": [
+        "负空间",
+        "留白",
+        "主体大小",
+        "极简",
+        "呼吸感",
+        "飞鸟"
+      ],
+      "title": "这只鸟该多大?"
+    },
+    {
+      "order": 6,
+      "id": "frame",
+      "file": "06-frame.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "前景层次",
+      "difficulty": "进阶",
+      "tags": [
+        "前景层次",
+        "纵深",
+        "framing",
+        "风光",
+        "远山",
+        "层次"
+      ],
+      "title": "哪张远山更有纵深？"
+    },
+    {
+      "order": 7,
+      "id": "clean",
+      "file": "07-clean.json",
+      "direction": "取景",
+      "category": "用光取景",
+      "subcategory": "背景净化",
+      "difficulty": "进阶",
+      "tags": [
+        "背景净化",
+        "干净背景",
+        "人像",
+        "杂乱",
+        "主体分离",
+        "用光"
+      ],
+      "title": "哪张人像更利落？"
+    },
+    {
+      "order": 8,
+      "id": "light",
+      "file": "08-light.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "时机",
+      "difficulty": "进阶",
+      "tags": [
+        "光线时机",
+        "黄金时刻",
+        "侧光",
+        "风光",
+        "氛围",
+        "树"
+      ],
+      "title": "同一棵树,哪束光更动人？"
+    },
+    {
+      "order": 9,
+      "id": "reflection",
+      "file": "09-reflection.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "对称倒影",
+      "difficulty": "进阶",
+      "tags": [
+        "对称",
+        "倒影",
+        "水面",
+        "构图",
+        "平衡",
+        "镜像"
+      ],
+      "title": "对称的倒影该怎么摆？"
+    },
+    {
+      "order": 10,
+      "id": "harmony",
+      "file": "10-harmony.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "和谐",
+      "difficulty": "入门",
+      "tags": [
+        "色彩和谐",
+        "配色",
+        "邻近色",
+        "色调",
+        "舒适",
+        "调色"
+      ],
+      "title": "哪一组配色更舒服？"
+    },
+    {
+      "order": 11,
+      "id": "fill",
+      "file": "11-fill.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "靠近",
+      "difficulty": "入门",
+      "tags": [
+        "靠近",
+        "填满画面",
+        "微距",
+        "花",
+        "主体突出",
+        "裁剪"
+      ],
+      "title": "这朵花该拍多大？"
+    },
+    {
+      "order": 12,
+      "id": "odds",
+      "file": "12-odds.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "奇数法则",
+      "difficulty": "进阶",
+      "tags": [
+        "奇数法则",
+        "构图",
+        "数量",
+        "树",
+        "耐看",
+        "rule-of-odds"
+      ],
+      "title": "几棵树更耐看？"
+    },
+    {
+      "order": 13,
+      "id": "layers",
+      "file": "13-layers.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "纵深层次",
+      "difficulty": "进阶",
+      "tags": [
+        "纵深",
+        "前中后景",
+        "层次",
+        "风光",
+        "透视",
+        "景深感"
+      ],
+      "title": "哪张风景更有纵深？"
+    },
+    {
+      "order": 14,
+      "id": "dof",
+      "file": "14-dof.json",
+      "direction": "镜头",
+      "category": "镜头",
+      "subcategory": "景深",
+      "difficulty": "进阶",
+      "tags": [
+        "景深",
+        "虚化",
+        "背景虚化",
+        "大光圈",
+        "主体分离",
+        "镜头"
+      ],
+      "title": "背景该清楚还是虚化？"
+    },
+    {
+      "order": 15,
+      "id": "diagonal",
+      "file": "15-diagonal.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "对角线",
+      "difficulty": "进阶",
+      "tags": [
+        "对角线",
+        "动感",
+        "构图",
+        "线条",
+        "张力",
+        "引导"
+      ],
+      "title": "栈桥该怎么摆？"
+    },
+    {
+      "order": 16,
+      "id": "headroom",
+      "file": "16-headroom.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "头顶空间",
+      "difficulty": "入门",
+      "tags": [
+        "头顶空间",
+        "裁切",
+        "人像",
+        "构图",
+        "留白",
+        "顶部空间"
+      ],
+      "title": "人物头顶留多少合适？"
+    },
+    {
+      "order": 17,
+      "id": "joints",
+      "file": "17-joints.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "裁切",
+      "difficulty": "进阶",
+      "tags": [
+        "裁切",
+        "关节",
+        "人像",
+        "半身",
+        "构图",
+        "crop"
+      ],
+      "title": "人像从哪儿裁更好？"
+    },
+    {
+      "order": 18,
+      "id": "pattern",
+      "file": "18-pattern.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "重复韵律",
+      "difficulty": "进阶",
+      "tags": [
+        "重复",
+        "韵律",
+        "图案",
+        "节奏",
+        "建筑",
+        "柱子"
+      ],
+      "title": "哪排柱子更有韵律？"
+    },
+    {
+      "order": 19,
+      "id": "declutter",
+      "file": "19-declutter.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "做减法",
+      "difficulty": "进阶",
+      "tags": [
+        "做减法",
+        "简化",
+        "干净",
+        "海景",
+        "断舍离",
+        "主次"
+      ],
+      "title": "海面上该留几条船？"
+    },
+    {
+      "order": 20,
+      "id": "contrast",
+      "file": "20-contrast.json",
+      "direction": "影调",
+      "category": "影调",
+      "subcategory": "明暗分离",
+      "difficulty": "进阶",
+      "tags": [
+        "明暗对比",
+        "主体分离",
+        "影调",
+        "背景",
+        "跳出",
+        "对比"
+      ],
+      "title": "哪张主体更跳得出来？"
+    },
+    {
+      "order": 21,
+      "id": "pov",
+      "file": "21-pov.json",
+      "direction": "视角",
+      "category": "视角",
+      "subcategory": "低机位",
+      "difficulty": "进阶",
+      "tags": [
+        "低机位",
+        "仰拍",
+        "视角",
+        "气势",
+        "树",
+        "机位高度"
+      ],
+      "title": "同一棵树,从哪个高度拍？"
+    },
+    {
+      "order": 22,
+      "id": "scurve",
+      "file": "22-scurve.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "S 形曲线",
+      "difficulty": "进阶",
+      "tags": [
+        "S形曲线",
+        "引导线",
+        "河流",
+        "优雅",
+        "构图",
+        "曲线"
+      ],
+      "title": "河流该是直的还是弯的？"
+    },
+    {
+      "order": 23,
+      "id": "pop",
+      "file": "23-pop.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "点缀色",
+      "difficulty": "进阶",
+      "tags": [
+        "点缀色",
+        "跳色",
+        "红伞",
+        "对比色",
+        "视觉焦点",
+        "街拍"
+      ],
+      "title": "哪张里的红伞更抢眼？"
+    },
+    {
+      "order": 24,
+      "id": "balance",
+      "file": "24-balance.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "视觉平衡",
+      "difficulty": "进阶",
+      "tags": [
+        "视觉平衡",
+        "配重",
+        "构图",
+        "对称感",
+        "空间分配",
+        "权重"
+      ],
+      "title": "画面重量该怎么摆平？"
+    },
+    {
+      "order": 25,
+      "id": "sky",
+      "file": "25-sky.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "天空占比",
+      "difficulty": "入门",
+      "tags": [
+        "天空占比",
+        "地平线",
+        "风光",
+        "主次",
+        "留白",
+        "构图"
+      ],
+      "title": "天空该给多少？"
+    },
+    {
+      "order": 26,
+      "id": "panning",
+      "file": "26-panning.json",
+      "direction": "镜头",
+      "category": "快门",
+      "subcategory": "追拍",
+      "difficulty": "高阶",
+      "tags": [
+        "追拍",
+        "慢门",
+        "动感",
+        "快门",
+        "车",
+        "panning"
+      ],
+      "title": "怎么拍出车在飞驰？"
+    },
+    {
+      "order": 27,
+      "id": "silhouette",
+      "file": "27-silhouette.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "剪影",
+      "difficulty": "进阶",
+      "tags": [
+        "剪影",
+        "逆光",
+        "不重叠",
+        "轮廓",
+        "用光",
+        "构图"
+      ],
+      "title": "逆光剪影怎么排？"
+    },
+    {
+      "order": 28,
+      "id": "wb",
+      "file": "28-wb.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "白平衡",
+      "difficulty": "高阶",
+      "tags": [
+        "白平衡",
+        "色温",
+        "冷暖",
+        "黄昏",
+        "色调",
+        "调色"
+      ],
+      "title": "黄昏该是什么色调？"
+    },
+    {
+      "order": 29,
+      "id": "highlow",
+      "file": "29-highlow.json",
+      "direction": "影调",
+      "category": "影调",
+      "subcategory": "高低调",
+      "difficulty": "高阶",
+      "tags": [
+        "高调",
+        "低调",
+        "影调",
+        "干净",
+        "氛围",
+        "调性"
+      ],
+      "title": "哪张影调更干净？"
+    },
+    {
+      "order": 30,
+      "id": "triangle",
+      "file": "30-triangle.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "三角形",
+      "difficulty": "进阶",
+      "tags": [
+        "三角形构图",
+        "稳定",
+        "三个主体",
+        "构图",
+        "布局",
+        "几何"
+      ],
+      "title": "三个主体怎么摆更稳？"
+    },
+    {
+      "order": 31,
+      "id": "scale",
+      "file": "31-scale.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "尺度感",
+      "difficulty": "进阶",
+      "tags": [
+        "尺度感",
+        "对比",
+        "渺小",
+        "风光",
+        "小人",
+        "气势"
+      ],
+      "title": "怎么显出山有多大？"
+    },
+    {
+      "order": 32,
+      "id": "texture",
+      "file": "32-texture.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "质感",
+      "difficulty": "高阶",
+      "tags": [
+        "质感",
+        "侧光",
+        "掠射光",
+        "沙纹",
+        "细节",
+        "用光"
+      ],
+      "title": "哪张沙纹更有质感？"
+    },
+    {
+      "order": 33,
+      "id": "framewithin",
+      "file": "33-framewithin.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "框中框",
+      "difficulty": "进阶",
+      "tags": [
+        "框中框",
+        "拱门",
+        "层次",
+        "framing",
+        "构图",
+        "引导"
+      ],
+      "title": "怎么让主体更有层次？"
+    },
+    {
+      "order": 34,
+      "id": "merger",
+      "file": "34-merger.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "避免相撞",
+      "difficulty": "进阶",
+      "tags": [
+        "避免相撞",
+        "电线杆",
+        "背景",
+        "人像",
+        "干净",
+        "merger"
+      ],
+      "title": "人该站在哪一边？"
+    },
+    {
+      "order": 35,
+      "id": "anomaly",
+      "file": "35-anomaly.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "打破图案",
+      "difficulty": "进阶",
+      "tags": [
+        "打破图案",
+        "异类",
+        "焦点",
+        "对比",
+        "重复",
+        "趣味中心"
+      ],
+      "title": "哪张更有焦点？"
+    },
+    {
+      "order": 36,
+      "id": "moment",
+      "file": "36-moment.json",
+      "direction": "时机",
+      "category": "时机",
+      "subcategory": "决定性瞬间",
+      "difficulty": "高阶",
+      "tags": [
+        "决定性瞬间",
+        "时机",
+        "抓拍",
+        "动态",
+        "跳跃",
+        "布列松"
+      ],
+      "title": "该在哪一刻按快门？"
+    },
+    {
+      "order": 37,
+      "id": "centered",
+      "file": "37-centered.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "中央对称",
+      "difficulty": "入门",
+      "tags": [
+        "中央对称",
+        "建筑",
+        "对称构图",
+        "居中",
+        "几何",
+        "对称"
+      ],
+      "title": "这座对称的建筑放哪？"
+    },
+    {
+      "order": 38,
+      "id": "portraitlight",
+      "file": "38-portraitlight.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "人像光位",
+      "difficulty": "高阶",
+      "tags": [
+        "伦勃朗光",
+        "人像光位",
+        "侧光",
+        "立体感",
+        "用光",
+        "人像"
+      ],
+      "title": "哪张人像更立体？"
+    }
+  ]
+}

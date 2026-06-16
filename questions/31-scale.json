@@ -1,0 +1,29 @@
+{
+  "id": "scale",
+  "order": 31,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "尺度感",
+  "en": "SENSE OF SCALE",
+  "difficulty": "进阶",
+  "tags": [
+    "尺度感",
+    "对比",
+    "渺小",
+    "风光",
+    "小人",
+    "气势"
+  ],
+  "title": "怎么显出山有多大？",
+  "hint": "找找画面里有没有参照物。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#mountSky)\"/>${ridge(170,150,'#9aa6b0',7)}${ridge(210,120,'#74808c',13)}${ridge(250,90,'#566069',5)}<rect y=\"330\" width=\"600\" height=\"70\" fill=\"#3e4650\"/>${person(300,330,0.5)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#mountSky)\"/>${ridge(170,150,'#9aa6b0',7)}${ridge(210,120,'#74808c',13)}${ridge(250,90,'#566069',5)}<rect y=\"330\" width=\"600\" height=\"70\" fill=\"#3e4650\"/>${grain}"
+  },
+  "verdict": "更显宏大的是放进一个小小人影当参照的一张。",
+  "points": [
+    "一个渺小的人(或一棵树、一栋房)给了观者比例尺,山的巍峨、空间的辽阔才真正被「感觉」到。",
+    "没有任何参照物,再大的山也可能被看成小土堆——大小是「比」出来的。"
+  ],
+  "soft": null
+}

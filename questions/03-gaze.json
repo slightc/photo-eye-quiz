@@ -1,0 +1,29 @@
+{
+  "id": "gaze",
+  "order": 3,
+  "direction": "构图",
+  "category": "留白",
+  "subcategory": "视线空间",
+  "en": "LEAD ROOM",
+  "difficulty": "入门",
+  "tags": [
+    "视线空间",
+    "留白",
+    "引导视线",
+    "人像",
+    "朝向",
+    "lead-room"
+  ],
+  "title": "人物该往哪边站？",
+  "hint": "注意人物朝向的那一侧,有没有空间。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#241d2c\"/>${boat(470,292,1.5)}${person(150,300,1)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#241d2c\"/>${person(486,300,1)}${grain}"
+  },
+  "verdict": "更舒展的是主体偏左、前方留空的一张。",
+  "points": [
+    "人物朝向/视线的方向留出空间(lead room),画面会「呼吸」,也暗示了他在看向什么。",
+    "主体贴着边缘、又朝着画外,会有被挤压、随时要「走出画面」的不安感。"
+  ],
+  "soft": null
+}

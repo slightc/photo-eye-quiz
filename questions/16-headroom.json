@@ -1,0 +1,29 @@
+{
+  "id": "headroom",
+  "order": 16,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "头顶空间",
+  "en": "HEADROOM",
+  "difficulty": "入门",
+  "tags": [
+    "头顶空间",
+    "裁切",
+    "人像",
+    "构图",
+    "留白",
+    "顶部空间"
+  ],
+  "title": "人物头顶留多少合适？",
+  "hint": "看头顶到画面上边的距离。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/>${bust(300,62,2.3)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/>${bust(300,196,2.3)}${grain}"
+  },
+  "verdict": "更稳的是头顶只留一道窄缝的一张。",
+  "points": [
+    "头顶留出恰当的窄缝,人物稳稳「坐」在画面里,眼睛大约落在上三分线,舒服又自然。",
+    "头顶空出一大片,人像被压到下方,显得下沉、局促,空白也没在表达任何东西。"
+  ],
+  "soft": null
+}

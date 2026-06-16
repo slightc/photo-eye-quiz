@@ -1,0 +1,32 @@
+{
+  "id": "framewithin",
+  "order": 33,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "框中框",
+  "en": "FRAME IN FRAME",
+  "difficulty": "进阶",
+  "tags": [
+    "框中框",
+    "拱门",
+    "层次",
+    "framing",
+    "构图",
+    "引导"
+  ],
+  "title": "怎么让主体更有层次？",
+  "hint": "看主体周围有没有「框」。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#d8c9a8\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#b6a47e\"/>${person(300,300,1.3)}<path d=\"M0 0 H600 V400 H470 V150 A170 150 0 0 0 130 150 V400 H0 Z\" fill=\"#2a2018\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#d8c9a8\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#b6a47e\"/>${person(300,300,1.3)}${grain}"
+  },
+  "verdict": "更有层次的是透过拱门「框」住主体的一张。",
+  "points": [
+    "用拱门、窗、门洞这类现成的几何框把主体围起来,既挡掉杂乱、聚焦视线,又添了一层纵深。",
+    "主体直愣愣地摆在空旷背景里,虽然清楚,却少了引导和包裹,显得单薄。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "这和前面「前景树枝框架」是一家:一个用自然枝叶,一个用建筑几何,目的都是「框」住主角。"
+  }
+}

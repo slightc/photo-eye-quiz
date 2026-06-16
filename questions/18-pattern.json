@@ -1,0 +1,32 @@
+{
+  "id": "pattern",
+  "order": 18,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "重复韵律",
+  "en": "RHYTHM",
+  "difficulty": "进阶",
+  "tags": [
+    "重复",
+    "韵律",
+    "图案",
+    "节奏",
+    "建筑",
+    "柱子"
+  ],
+  "title": "哪排柱子更有韵律？",
+  "hint": "留意间距和高低。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#cdbfa8\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#9a8b6e\"/><rect x=\"70\" y=\"112\" width=\"460\" height=\"14\" fill=\"#6e6149\"/><g fill=\"#5a4f3c\"><rect x=\"90\" y=\"120\" width=\"20\" height=\"180\"/><rect x=\"190\" y=\"120\" width=\"20\" height=\"180\"/><rect x=\"290\" y=\"120\" width=\"20\" height=\"180\"/><rect x=\"390\" y=\"120\" width=\"20\" height=\"180\"/><rect x=\"490\" y=\"120\" width=\"20\" height=\"180\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#cdbfa8\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#9a8b6e\"/><g fill=\"#5a4f3c\"><rect x=\"70\" y=\"170\" width=\"20\" height=\"130\"/><rect x=\"150\" y=\"120\" width=\"20\" height=\"180\"/><rect x=\"300\" y=\"200\" width=\"20\" height=\"100\"/><rect x=\"360\" y=\"140\" width=\"20\" height=\"160\"/><rect x=\"500\" y=\"190\" width=\"20\" height=\"110\"/></g>${grain}"
+  },
+  "verdict": "更有韵律的是柱子等距、整齐重复的一张。",
+  "points": [
+    "等距的重复像视觉上的鼓点,规律本身就赏心悦目,也撑起了画面的秩序感。",
+    "高低不齐、随意散落,重复就变成了杂乱,节奏一断,画面就散了。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "在规律里安排一个「异类」往往是点睛之笔——但前提是先建立起规律。"
+  }
+}

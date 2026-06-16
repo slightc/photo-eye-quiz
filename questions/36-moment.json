@@ -1,0 +1,32 @@
+{
+  "id": "moment",
+  "order": 36,
+  "direction": "时机",
+  "category": "时机",
+  "subcategory": "决定性瞬间",
+  "en": "THE MOMENT",
+  "difficulty": "高阶",
+  "tags": [
+    "决定性瞬间",
+    "时机",
+    "抓拍",
+    "动态",
+    "跳跃",
+    "布列松"
+  ],
+  "title": "该在哪一刻按快门？",
+  "hint": "看人跳到了什么位置。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"280\" fill=\"url(#skyNoon)\"/><rect y=\"270\" width=\"600\" height=\"130\" fill=\"url(#field)\"/><g fill=\"#171318\" transform=\"translate(300,150)\"><circle cx=\"0\" cy=\"-14\" r=\"13\"/><path d=\"M -8 0 Q 0 -6 8 0 L 6 30 L -6 30 Z\"/><path d=\"M -8 4 L -30 -10 M 8 4 L 30 -10\" stroke=\"#171318\" stroke-width=\"7\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M -5 30 L -22 56 M 5 30 L 22 56\" stroke=\"#171318\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/></g><ellipse cx=\"300\" cy=\"372\" rx=\"24\" ry=\"5\" fill=\"#000\" opacity=\"0.2\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"280\" fill=\"url(#skyNoon)\"/><rect y=\"270\" width=\"600\" height=\"130\" fill=\"url(#field)\"/><g fill=\"#171318\" transform=\"translate(300,236)\"><circle cx=\"0\" cy=\"-12\" r=\"13\"/><path d=\"M -10 0 Q 0 -6 10 0 L 12 30 L -12 30 Z\"/><path d=\"M -10 6 L -28 18 M 10 6 L 28 18\" stroke=\"#171318\" stroke-width=\"7\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M -8 30 L -20 30 L -20 34 M 8 30 L 20 30 L 20 34\" stroke=\"#171318\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/></g><ellipse cx=\"300\" cy=\"270\" rx=\"26\" ry=\"5\" fill=\"#000\" opacity=\"0.3\"/>${grain}"
+  },
+  "verdict": "更精彩的是抓住跳跃最高点的一张。",
+  "points": [
+    "动作类的关键在「决定性瞬间」:跳到最高、浪花最炸、回眸那一刻——早一拍晚一拍,张力就泄了。",
+    "人都快落地了才按下快门,最有劲的瞬间已经过去,只剩一个平淡的收尾动作。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "用连拍、提前预判、半按对焦守住时机;决定性瞬间是「等」来和「猜」来的,不全靠运气。"
+  }
+}

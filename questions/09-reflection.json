@@ -1,0 +1,29 @@
+{
+  "id": "reflection",
+  "order": 9,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "对称倒影",
+  "en": "SYMMETRY",
+  "difficulty": "进阶",
+  "tags": [
+    "对称",
+    "倒影",
+    "水面",
+    "构图",
+    "平衡",
+    "镜像"
+  ],
+  "title": "对称的倒影该怎么摆？",
+  "hint": "打开九宫格,看地平线和山的位置。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"200\" fill=\"url(#skyDusk)\"/><rect y=\"200\" width=\"600\" height=\"200\" fill=\"url(#seaDusk)\"/><circle cx=\"300\" cy=\"96\" r=\"28\" fill=\"#fce6ad\"/><circle cx=\"300\" cy=\"304\" r=\"28\" fill=\"#fce6ad\" opacity=\"0.5\"/><polygon points=\"170,200 300,96 430,200\" fill=\"#2c2536\"/><polygon points=\"170,200 300,304 430,200\" fill=\"#2c2536\" opacity=\"0.55\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"140\" fill=\"url(#skyDusk)\"/><rect y=\"140\" width=\"600\" height=\"260\" fill=\"url(#seaDusk)\"/><circle cx=\"470\" cy=\"70\" r=\"28\" fill=\"#fce6ad\"/><polygon points=\"60,140 175,58 300,140\" fill=\"#2c2536\"/><polygon points=\"60,140 175,182 300,140\" fill=\"#2c2536\" opacity=\"0.5\"/>${grain}"
+  },
+  "verdict": "对称的倒影里,把地平线放正中、上下镜像,反而最稳。",
+  "points": [
+    "镜像本身就是一种秩序;让地平线水平居中、上下严格对称,会放大那份宁静与庄重——这正是三分法最著名的例外。",
+    "抬高地平线、主体挤向一边、又把倒影压成窄窄一条,就白白浪费了镜像本可以给的对称美。"
+  ],
+  "soft": null
+}

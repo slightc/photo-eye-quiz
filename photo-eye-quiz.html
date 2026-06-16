@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>摄影眼 · 审美对比测验</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== 取景器 / 暗房 主题 ===== */
+  :root{
+    --bg:#17151B;
+    --panel:#201E26;
+    --panel-2:#262430;
+    --line:#37333F;
+    --ink:#ECE7DE;
+    --muted:#8E8995;
+    --amber:#E6A23C;        /* 强调:对焦框 / 维度刻字 */
+    --amber-soft:rgba(230,162,60,.13);
+    --ok:#67C18C;
+    --bad:#E0685F;
+    --shadow:0 18px 50px -20px rgba(0,0,0,.7);
+    --mono:'Space Grotesk',ui-monospace,monospace;
+    --zh:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:
+      radial-gradient(1100px 600px at 50% -10%, #221F2A 0%, var(--bg) 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--zh);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    min-height:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .stage{
+    width:100%;
+    max-width:1040px;
+    padding:28px 22px 64px;
+  }
+
+  /* ===== 顶部状态条:像相机背屏 ===== */
+  .topbar{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    padding-bottom:20px;margin-bottom:24px;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex;align-items:baseline;gap:12px;margin-right:auto}
+  .brand h1{
+    font-family:var(--mono);font-weight:600;font-size:18px;letter-spacing:.04em;
+  }
+  .brand .dot{color:var(--amber)}
+  .brand .sub{
+    font-family:var(--mono);font-size:11px;letter-spacing:.34em;
+    color:var(--muted);text-transform:uppercase;
+  }
+  .counter{
+    font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.12em;
+    color:var(--ink);
+    background:var(--panel);border:1px solid var(--line);
+    padding:7px 12px;border-radius:8px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .counter .rec{width:7px;height:7px;border-radius:50%;background:var(--amber);
+    box-shadow:0 0 0 0 var(--amber);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(230,162,60,.5)}70%{box-shadow:0 0 0 6px rgba(230,162,60,0)}100%{box-shadow:0 0 0 0 rgba(230,162,60,0)}}
+  .gridtoggle{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);
+    background:var(--panel);border:1px solid var(--line);
+    padding:8px 12px;border-radius:8px;cursor:pointer;
+    display:flex;align-items:center;gap:8px;transition:color .2s,border-color .2s;
+  }
+  .gridtoggle:hover{color:var(--ink);border-color:#4a4654}
+  .gridtoggle .led{width:8px;height:8px;border-radius:2px;background:#4a4654;transition:background .2s}
+  .gridtoggle[aria-pressed="true"] .led{background:var(--amber)}
+  .gridtoggle[aria-pressed="true"]{color:var(--ink)}
+
+  /* ===== 题目区 ===== */
+  .prompt{margin-bottom:18px}
+  .eyebrow{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.26em;
+    color:var(--amber);text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:9px;margin-bottom:9px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--amber);opacity:.6}
+  .prompt h2{font-size:22px;font-weight:600;letter-spacing:-.01em}
+  .prompt .hint{color:var(--muted);font-size:13.5px;margin-top:4px}
+
+  /* ===== 两张取景画面 ===== */
+  .pair{
+    display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:22px 0 8px;
+  }
+  .shot{
+    position:relative;cursor:pointer;border-radius:12px;
+    background:#000;border:1px solid var(--line);
+    overflow:hidden;
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+    outline:none;
+  }
+  .shot:hover{transform:translateY(-3px);border-color:#54505f;box-shadow:var(--shadow)}
+  .shot:focus-visible{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-soft)}
+  .shot .canvas{display:block;width:100%;aspect-ratio:3/2}
+  .shot .canvas svg{display:block;width:100%;height:100%}
+
+  /* 框角(crop marks) */
+  .corner{position:absolute;width:18px;height:18px;border:2px solid rgba(255,255,255,.85);pointer-events:none;opacity:.9;transition:border-color .18s}
+  .c-tl{top:9px;left:9px;border-right:none;border-bottom:none}
+  .c-tr{top:9px;right:9px;border-left:none;border-bottom:none}
+  .c-bl{bottom:9px;left:9px;border-right:none;border-top:none}
+  .c-br{bottom:9px;right:9px;border-left:none;border-top:none}
+
+  /* 九宫格辅助线 */
+  .grid-overlay{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s}
+  .grids-on .grid-overlay{opacity:.5}
+  .grid-overlay span{position:absolute;background:rgba(255,255,255,.55)}
+  .grid-overlay .v1{left:33.33%;top:0;bottom:0;width:1px}
+  .grid-overlay .v2{left:66.66%;top:0;bottom:0;width:1px}
+  .grid-overlay .h1{top:33.33%;left:0;right:0;height:1px}
+  .grid-overlay .h2{top:66.66%;left:0;right:0;height:1px}
+
+  /* 角标 A / B */
+  .tag{
+    position:absolute;left:14px;bottom:14px;z-index:3;
+    font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.1em;
+    color:#fff;background:rgba(0,0,0,.5);backdrop-filter:blur(2px);
+    border:1px solid rgba(255,255,255,.25);
+    width:30px;height:30px;border-radius:7px;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* 选择结果状态 */
+  .shot.is-good{border-color:var(--ok);box-shadow:0 0 0 3px rgba(103,193,140,.22)}
+  .shot.is-good .corner{border-color:var(--ok)}
+  .shot.is-good .tag{background:var(--ok);border-color:var(--ok);color:#10231a}
+  .shot.is-bad{border-color:var(--bad);box-shadow:0 0 0 3px rgba(224,104,95,.22)}
+  .shot.is-bad .corner{border-color:var(--bad)}
+  .shot.is-bad .tag{background:var(--bad);border-color:var(--bad);color:#2a0f0d}
+  .shot.picked::after{
+    content:attr(data-mark);position:absolute;top:14px;right:14px;z-index:3;
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+    padding:4px 9px;border-radius:6px;color:#fff;
+  }
+  .shot.is-good.picked::after{content:"你选 · 对";background:var(--ok);color:#10231a}
+  .shot.is-bad.picked::after{content:"你选 · 错";background:var(--bad);color:#2a0f0d}
+  .shot.is-good:not(.picked)::after{content:"更佳";background:var(--ok);color:#10231a;
+    position:absolute;top:14px;right:14px;z-index:3;font-family:var(--mono);font-size:11px;letter-spacing:.12em;padding:4px 9px;border-radius:6px}
+  .answered .shot{cursor:default;pointer-events:none}
+  .answered .shot:hover{transform:none;box-shadow:none}
+  .shake{animation:shake .4s}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+  /* ===== 解析卡 ===== */
+  .readout{
+    margin-top:18px;border:1px solid var(--line);border-radius:14px;
+    background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);
+    overflow:hidden;
+    max-height:0;opacity:0;transform:translateY(8px);
+    transition:max-height .4s ease,opacity .35s ease,transform .35s ease;
+  }
+  .readout.show{max-height:520px;opacity:1;transform:translateY(0)}
+  .readout-inner{padding:20px 22px}
+  .verdict{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+  .verdict .badge{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    padding:4px 10px;border-radius:6px;flex:none;
+  }
+  .verdict .badge.ok{background:rgba(103,193,140,.16);color:var(--ok);border:1px solid rgba(103,193,140,.4)}
+  .verdict .badge.no{background:rgba(224,104,95,.16);color:var(--bad);border:1px solid rgba(224,104,95,.4)}
+  .verdict .v-text{font-size:15.5px;font-weight:600}
+  .points{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .points li{position:relative;padding-left:20px;color:#cfc9d2;font-size:14px}
+  .points li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border:1.5px solid var(--amber);border-radius:50%}
+  .soft-note{margin-top:13px;font-size:12.5px;color:var(--muted);
+    border-left:2px solid var(--line);padding-left:12px;font-style:normal}
+  .soft-note b{color:#b6b1bd;font-weight:600}
+
+  /* ===== 操作行 ===== */
+  .actions{display:flex;justify-content:flex-end;margin-top:20px}
+  .btn{
+    font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.08em;
+    color:#1a160e;background:var(--amber);border:none;
+    padding:13px 26px;border-radius:10px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:transform .15s,filter .15s;
+  }
+  .btn:hover{filter:brightness(1.07)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:3px solid var(--amber-soft);outline-offset:2px}
+  .btn .arrow{transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  /* ===== 成绩页 ===== */
+  .result{text-align:center;padding:8px 0}
+  .result .score-mono{font-family:var(--mono);font-size:13px;letter-spacing:.3em;color:var(--amber);text-transform:uppercase;margin-bottom:14px}
+  .result .score-big{font-family:var(--mono);font-weight:700;font-size:76px;line-height:1;letter-spacing:-.02em}
+  .result .score-big .of{color:var(--muted);font-size:34px}
+  .result .grade{font-size:20px;font-weight:600;margin-top:14px}
+  .result .blurb{color:var(--muted);max-width:520px;margin:10px auto 0;font-size:14.5px}
+  .recap{
+    margin:34px auto 28px;max-width:560px;
+    border:1px solid var(--line);border-radius:14px;background:var(--panel);
+    overflow:hidden;text-align:left;
+  }
+  .recap .row{display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line)}
+  .recap .row:last-child{border-bottom:none}
+  .recap .idx{font-family:var(--mono);font-size:12px;color:var(--muted);width:26px;flex:none}
+  .recap .dim{flex:1;font-size:14px}
+  .recap .dim small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+  .recap .mk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:4px 9px;border-radius:6px;flex:none}
+  .recap .mk.y{background:rgba(103,193,140,.16);color:var(--ok)}
+  .recap .mk.n{background:rgba(224,104,95,.16);color:var(--bad)}
+  .result .actions{justify-content:center;margin-top:8px}
+
+  .foot{margin-top:30px;text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
+  .foot .mono{font-family:var(--mono);letter-spacing:.1em}
+
+  @media (max-width:680px){
+    .pair{grid-template-columns:1fr;gap:16px}
+    .prompt h2{font-size:19px}
+    .result .score-big{font-size:60px}
+    .brand .sub{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .readout{max-height:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- 全局渐变 / 滤镜库:供所有 SVG 引用 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="skyDusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#27314e"/><stop offset="48%" stop-color="#834b46"/><stop offset="100%" stop-color="#e69b46"/>
+    </linearGradient>
+    <linearGradient id="seaDusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cf833f"/><stop offset="100%" stop-color="#2c2942"/>
+    </linearGradient>
+    <linearGradient id="skyNoon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5c98cd"/><stop offset="100%" stop-color="#b3d2e8"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#909a5a"/><stop offset="100%" stop-color="#525c36"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfd6dc"/><stop offset="100%" stop-color="#eef1f3"/>
+    </linearGradient>
+    <linearGradient id="mountSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0dcc0"/><stop offset="100%" stop-color="#f6ecdd"/>
+    </linearGradient>
+    <linearGradient id="portraitSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2f4a"/><stop offset="100%" stop-color="#cd7b3f"/>
+    </linearGradient>
+    <linearGradient id="goldGround" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#caa05c"/><stop offset="100%" stop-color="#8a6a36"/>
+    </linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter>
+    <filter id="dof" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="motion" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11 0"/></filter>
+  </defs>
+</svg>
+
+<main class="stage grids-on">
+  <header class="topbar">
+    <div class="brand">
+      <h1>摄影眼<span class="dot">.</span></h1>
+      <span class="sub">aesthetic eye test</span>
+    </div>
+    <div class="counter" id="counter"><span class="rec"></span><span id="counterText">01 / 38</span></div>
+    <button class="gridtoggle" id="gridToggle" aria-pressed="true">
+      <span class="led"></span>九宫格
+    </button>
+  </header>
+
+  <section id="quizView">
+    <div class="prompt">
+      <span class="eyebrow" id="eyebrow">取景 · 水平</span>
+      <h2 id="qTitle">哪一张更稳？</h2>
+      <p class="hint" id="qHint">凭直觉,先选你更想留下的那一张。</p>
+    </div>
+
+    <div class="pair" id="pair">
+      <div class="shot" id="slotA" role="button" tabindex="0" aria-label="选择 A 图" data-slot="A">
+        <div class="canvas" id="canvasA"></div>
+        <span class="corner c-tl"></span><span class="corner c-tr"></span>
+        <span class="corner c-bl"></span><span class="corner c-br"></span>
+        <div class="grid-overlay"><span class="v1"></span><span class="v2"></span><span class="h1"></span><span class="h2"></span></div>
+        <span class="tag">A</span>
+      </div>
+      <div class="shot" id="slotB" role="button" tabindex="0" aria-label="选择 B 图" data-slot="B">
+        <div class="canvas" id="canvasB"></div>
+        <span class="corner c-tl"></span><span class="corner c-tr"></span>
+        <span class="corner c-bl"></span><span class="corner c-br"></span>
+        <div class="grid-overlay"><span class="v1"></span><span class="v2"></span><span class="h1"></span><span class="h2"></span></div>
+        <span class="tag">B</span>
+      </div>
+    </div>
+
+    <div class="readout" id="readout">
+      <div class="readout-inner">
+        <div class="verdict">
+          <span class="badge" id="vBadge"></span>
+          <span class="v-text" id="vText"></span>
+        </div>
+        <ul class="points" id="vPoints"></ul>
+        <div class="soft-note" id="vSoft" style="display:none"></div>
+      </div>
+    </div>
+
+    <div class="actions" id="actions" style="visibility:hidden">
+      <button class="btn" id="nextBtn">下一张 <span class="arrow">→</span></button>
+    </div>
+  </section>
+
+  <section id="resultView" style="display:none">
+    <div class="result">
+      <div class="score-mono">冲洗完成 · 你的成绩</div>
+      <div class="score-big"><span id="scoreNum">0</span><span class="of"> / <span id="scoreOf">38</span></span></div>
+      <div class="grade" id="grade"></div>
+      <p class="blurb" id="blurb"></p>
+      <div class="recap" id="recap"></div>
+      <div class="actions">
+        <button class="btn" id="againBtn">再来一卷 <span class="arrow">↻</span></button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="mono">VIEWFINDER TEST · 38 FRAMES</div>
+    <div>这些是审美的常见倾向,不是铁律 —— 标注「并非定律」的题,反着拍也可能更妙。</div>
+  </footer>
+</main>
+
+<script>
+/* ============================================================
+   题库:每题只改动一个审美变量。
+   good / bad 为同一场景的两个版本,渲染时随机分配到 A / B 槽。
+   ============================================================ */
+
+// —— 复用绘图片段 ——
+const grain = '<rect width="600" height="400" filter="url(#grain)" opacity="0.05" style="mix-blend-mode:overlay"/>';
+// 人物剪影(朝右),x 为脚下中心,s 为缩放
+function person(x, ground, s){
+  const h = 70*s;
+  return `<g fill="#171318" transform="translate(${x},${ground})">
+    <ellipse cx="0" cy="2" rx="${16*s}" ry="${4*s}" fill="#000" opacity="0.35"/>
+    <circle cx="${2*s}" cy="${-h-10*s}" r="${9*s}"/>
+    <path d="M ${-10*s} 0 Q ${-9*s} ${-h} ${1*s} ${-h-2*s} Q ${12*s} ${-h} ${11*s} 0 Z"/>
+    <path d="M ${9*s} ${-h-2*s} l ${6*s} ${2*s} l ${-6*s} ${4*s} Z"/>
+  </g>`; // 末尾小三角 = 朝右
+}
+// 海鸥剪影
+function gull(x,y,s){return `<path d="M ${x-14*s} ${y} Q ${x-6*s} ${y-9*s} ${x} ${y} Q ${x+6*s} ${y-9*s} ${x+14*s} ${y}" stroke="#2a2630" stroke-width="${2.4*s}" fill="none" stroke-linecap="round"/>`;}
+// 小帆船
+function boat(x,y,s){return `<g transform="translate(${x},${y})" fill="#2c2735"><path d="M ${-9*s} 0 h ${18*s} l ${-3*s} ${5*s} h ${-12*s} Z"/><path d="M 0 0 v ${-16*s} l ${9*s} ${13*s} Z"/></g>`;}
+// 蓬松树
+function tree(x,ground,s,trunk,crown,lit){
+  return `<g transform="translate(${x},${ground})">
+    <rect x="${-4*s}" y="${-46*s}" width="${8*s}" height="${48*s}" fill="${trunk}"/>
+    <circle cx="0" cy="${-58*s}" r="${26*s}" fill="${crown}"/>
+    <circle cx="${-18*s}" cy="${-46*s}" r="${18*s}" fill="${crown}"/>
+    <circle cx="${18*s}" cy="${-46*s}" r="${18*s}" fill="${crown}"/>
+    <circle cx="0" cy="${-40*s}" r="${20*s}" fill="${crown}"/>
+    ${lit?`<path d="M ${-2*s} ${-84*s} A ${26*s} ${26*s} 0 0 0 ${-26*s} ${-50*s}" stroke="${lit}" stroke-width="${3*s}" fill="none" opacity="0.9"/>`:''}
+  </g>`;
+}
+// 远山层
+function ridge(y,h,fill,seed){
+  const pts=[]; for(let x=0;x<=600;x+=60){const j=((x*seed)%97)/97; pts.push(`${x},${y - j*h}`);}
+  return `<polygon points="0,400 ${pts.join(' ')} 600,400" fill="${fill}"/>`;
+}
+// 花
+function flower(x,y,s,petal,center){
+  let p=''; for(let k=0;k<6;k++){const a=k*Math.PI/3, px=x+Math.cos(a)*16*s, py=y+Math.sin(a)*16*s;
+    p+=`<ellipse cx="${px}" cy="${py}" rx="${13*s}" ry="${8*s}" fill="${petal}" transform="rotate(${k*60} ${px} ${py})"/>`;}
+  return `<g>${p}<circle cx="${x}" cy="${y}" r="${10*s}" fill="${center}"/></g>`;
+}
+// 头肩半身剪影(topY = 头顶 y)
+function bust(cx,topY,s){
+  return `<g fill="#171318"><circle cx="${cx}" cy="${topY+20*s}" r="${20*s}"/>
+    <path d="M ${cx-42*s} 400 Q ${cx-44*s} ${topY+54*s} ${cx} ${topY+46*s} Q ${cx+44*s} ${topY+54*s} ${cx+42*s} 400 Z"/></g>`;
+}
+// 汽车剪影
+function car(x,ground,s){
+  return `<g transform="translate(${x},${ground})" fill="#1d1a22">
+    <path d="M ${-56*s} 0 Q ${-54*s} ${-24*s} ${-26*s} ${-26*s} L ${-12*s} ${-44*s} Q ${10*s} ${-48*s} ${26*s} ${-30*s} L ${50*s} ${-26*s} Q ${60*s} ${-22*s} ${56*s} 0 Z"/>
+    <circle cx="${-30*s}" cy="0" r="${12*s}"/><circle cx="${34*s}" cy="0" r="${12*s}"/></g>`;
+}
+
+// <<<QUESTIONS:BEGIN>>> 此区块由 build.mjs 从 questions/*.json 自动生成,请勿手改
+const RAW = [
+  { id: "level", eyebrow: "取景 · 水平", en: "LEVEL", title: "哪一张更稳？",
+    hint: "同一片落日海面,只差一个动作。",
+    good: `<rect width="600" height="400" fill="url(#skyDusk)"/><rect y="260" width="600" height="140" fill="url(#seaDusk)"/><circle cx="430" cy="205" r="46" fill="#fce6ad"/><g stroke="#f6cf8a" stroke-width="3" opacity="0.7"><line x1="408" y1="278" x2="452" y2="278"/><line x1="400" y1="300" x2="460" y2="300"/><line x1="412" y1="322" x2="448" y2="322"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#skyDusk)"/><g transform="rotate(-6 300 200)"><rect x="-120" y="260" width="840" height="220" fill="url(#seaDusk)"/><circle cx="430" cy="205" r="46" fill="#fce6ad"/><g stroke="#f6cf8a" stroke-width="3" opacity="0.7"><line x1="408" y1="278" x2="452" y2="278"/><line x1="400" y1="300" x2="460" y2="300"/></g></g>${grain}`,
+    verdict: "更稳的是地平线水平的一张。",
+    points: ["风光里歪斜的海/地平线会让整幅画失衡,观者第一眼读到的是「没端平」,而不是风格。","要倾斜就得倾斜得彻底——大角度、有明确动感意图的「荷兰角」才成立;几度的小歪只会像失误。"] },
+
+  { id: "thirds", eyebrow: "构图 · 三分法", en: "THIRDS", title: "哪一张落日更耐看？",
+    hint: "打开九宫格,看太阳和地平线落在哪里。",
+    good: `<rect width="600" height="400" fill="url(#skyDusk)"/><rect y="266" width="600" height="134" fill="url(#seaDusk)"/><circle cx="400" cy="150" r="42" fill="#fce6ad"/><g stroke="#f6cf8a" stroke-width="3" opacity="0.6"><line x1="380" y1="280" x2="420" y2="280"/><line x1="374" y1="300" x2="426" y2="300"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#skyDusk)"/><rect y="200" width="600" height="200" fill="url(#seaDusk)"/><circle cx="300" cy="118" r="42" fill="#fce6ad"/><g stroke="#f6cf8a" stroke-width="3" opacity="0.6"><line x1="280" y1="222" x2="320" y2="222"/><line x1="274" y1="244" x2="326" y2="244"/></g>${grain}`,
+    verdict: "更耐看的是用三分法的一张。",
+    points: ["地平线压在下三分线、落日落在三分点,天空与海面有了主次,视线有处可去。","地平线正中、太阳正中,画面被均匀对半切开,容易显得呆板、没有重点。"],
+    soft: "并非定律：严格对称(如倒影、建筑)也能很美。但开阔的风光里,三分通常比死中更灵动。" },
+
+  { id: "gaze", eyebrow: "留白 · 视线空间", en: "LEAD ROOM", title: "人物该往哪边站？",
+    hint: "注意人物朝向的那一侧,有没有空间。",
+    good: `<rect width="600" height="400" fill="url(#portraitSky)"/><rect y="300" width="600" height="100" fill="#241d2c"/>${boat(470,292,1.5)}${person(150,300,1)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#portraitSky)"/><rect y="300" width="600" height="100" fill="#241d2c"/>${person(486,300,1)}${grain}`,
+    verdict: "更舒展的是主体偏左、前方留空的一张。",
+    points: ["人物朝向/视线的方向留出空间(lead room),画面会「呼吸」,也暗示了他在看向什么。","主体贴着边缘、又朝着画外,会有被挤压、随时要「走出画面」的不安感。"] },
+
+  { id: "lead", eyebrow: "构图 · 引导线", en: "LEADING LINE", title: "哪条路把你带进画里？",
+    hint: "看视线从哪儿进入、停在哪儿。",
+    good: `<rect width="600" height="220" fill="url(#mountSky)"/><rect y="200" width="600" height="200" fill="url(#field)"/><path d="M 300 400 C 360 330 240 300 320 250 C 380 215 360 200 372 188" stroke="#c9bb98" stroke-width="26" fill="none" stroke-linecap="round" opacity="0.9"/><path d="M 300 400 C 360 330 240 300 320 250 C 380 215 360 200 372 188" stroke="#e3d8ba" stroke-width="10" fill="none" stroke-linecap="round"/><g transform="translate(372,176)"><polygon points="-14,12 0,-6 14,12" fill="#33272a"/><rect x="-12" y="12" width="24" height="14" fill="#3c2f31"/><rect x="-4" y="16" width="8" height="8" fill="#e6a23c"/></g>${grain}`,
+    bad: `<rect width="600" height="220" fill="url(#mountSky)"/><rect y="200" width="600" height="200" fill="url(#field)"/><g transform="translate(372,176)"><polygon points="-14,12 0,-6 14,12" fill="#33272a"/><rect x="-12" y="12" width="24" height="14" fill="#3c2f31"/><rect x="-4" y="16" width="8" height="8" fill="#e6a23c"/></g><g fill="#6c7644"><path d="M180 300 l4 -16 l4 16 Z"/><path d="M188 300 l4 -20 l4 20 Z"/><path d="M460 320 l4 -16 l4 16 Z"/></g>${grain}`,
+    verdict: "更有纵深的是有小路引导的一张。",
+    points: ["一条蜿蜒的引导线像「钩子」,牵着视线从前景一路走到主体,顺带建立了纵深和故事。","同一座小屋孤零零地浮在田野里,缺少进入画面的通道,看一眼就滑走了。"] },
+
+  { id: "negative", eyebrow: "留白 · 负空间", en: "NEGATIVE SPACE", title: "这只鸟该多大?",
+    hint: "同一只海鸥,两种取景。",
+    good: `<rect width="600" height="400" fill="url(#mist)"/>${gull(470,90,1)}${gull(505,118,0.6)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#mist)"/>${gull(300,200,3.4)}${grain}`,
+    verdict: "更有意境的是把鸟放小、留出大片天空的一张。",
+    points: ["适度的负空间(留白)反而凸显主体,给画面安静、辽阔的呼吸感,情绪一下就出来了。","把主体放大塞满中央,信息是清楚了,但局促、平淡,失去了想象的余地。"],
+    soft: "并非定律：特写、纪实里「塞满」是力量。但写意、极简的题材,留白往往更动人。" },
+
+  { id: "frame", eyebrow: "构图 · 前景层次", en: "FRAMING", title: "哪张远山更有纵深？",
+    hint: "留意画面四周有没有「框」。",
+    good: `<rect width="600" height="400" fill="url(#mountSky)"/>${ridge(250,70,'#9fb0c4',7)}${ridge(290,60,'#6c829e',13)}${ridge(330,55,'#46586f',5)}<path d="M0 0 h600 v40 q-160 30 -300 10 Q160 50 0 60 Z" fill="#1d1f18"/><path d="M0 0 q70 120 40 250 q-30 -40 -50 -10 V0 Z" fill="#1d1f18"/><g stroke="#1d1f18" stroke-width="7" fill="none" stroke-linecap="round"><path d="M120 40 q40 30 30 80"/><path d="M150 50 q30 20 60 25"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#mountSky)"/>${ridge(250,70,'#9fb0c4',7)}${ridge(290,60,'#6c829e',13)}${ridge(330,55,'#46586f',5)}${grain}`,
+    verdict: "更有纵深的是用前景枝叶「框」住远山的一张。",
+    points: ["前景的暗色枝叶像画框,把视线收进画面深处,层次和空间感立刻成立。","只有远山平铺时,画面是「一层」的,真实但平,容易显得空。"],
+    soft: "并非定律：干净的极简留白本身就是风格。这里的关键是别让画面「空得没重点」。" },
+
+  { id: "clean", eyebrow: "用光取景 · 背景净化", en: "CLEAN BG", title: "哪张人像更利落？",
+    hint: "看看人物头顶上方。",
+    good: `<rect width="600" height="400" fill="url(#portraitSky)"/><circle cx="300" cy="180" r="120" fill="#e7a24a" opacity="0.25"/>${person(300,360,1.9)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#portraitSky)"/><g stroke="#2a2530" stroke-width="6"><line x1="300" y1="0" x2="300" y2="190"/><line x1="300" y1="60" x2="260" y2="20"/><line x1="300" y1="60" x2="345" y2="25"/><line x1="300" y1="100" x2="270" y2="70"/></g><line x1="0" y1="120" x2="600" y2="132" stroke="#2a2530" stroke-width="3"/>${person(300,360,1.9)}${grain}`,
+    verdict: "更利落的是背景干净的一张。",
+    points: ["背景空出来、主体与之分离,人物清晰,情绪有去处——这是人像的基本功。","电线杆、枯枝正好从头顶「长」出来,背景杂线和主体重叠,再好的表情也被拖累。"] },
+
+  { id: "light", eyebrow: "用光 · 时机", en: "GOLDEN HOUR", title: "同一棵树,哪束光更动人？",
+    hint: "一张黄昏,一张正午。",
+    good: `<rect width="600" height="270" fill="url(#skyDusk)"/><rect y="250" width="600" height="150" fill="url(#goldGround)"/><circle cx="500" cy="120" r="34" fill="#ffe9b0" opacity="0.9"/><ellipse cx="245" cy="300" rx="150" ry="18" fill="#5a431f" opacity="0.55"/>${tree(300,300,1.4,'#2a211a','#2c2a1f','#e9b25a')}${grain}`,
+    bad: `<rect width="600" height="270" fill="url(#skyNoon)"/><rect y="250" width="600" height="150" fill="#9a9f86"/><circle cx="300" cy="60" r="30" fill="#fcfdf5"/><ellipse cx="300" cy="302" rx="46" ry="10" fill="#5c604f" opacity="0.5"/>${tree(300,300,1.4,'#4a4636','#566042',null)}${grain}`,
+    verdict: "更有氛围的是黄金时刻、侧逆光的一张。",
+    points: ["日出日落前后的低角度光,带来长投影、暖色调和立体的明暗,情绪自然就来了。","正午顶光直打而下,几乎没有影子,层次被压平,画面平淡又生硬。"],
+    soft: "并非定律：正午硬光适合街头、强对比的题材。但论「氛围感」,黄金时刻几乎总是更稳。" },
+
+  { id: "reflection", eyebrow: "构图 · 对称倒影", en: "SYMMETRY", title: "对称的倒影该怎么摆？",
+    hint: "打开九宫格,看地平线和山的位置。",
+    good: `<rect width="600" height="200" fill="url(#skyDusk)"/><rect y="200" width="600" height="200" fill="url(#seaDusk)"/><circle cx="300" cy="96" r="28" fill="#fce6ad"/><circle cx="300" cy="304" r="28" fill="#fce6ad" opacity="0.5"/><polygon points="170,200 300,96 430,200" fill="#2c2536"/><polygon points="170,200 300,304 430,200" fill="#2c2536" opacity="0.55"/>${grain}`,
+    bad: `<rect width="600" height="140" fill="url(#skyDusk)"/><rect y="140" width="600" height="260" fill="url(#seaDusk)"/><circle cx="470" cy="70" r="28" fill="#fce6ad"/><polygon points="60,140 175,58 300,140" fill="#2c2536"/><polygon points="60,140 175,182 300,140" fill="#2c2536" opacity="0.5"/>${grain}`,
+    verdict: "对称的倒影里,把地平线放正中、上下镜像,反而最稳。",
+    points: ["镜像本身就是一种秩序;让地平线水平居中、上下严格对称,会放大那份宁静与庄重——这正是三分法最著名的例外。","抬高地平线、主体挤向一边、又把倒影压成窄窄一条,就白白浪费了镜像本可以给的对称美。"] },
+
+  { id: "harmony", eyebrow: "色彩 · 和谐", en: "COLOR HARMONY", title: "哪一组配色更舒服？",
+    hint: "天、地、光,看它们的颜色合不合得来。",
+    good: `<rect width="600" height="260" fill="url(#skyDusk)"/><rect y="260" width="600" height="140" fill="#7a5a8a"/><circle cx="300" cy="150" r="44" fill="#f2c87a"/>${grain}`,
+    bad: `<rect width="600" height="260" fill="#1faf6a"/><rect y="260" width="600" height="140" fill="#c81f8a"/><circle cx="300" cy="150" r="44" fill="#19c5d6"/>${grain}`,
+    verdict: "更和谐的是邻近暖色调的一张。",
+    points: ["天、地、光都落在相邻的色相里(蓝紫到暖橙),天然就和谐、统一,情绪也更浓。","高饱和的绿、品红、青硬凑在一起互相打架,刺眼又显廉价,看久了眼睛累。"],
+    soft: "并非定律：大胆的撞色(互补色)也能很有张力,但要有意识地控制比例与饱和度,而不是放任。" },
+
+  { id: "fill", eyebrow: "取景 · 靠近", en: "FILL THE FRAME", title: "这朵花该拍多大？",
+    hint: "同一朵花,两种距离。",
+    good: `<rect width="600" height="400" fill="#243018"/>${flower(300,205,4.4,'#e7badd','#caa23a')}${grain}`,
+    bad: `<rect width="600" height="400" fill="#243018"/><g stroke="#3f4d28" stroke-width="3" fill="none" opacity="0.8"><path d="M40 380 Q120 300 90 200"/><path d="M520 390 Q470 320 540 250"/><path d="M200 400 Q230 340 180 290"/><path d="M420 400 Q400 330 450 300"/></g>${flower(392,150,1.0,'#e7badd','#caa23a')}${grain}`,
+    verdict: "更出彩的是靠近、把花填满取景框的一张。",
+    points: ["走近、让主体填满画面,花瓣的层次、颜色、质感全都看得清,主角的存在感一下就立住了。","离得太远,花缩成一个小点,又被周围杂乱的枝叶包围,主角被淹没,画面没有重点。"],
+    soft: "这与「负空间」并不矛盾:留白是有意把小主体放进干净背景;这里的问题是主体太小、又被杂物包围。" },
+
+  { id: "odds", eyebrow: "构图 · 奇数法则", en: "RULE OF ODDS", title: "几棵树更耐看？",
+    hint: "数一数,留意它们的大小和排布。",
+    good: `<rect width="600" height="240" fill="url(#mountSky)"/><rect y="220" width="600" height="180" fill="url(#field)"/>${tree(180,300,1.5,'#4b3a2a','#5f7a3e',null)}${tree(312,290,1.0,'#4b3a2a','#5f7a3e',null)}${tree(440,305,1.9,'#4b3a2a','#5f7a3e',null)}${grain}`,
+    bad: `<rect width="600" height="240" fill="url(#mountSky)"/><rect y="220" width="600" height="180" fill="url(#field)"/>${tree(212,300,1.3,'#4b3a2a','#5f7a3e',null)}${tree(388,300,1.3,'#4b3a2a','#5f7a3e',null)}${grain}`,
+    verdict: "更耐看的是三棵、大小错落的一张。",
+    points: ["奇数个主体不容易被一眼数完,视线会在它们之间游走,画面更活、更有节奏。","两个等大、左右对称的主体把画面对半分,彼此「对峙」,显得呆板、静止。"],
+    soft: "并非定律：成双成对也有叙事力(呼应、对话);奇数只是更安全的默认倾向。" },
+
+  { id: "layers", eyebrow: "构图 · 纵深层次", en: "DEPTH", title: "哪张风景更有纵深？",
+    hint: "找一找画面里有几个「层」。",
+    good: `<rect width="600" height="400" fill="url(#mountSky)"/>${ridge(210,46,'#b9a98c',7)}${ridge(250,40,'#8f8064',13)}<g>${tree(160,300,1.0,'#3f3326','#566b3a',null)}${tree(300,304,1.1,'#3f3326','#566b3a',null)}${tree(440,300,1.0,'#3f3326','#566b3a',null)}</g><path d="M0 400 L0 350 Q150 330 300 348 Q450 366 600 344 L600 400 Z" fill="#14160e"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#mountSky)"/>${ridge(250,44,'#9aa06e',11)}${grain}`,
+    verdict: "更有纵深的是前、中、远三层叠起来的一张。",
+    points: ["远山、中景树、前景暗石分出三个层次,眼睛能一层层「走」进画面,空间感就出来了。","只有远景一层,虽然真实,却扁平得像一张明信片,看一眼就到头了。"] },
+
+  { id: "dof", eyebrow: "镜头 · 景深", en: "SHALLOW DOF", title: "背景该清楚还是虚化？",
+    hint: "看背景,再看主体。",
+    good: `<rect width="600" height="400" fill="#46583a"/><g filter="url(#dof)"><circle cx="120" cy="120" r="30" fill="#9fae6e" opacity="0.7"/><circle cx="500" cy="90" r="40" fill="#b7c486" opacity="0.6"/><circle cx="430" cy="260" r="26" fill="#d8e0a0" opacity="0.7"/><circle cx="80" cy="320" r="34" fill="#8fa05e" opacity="0.6"/></g>${person(300,360,1.9)}${grain}`,
+    bad: `<rect width="600" height="400" fill="#46583a"/><g fill="none" stroke="#33402a" stroke-width="4"><path d="M60 400 Q90 240 70 120"/><path d="M540 400 Q520 250 560 110"/><path d="M180 400 Q170 300 200 220"/><path d="M420 400 Q440 300 410 220"/></g><circle cx="120" cy="120" r="14" fill="#c7d488"/><circle cx="500" cy="100" r="14" fill="#c7d488"/>${person(300,360,1.9)}${grain}`,
+    verdict: "更突出主体的是背景虚化的一张。",
+    points: ["浅景深把杂乱的背景化成柔和的光斑,清晰的主体一下从画面里「浮」出来。","前后景全都清清楚楚,背景争着抢戏,视线不知该落在谁身上。"],
+    soft: "并非定律：风光、纪实常要大景深让一切都清晰;虚化是为了「孤立主体」,看你拍的是什么。" },
+
+  { id: "diagonal", eyebrow: "构图 · 对角线", en: "DIAGONAL", title: "栈桥该怎么摆？",
+    hint: "注意它是斜的还是平的。",
+    good: `<rect width="600" height="220" fill="url(#skyNoon)"/><rect y="210" width="600" height="190" fill="#41617c"/><polygon points="0,398 60,398 472,214 430,206" fill="#5b4a39"/><g fill="#4a3c2e"><rect x="120" y="318" width="8" height="20"/><rect x="240" y="276" width="8" height="18"/><rect x="350" y="240" width="7" height="16"/></g>${grain}`,
+    bad: `<rect width="600" height="220" fill="url(#skyNoon)"/><rect y="210" width="600" height="190" fill="#41617c"/><rect x="40" y="250" width="520" height="20" fill="#5b4a39"/><g fill="#4a3c2e"><rect x="120" y="270" width="8" height="22"/><rect x="300" y="270" width="8" height="22"/><rect x="470" y="270" width="8" height="22"/></g>${grain}`,
+    verdict: "更有张力的是栈桥斜着伸进画面的一张。",
+    points: ["对角线天生带张力和方向感,把视线沿着它一路拉向远方,画面立刻有了运动和纵深。","水平摆放四平八稳,却也静止、平淡,少了那股把人「拉进去」的劲。"],
+    soft: "并非定律：水平、垂直线传达的是平静与秩序;对角线给的是动感与不安——看你要哪种情绪。" },
+
+  { id: "headroom", eyebrow: "取景 · 头顶空间", en: "HEADROOM", title: "人物头顶留多少合适？",
+    hint: "看头顶到画面上边的距离。",
+    good: `<rect width="600" height="400" fill="url(#portraitSky)"/>${bust(300,62,2.3)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#portraitSky)"/>${bust(300,196,2.3)}${grain}`,
+    verdict: "更稳的是头顶只留一道窄缝的一张。",
+    points: ["头顶留出恰当的窄缝,人物稳稳「坐」在画面里,眼睛大约落在上三分线,舒服又自然。","头顶空出一大片,人像被压到下方,显得下沉、局促,空白也没在表达任何东西。"] },
+
+  { id: "joints", eyebrow: "取景 · 裁切", en: "CROPPING", title: "人像从哪儿裁更好？",
+    hint: "看画面下边切在身体的哪个位置。",
+    good: `<rect width="600" height="400" fill="#6a5b52"/><circle cx="300" cy="92" r="36" fill="#171318"/><path d="M 262 150 Q 300 130 338 150 L 352 400 L 248 400 Z" fill="#171318"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#6a5b52"/><circle cx="300" cy="60" r="26" fill="#171318"/><path d="M 282 92 Q 300 80 318 92 L 326 250 L 322 392 L 312 392 L 304 270 L 296 270 L 288 392 L 278 392 L 274 250 Z" fill="#171318"/>${grain}`,
+    verdict: "更从容的是裁在大腿、而不是脚踝的一张。",
+    points: ["在大腿、上臂、腰这些「中段」裁切,看起来是有意的取景,人物落落大方。","正好切在脚踝、手腕、膝盖这些关节处,像被「截肢」,本能地让人觉得别扭、不完整。"] },
+
+  { id: "pattern", eyebrow: "构图 · 重复韵律", en: "RHYTHM", title: "哪排柱子更有韵律？",
+    hint: "留意间距和高低。",
+    good: `<rect width="600" height="400" fill="#cdbfa8"/><rect y="300" width="600" height="100" fill="#9a8b6e"/><rect x="70" y="112" width="460" height="14" fill="#6e6149"/><g fill="#5a4f3c"><rect x="90" y="120" width="20" height="180"/><rect x="190" y="120" width="20" height="180"/><rect x="290" y="120" width="20" height="180"/><rect x="390" y="120" width="20" height="180"/><rect x="490" y="120" width="20" height="180"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="#cdbfa8"/><rect y="300" width="600" height="100" fill="#9a8b6e"/><g fill="#5a4f3c"><rect x="70" y="170" width="20" height="130"/><rect x="150" y="120" width="20" height="180"/><rect x="300" y="200" width="20" height="100"/><rect x="360" y="140" width="20" height="160"/><rect x="500" y="190" width="20" height="110"/></g>${grain}`,
+    verdict: "更有韵律的是柱子等距、整齐重复的一张。",
+    points: ["等距的重复像视觉上的鼓点,规律本身就赏心悦目,也撑起了画面的秩序感。","高低不齐、随意散落,重复就变成了杂乱,节奏一断,画面就散了。"],
+    soft: "并非定律：在规律里安排一个「异类」往往是点睛之笔——但前提是先建立起规律。" },
+
+  { id: "declutter", eyebrow: "取景 · 做减法", en: "SIMPLICITY", title: "海面上该留几条船？",
+    hint: "看画面干净还是热闹。",
+    good: `<rect width="600" height="240" fill="url(#mist)"/><rect y="230" width="600" height="170" fill="#8aa0ad"/>${boat(345,250,2.2)}${grain}`,
+    bad: `<rect width="600" height="240" fill="url(#mist)"/><rect y="230" width="600" height="170" fill="#8aa0ad"/>${boat(120,250,1.4)}${boat(250,280,1.0)}${boat(345,250,1.6)}${boat(470,300,1.2)}${boat(540,260,0.9)}${gull(160,90,0.8)}${gull(420,70,0.9)}${gull(300,120,0.7)}${grain}`,
+    verdict: "更耐看的是只留一条船的一张。",
+    points: ["摄影是减法:每多一样东西,就分走一份注意力。画面越干净,主体越响亮。","元素一多就互相争抢,看着热闹,却没了重点,过目即忘。"] },
+
+  { id: "contrast", eyebrow: "影调 · 明暗分离", en: "SEPARATION", title: "哪张主体更跳得出来？",
+    hint: "比比主体和背景的明暗。",
+    good: `<rect width="600" height="400" fill="#e3e9ec"/>${ridge(300,40,'#cdd6da',9)}${person(300,360,2.0)}${grain}`,
+    bad: `<rect width="600" height="400" fill="#2b2f33"/>${ridge(300,40,'#34393d',9)}${person(300,360,2.0)}${grain}`,
+    verdict: "更清楚的是深色主体配浅背景的一张。",
+    points: ["深主体、浅背景,靠明暗差把主体从背景里「切」出来,一眼就认得出。","主体和背景明度相近,轮廓糊在一起,主角被背景「吃」掉了。"],
+    soft: "并非定律：低对比的高级灰、暗调也是一种风格;关键是主体仍要能被辨认出来。" },
+
+  { id: "pov", eyebrow: "视角 · 低机位", en: "LOW ANGLE", title: "同一棵树,从哪个高度拍？",
+    hint: "注意机位的高低和背景。",
+    good: `<rect width="600" height="400" fill="url(#skyNoon)"/>${tree(300,392,2.8,'#3f3326','#4f6a34',null)}${grain}`,
+    bad: `<rect width="600" height="180" fill="url(#skyNoon)"/><rect y="170" width="600" height="230" fill="url(#field)"/>${tree(300,300,1.0,'#3f3326','#4f6a34',null)}${grain}`,
+    verdict: "更有气势的是蹲低、仰拍大树的一张。",
+    points: ["压低机位仰拍,主体顶天立地,背景换成干净的天空,平凡的树也有了纪念碑般的气势。","站着平视,主体被淹没在大片地面里,像随手一拍的「到此一游」。"],
+    soft: "并非定律：平视更亲切、真实(尤其拍人);仰拍、俯拍是为了夸张某种感觉,看你想说什么。" },
+
+  { id: "scurve", eyebrow: "构图 · S 形曲线", en: "S-CURVE", title: "河流该是直的还是弯的？",
+    hint: "顺着河看视线怎么走。",
+    good: `<rect width="600" height="200" fill="url(#mountSky)"/><rect y="180" width="600" height="220" fill="url(#field)"/><path d="M 250 400 C 330 330 200 300 300 250 C 400 200 270 180 330 130" stroke="#9fb8c8" stroke-width="30" fill="none" stroke-linecap="round"/><path d="M 250 400 C 330 330 200 300 300 250 C 400 200 270 180 330 130" stroke="#c4d6e0" stroke-width="12" fill="none" stroke-linecap="round"/>${grain}`,
+    bad: `<rect width="600" height="200" fill="url(#mountSky)"/><rect y="180" width="600" height="220" fill="url(#field)"/><path d="M 290 400 L 320 130" stroke="#9fb8c8" stroke-width="30" fill="none" stroke-linecap="round"/><path d="M 290 400 L 320 130" stroke="#c4d6e0" stroke-width="12" fill="none" stroke-linecap="round"/>${grain}`,
+    verdict: "更优雅的是河流呈 S 形蜿蜒的一张。",
+    points: ["S 形曲线像一条缎带,引着视线舒缓地绕向深处,既有引导又有柔美的韵律。","笔直一条则生硬、急促,少了那份从容和回转的余味。"],
+    soft: "并非定律：笔直的线条传达力量与速度;S 形传达柔和与优雅——看你要刚还是柔。" },
+
+  { id: "pop", eyebrow: "色彩 · 点缀色", en: "POP OF COLOR", title: "哪张里的红伞更抢眼？",
+    hint: "看看周围其他颜色。",
+    good: `<rect width="600" height="400" fill="#7b8590"/><rect y="300" width="600" height="100" fill="#5e6671"/><g fill="#6c757f"><rect x="80" y="180" width="60" height="120"/><rect x="170" y="150" width="60" height="150"/><rect x="380" y="160" width="60" height="140"/><rect x="470" y="190" width="60" height="110"/></g><g transform="translate(300,250)"><path d="M -26 0 A 26 26 0 0 1 26 0 Z" fill="#d83b2e"/><rect x="-2" y="0" width="4" height="34" fill="#3a3a3a"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="#3aa0d8"/><rect y="300" width="600" height="100" fill="#e08a2a"/><rect x="80" y="180" width="60" height="120" fill="#2fb36a"/><rect x="170" y="150" width="60" height="150" fill="#c83bd0"/><rect x="380" y="160" width="60" height="140" fill="#e0c22a"/><rect x="470" y="190" width="60" height="110" fill="#2f55d0"/><g transform="translate(300,250)"><path d="M -26 0 A 26 26 0 0 1 26 0 Z" fill="#d83b2e"/><rect x="-2" y="0" width="4" height="34" fill="#3a3a3a"/></g>${grain}`,
+    verdict: "更抓眼的是灰调里只有一抹红伞的一张。",
+    points: ["安静、收敛的色调里突然出现一抹高饱和的亮色,像磁铁一样牢牢抓住视线。","满画面都是鲜艳色块,各自争抢,那抹红伞就泯然众人、失去了焦点。"] },
+
+  { id: "balance", eyebrow: "构图 · 视觉平衡", en: "BALANCE", title: "画面重量该怎么摆平？",
+    hint: "看左右两边的分量。",
+    good: `<rect width="600" height="400" fill="url(#portraitSky)"/><rect y="320" width="600" height="80" fill="#241d2c"/>${tree(150,320,1.6,'#2e2430','#3a2f44',null)}<circle cx="470" cy="120" r="20" fill="#fce6ad"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#portraitSky)"/><rect y="320" width="600" height="80" fill="#241d2c"/>${tree(90,320,1.6,'#2e2430','#3a2f44',null)}${grain}`,
+    verdict: "更平衡的是一侧大树、对侧有小月亮配重的一张。",
+    points: ["大主体放一侧,对角再放一个小元素「配重」,画面像天平一样达成动态平衡,稳而不闷。","分量全压在一边,另半边空荡荡,画面就往那一侧「倾倒」,失了重心。"],
+    soft: "并非定律：有意的大片留白(极简)是另一回事;这里说的是无意识的「一边倒」。" },
+
+  { id: "sky", eyebrow: "取景 · 天空占比", en: "SKY RATIO", title: "天空该给多少？",
+    hint: "看天空和地面谁占得多。",
+    good: `<rect width="600" height="400" fill="url(#skyDusk)"/><circle cx="420" cy="120" r="40" fill="#fce6ad" opacity="0.85"/><g fill="#e6a24a" opacity="0.35"><ellipse cx="200" cy="150" rx="160" ry="22"/><ellipse cx="420" cy="210" rx="180" ry="20"/></g><path d="M0 300 Q120 280 240 296 Q400 316 600 292 L600 400 L0 400 Z" fill="#2b2a24"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#3a3a30"/><rect width="600" height="110" fill="url(#skyDusk)"/><circle cx="420" cy="56" r="30" fill="#fce6ad" opacity="0.85"/>${grain}`,
+    verdict: "更精彩的是把戏剧化的天空给到三分之二的一张。",
+    points: ["天空越是戏剧化(火烧云、霞光),越值得多给画面——别让平淡的地面来抢戏。","把精彩的天压成一条缝,让乏味的地面占满,等于把照片里最好的部分扔掉了。"],
+    soft: "并非定律：当前景才是主角时(花海、街景),反过来压低天空、突出地面才对。" },
+
+  { id: "panning", eyebrow: "快门 · 追拍", en: "PANNING", title: "怎么拍出车在飞驰？",
+    hint: "看车清楚,还是背景清楚。",
+    good: `<rect width="600" height="400" fill="#9aa6b0"/><rect y="300" width="600" height="100" fill="#5b626b"/><g filter="url(#motion)"><rect x="40" y="140" width="120" height="120" fill="#7a828c"/><rect x="220" y="120" width="120" height="140" fill="#69707a"/><rect x="400" y="150" width="140" height="110" fill="#7a828c"/></g>${car(300,300,1.6)}${grain}`,
+    bad: `<rect width="600" height="400" fill="#9aa6b0"/><rect y="300" width="600" height="100" fill="#5b626b"/><g fill="#7a828c"><rect x="40" y="140" width="120" height="120"/><rect x="220" y="120" width="120" height="140"/><rect x="400" y="150" width="140" height="110"/></g><g stroke="#5b626b" stroke-width="3"><line x1="100" y1="140" x2="100" y2="260"/><line x1="280" y1="120" x2="280" y2="260"/></g>${car(300,300,1.6)}${grain}`,
+    verdict: "更有动感的是车清晰、背景被拉成线条的一张。",
+    points: ["跟着运动的主体一起摇镜(追拍),主体清晰、背景拉成流动的线条,静照里就有了风驰电掣。","一切都凝固清晰,车像停在路边,而不是正在飞驰。"],
+    soft: "并非定律：高速凝固瞬间(飞溅的水花、定格的飞鸟)是另一种震撼——看你要「快」还是要「那一瞬」。" },
+
+  { id: "silhouette", eyebrow: "用光 · 剪影", en: "SILHOUETTE", title: "逆光剪影怎么排？",
+    hint: "看几个剪影有没有叠在一起。",
+    good: `<rect width="600" height="400" fill="url(#skyDusk)"/><circle cx="300" cy="150" r="48" fill="#fce6ad" opacity="0.85"/><rect y="330" width="600" height="70" fill="#1a1620"/>${person(150,330,1.3)}${tree(460,330,1.5,'#1a1620','#1a1620',null)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#skyDusk)"/><circle cx="300" cy="150" r="48" fill="#fce6ad" opacity="0.85"/><rect y="330" width="600" height="70" fill="#1a1620"/>${person(286,330,1.3)}${person(312,330,1.3)}${tree(326,330,1.5,'#1a1620','#1a1620',null)}${grain}`,
+    verdict: "更清楚的是剪影彼此分开、形状能认出的一张。",
+    points: ["逆光剪影全靠轮廓说话;让各个主体之间留出空隙、不重叠,形状才清晰、可读。","剪影叠成一团黑,看不出到底是几个人、几棵树,逆光的妙处也就没了。"] },
+
+  { id: "wb", eyebrow: "色彩 · 白平衡", en: "WHITE BALANCE", title: "黄昏该是什么色调？",
+    hint: "感觉一下整体偏暖还是偏冷。",
+    good: `<rect width="600" height="260" fill="url(#skyDusk)"/><rect y="260" width="600" height="140" fill="url(#goldGround)"/><circle cx="420" cy="150" r="40" fill="#ffe7a6"/>${tree(170,360,1.4,'#5a3f24','#7a5a2e','#caa05c')}${grain}`,
+    bad: `<rect width="600" height="260" fill="#2a3a5a"/><rect y="260" width="600" height="140" fill="#3e4e64"/><circle cx="420" cy="150" r="40" fill="#cdd8e6"/>${tree(170,360,1.4,'#33394a','#3e4a5e',null)}<rect width="600" height="400" fill="#2a5aa0" opacity="0.18"/>${grain}`,
+    verdict: "更对味的是白平衡偏暖、符合黄昏的一张。",
+    points: ["黄昏本就该是暖调:正确的白平衡让金光、暖影都对味,看着舒服又真实。","整片发蓝,夕阳被「冻」住,人脸、景物都发青,一眼就觉得不对劲。"],
+    soft: "并非定律：刻意压成冷调可以营造清冷、孤寂的情绪——前提是你「故意」这么做,而不是设错了。" },
+
+  { id: "highlow", eyebrow: "影调 · 高低调", en: "TONAL KEY", title: "哪张影调更干净？",
+    hint: "看整体是亮、是暗,还是灰蒙蒙。",
+    good: `<rect width="600" height="400" fill="#eef0f1"/><rect y="320" width="600" height="80" fill="#e2e5e7"/>${flower(220,210,2.0,'#f2ccdd','#e8c98a')}${flower(380,238,1.5,'#f2ccdd','#e8c98a')}${grain}`,
+    bad: `<rect width="600" height="400" fill="#5a5650"/><rect y="320" width="600" height="80" fill="#4c4943"/>${flower(220,210,2.0,'#8a7782','#7a6a4a')}${flower(380,238,1.5,'#8a7782','#7a6a4a')}${grain}`,
+    verdict: "更通透的是整体明亮、影调干净的一张(高调)。",
+    points: ["有意提亮、让画面落在明亮的高调区间,清新、通透,情绪轻盈——前提是该亮的地方亮得干净。","灰蒙蒙地压在中间调,既不够亮也不够暗,既脏又闷,像没曝准的废片。"],
+    soft: "并非定律：低调(大面积暗 + 一点亮)同样高级、有戏剧性;怕的是不高不低、灰扑扑的「中间地带」。" },
+
+  { id: "triangle", eyebrow: "构图 · 三角形", en: "TRIANGLE", title: "三个主体怎么摆更稳？",
+    hint: "连一连它们,是什么形状。",
+    good: `<rect width="600" height="240" fill="url(#mist)"/><rect y="230" width="600" height="170" fill="#8aa0ad"/>${boat(300,160,1.7)}${boat(185,300,1.4)}${boat(425,300,1.4)}${grain}`,
+    bad: `<rect width="600" height="240" fill="url(#mist)"/><rect y="230" width="600" height="170" fill="#8aa0ad"/>${boat(180,170,1.4)}${boat(430,170,1.4)}${boat(300,330,1.6)}${grain}`,
+    verdict: "更稳的是三个主体排成正三角形(底宽顶尖)的一张。",
+    points: ["三角形是最稳定的形状:底边宽、向上收,主体之间彼此呼应,画面安定又有秩序。","把重量都堆在上方、底下只剩一个支点,就成了「头重脚轻」的倒三角,看着不安稳。"],
+    soft: "并非定律：倒三角、不稳定的排布正可以用来表达紧张、动荡——看你要的是安定还是不安。" },
+
+  { id: "scale", eyebrow: "构图 · 尺度感", en: "SENSE OF SCALE", title: "怎么显出山有多大？",
+    hint: "找找画面里有没有参照物。",
+    good: `<rect width="600" height="400" fill="url(#mountSky)"/>${ridge(170,150,'#9aa6b0',7)}${ridge(210,120,'#74808c',13)}${ridge(250,90,'#566069',5)}<rect y="330" width="600" height="70" fill="#3e4650"/>${person(300,330,0.5)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#mountSky)"/>${ridge(170,150,'#9aa6b0',7)}${ridge(210,120,'#74808c',13)}${ridge(250,90,'#566069',5)}<rect y="330" width="600" height="70" fill="#3e4650"/>${grain}`,
+    verdict: "更显宏大的是放进一个小小人影当参照的一张。",
+    points: ["一个渺小的人(或一棵树、一栋房)给了观者比例尺,山的巍峨、空间的辽阔才真正被「感觉」到。","没有任何参照物,再大的山也可能被看成小土堆——大小是「比」出来的。"] },
+
+  { id: "texture", eyebrow: "用光 · 质感", en: "TEXTURE LIGHT", title: "哪张沙纹更有质感？",
+    hint: "看光是从侧面来,还是正面来。",
+    good: `<rect width="600" height="400" fill="#caa86a"/><path d="M0 140 Q150 110 300 140 T600 140 L600 175 Q450 145 300 175 T0 175 Z" fill="#e6cfa0"/><path d="M0 175 Q150 145 300 175 T600 175 L600 200 Q450 170 300 200 T0 200 Z" fill="#9c7a40"/><path d="M0 240 Q150 210 300 240 T600 240 L600 275 Q450 245 300 275 T0 275 Z" fill="#e6cfa0"/><path d="M0 275 Q150 245 300 275 T600 275 L600 300 Q450 270 300 300 T0 300 Z" fill="#9c7a40"/><path d="M0 340 Q150 310 300 340 T600 340 L600 375 Q450 345 300 375 T0 375 Z" fill="#e6cfa0"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#caa86a"/><g opacity="0.25" stroke="#b89656" stroke-width="2" fill="none"><path d="M0 160 Q150 150 300 160 T600 160"/><path d="M0 230 Q150 220 300 230 T600 230"/><path d="M0 300 Q150 290 300 300 T600 300"/></g>${grain}`,
+    verdict: "更有质感的是侧面掠射光、留下阴影的一张。",
+    points: ["低角度的侧光(掠射光)沿着表面扫过,凹凸的地方一面亮一面暗,沙纹、墙面的质感全被「刻」了出来。","正面平光直打,处处一样亮,阴影没了,表面再有纹理也被「抹平」成一片。"],
+    soft: "并非定律：拍人像、想要柔和干净时,平一点的光反而讨喜;质感不是任何题材都越强越好。" },
+
+  { id: "framewithin", eyebrow: "构图 · 框中框", en: "FRAME IN FRAME", title: "怎么让主体更有层次？",
+    hint: "看主体周围有没有「框」。",
+    good: `<rect width="600" height="400" fill="#d8c9a8"/><rect y="300" width="600" height="100" fill="#b6a47e"/>${person(300,300,1.3)}<path d="M0 0 H600 V400 H470 V150 A170 150 0 0 0 130 150 V400 H0 Z" fill="#2a2018"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#d8c9a8"/><rect y="300" width="600" height="100" fill="#b6a47e"/>${person(300,300,1.3)}${grain}`,
+    verdict: "更有层次的是透过拱门「框」住主体的一张。",
+    points: ["用拱门、窗、门洞这类现成的几何框把主体围起来,既挡掉杂乱、聚焦视线,又添了一层纵深。","主体直愣愣地摆在空旷背景里,虽然清楚,却少了引导和包裹,显得单薄。"],
+    soft: "这和前面「前景树枝框架」是一家:一个用自然枝叶,一个用建筑几何,目的都是「框」住主角。" },
+
+  { id: "merger", eyebrow: "取景 · 避免相撞", en: "MERGERS", title: "人该站在哪一边？",
+    hint: "留意人和那根电线杆的关系。",
+    good: `<rect width="600" height="250" fill="url(#skyNoon)"/><rect y="240" width="600" height="160" fill="url(#field)"/><rect x="430" y="120" width="10" height="160" fill="#4a3c2e"/>${person(250,360,1.7)}${grain}`,
+    bad: `<rect width="600" height="250" fill="url(#skyNoon)"/><rect y="240" width="600" height="160" fill="url(#field)"/><rect x="296" y="120" width="10" height="150" fill="#4a3c2e"/>${person(300,360,1.7)}${grain}`,
+    verdict: "更利落的是人与电线杆错开、互不打架的一张。",
+    points: ["留意主体和背景里线条、物体的关系:稍微挪一步,别让电线杆「长」在头顶、别让地平线「切」过脖子。","电线杆正从头顶冒出来,两样东西「撞」在一起,看着别扭又廉价——这叫「相撞(merger)」。"] },
+
+  { id: "anomaly", eyebrow: "构图 · 打破图案", en: "THE ODD ONE", title: "哪张更有焦点？",
+    hint: "找一找有没有「不一样」的那一个。",
+    good: `<rect width="600" height="400" fill="#26303a"/><g fill="#5a6b72"><circle cx="120" cy="110" r="22"/><circle cx="240" cy="110" r="22"/><circle cx="360" cy="110" r="22"/><circle cx="480" cy="110" r="22"/><circle cx="120" cy="210" r="22"/><circle cx="240" cy="210" r="22"/><circle cx="480" cy="210" r="22"/><circle cx="120" cy="310" r="22"/><circle cx="240" cy="310" r="22"/><circle cx="360" cy="310" r="22"/><circle cx="480" cy="310" r="22"/></g><circle cx="360" cy="210" r="22" fill="#e0a32e"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#26303a"/><g fill="#5a6b72"><circle cx="120" cy="110" r="22"/><circle cx="240" cy="110" r="22"/><circle cx="360" cy="110" r="22"/><circle cx="480" cy="110" r="22"/><circle cx="120" cy="210" r="22"/><circle cx="240" cy="210" r="22"/><circle cx="360" cy="210" r="22"/><circle cx="480" cy="210" r="22"/><circle cx="120" cy="310" r="22"/><circle cx="240" cy="310" r="22"/><circle cx="360" cy="310" r="22"/><circle cx="480" cy="310" r="22"/></g>${grain}`,
+    verdict: "更有焦点的是整齐图案里留一个「异类」的一张。",
+    points: ["先用重复建立起规律,再让其中一个打破它(变色、转向、缺席),那个异类立刻成为全场焦点。","清一色完全相同,规律是有了,却平均、单调,视线无处停留,没有主角。"],
+    soft: "这是「重复韵律」的进阶:有了图案这块底,那个「不一样」才有意义。" },
+
+  { id: "moment", eyebrow: "时机 · 决定性瞬间", en: "THE MOMENT", title: "该在哪一刻按快门？",
+    hint: "看人跳到了什么位置。",
+    good: `<rect width="600" height="280" fill="url(#skyNoon)"/><rect y="270" width="600" height="130" fill="url(#field)"/><g fill="#171318" transform="translate(300,150)"><circle cx="0" cy="-14" r="13"/><path d="M -8 0 Q 0 -6 8 0 L 6 30 L -6 30 Z"/><path d="M -8 4 L -30 -10 M 8 4 L 30 -10" stroke="#171318" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M -5 30 L -22 56 M 5 30 L 22 56" stroke="#171318" stroke-width="8" stroke-linecap="round" fill="none"/></g><ellipse cx="300" cy="372" rx="24" ry="5" fill="#000" opacity="0.2"/>${grain}`,
+    bad: `<rect width="600" height="280" fill="url(#skyNoon)"/><rect y="270" width="600" height="130" fill="url(#field)"/><g fill="#171318" transform="translate(300,236)"><circle cx="0" cy="-12" r="13"/><path d="M -10 0 Q 0 -6 10 0 L 12 30 L -12 30 Z"/><path d="M -10 6 L -28 18 M 10 6 L 28 18" stroke="#171318" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M -8 30 L -20 30 L -20 34 M 8 30 L 20 30 L 20 34" stroke="#171318" stroke-width="8" stroke-linecap="round" fill="none"/></g><ellipse cx="300" cy="270" rx="26" ry="5" fill="#000" opacity="0.3"/>${grain}`,
+    verdict: "更精彩的是抓住跳跃最高点的一张。",
+    points: ["动作类的关键在「决定性瞬间」:跳到最高、浪花最炸、回眸那一刻——早一拍晚一拍,张力就泄了。","人都快落地了才按下快门,最有劲的瞬间已经过去,只剩一个平淡的收尾动作。"],
+    soft: "练法：用连拍、提前预判、半按对焦守住时机;决定性瞬间是「等」来和「猜」来的,不全靠运气。" },
+
+  { id: "centered", eyebrow: "构图 · 中央对称", en: "DEAD CENTER", title: "这座对称的建筑放哪？",
+    hint: "看它在画面里偏不偏。",
+    good: `<rect width="600" height="400" fill="#dfe3e6"/><g fill="#8a7f74"><rect x="240" y="80" width="120" height="280"/><polygon points="300,40 360,90 240,90"/><rect x="262" y="120" width="16" height="40"/><rect x="322" y="120" width="16" height="40"/><rect x="284" y="210" width="32" height="150"/></g><rect y="360" width="600" height="40" fill="#b7afa6"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#dfe3e6"/><g fill="#8a7f74" transform="translate(-150,0)"><rect x="240" y="80" width="120" height="280"/><polygon points="300,40 360,90 240,90"/><rect x="262" y="120" width="16" height="40"/><rect x="322" y="120" width="16" height="40"/><rect x="284" y="210" width="32" height="150"/></g><rect y="360" width="600" height="40" fill="#b7afa6"/>${grain}`,
+    verdict: "更有力量的是把这座对称建筑放正中央的一张。",
+    points: ["当主体本身高度对称(正面建筑、肖像、纹样),把它端端正正放在中央,那份庄严、稳定与气场最足。","硬把对称的东西挪到一边,既没了对称的庄重,也没换来更好的平衡,只剩一侧的尴尬空白。"],
+    soft: "这是三分法的反面:规则是参考不是枷锁。强对称的题材,「死中」往往比三分更对。" },
+
+  { id: "portraitlight", eyebrow: "用光 · 人像光位", en: "PORTRAIT LIGHT", title: "哪张人像更立体？",
+    hint: "看光从哪个方向打在脸上。",
+    good: `<rect width="600" height="400" fill="#2a2230"/><g transform="translate(300,200)"><circle cx="0" cy="0" r="120" fill="#caa07a"/><path d="M 0 -120 A 120 120 0 0 1 0 120 Z" fill="#6e5340" opacity="0.85"/><circle cx="-22" cy="40" r="10" fill="#e6c79e" opacity="0.9"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="#2a2230"/><g transform="translate(300,200)"><circle cx="0" cy="0" r="120" fill="#caa07a"/></g>${grain}`,
+    verdict: "更立体的是脸上有侧光、有明暗过渡的一张。",
+    points: ["光从侧前方来,脸的一侧亮、一侧落入柔和的阴影(经典的「伦勃朗光」),立体感和情绪一下就有了。","正面平光直打,整张脸均匀一片、没有阴影,五官被压平,像证件照一样寡淡。"],
+    soft: "并非定律：平光也有用处(高调、美妆、需要干净时);但想要立体、有戏的人像,侧光几乎总是更好。" }
+];
+// <<<QUESTIONS:END>>>
+
+/* ============================================================
+   逻辑
+   ============================================================ */
+const state = { i:0, score:0, answered:false, log:[], order:[] };
+const $ = id => document.getElementById(id);
+
+function buildOrder(){
+  // 每题随机决定 good 放 A 还是 B
+  state.order = RAW.map(()=> Math.random() < 0.5 ? 'A' : 'B');
+}
+
+function svgWrap(inner){
+  return `<svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img">${inner}</svg>`;
+}
+
+function renderQuestion(){
+  const q = RAW[state.i];
+  const goodSlot = state.order[state.i];
+  state.answered = false;
+
+  $('counterText').textContent = String(state.i+1).padStart(2,'0') + ' / ' + String(RAW.length).padStart(2,'0');
+  $('eyebrow').textContent = q.eyebrow;
+  $('qTitle').textContent = q.title;
+  $('qHint').textContent = q.hint;
+
+  $('canvasA').innerHTML = svgWrap(goodSlot==='A' ? q.good : q.bad);
+  $('canvasB').innerHTML = svgWrap(goodSlot==='B' ? q.good : q.bad);
+
+  // 复位样式
+  ['slotA','slotB'].forEach(s=>{
+    const el=$(s); el.className='shot'; el.removeAttribute('data-mark');
+    el.style.pointerEvents=''; 
+  });
+  $('pair').classList.remove('answered');
+  $('readout').classList.remove('show');
+  $('actions').style.visibility='hidden';
+}
+
+function choose(slot){
+  if(state.answered) return;
+  state.answered = true;
+  const q = RAW[state.i];
+  const goodSlot = state.order[state.i];
+  const correct = slot === goodSlot;
+  if(correct) state.score++;
+  state.log.push({ q, correct });
+
+  const goodEl = $('slot'+goodSlot);
+  const badEl  = $('slot'+(goodSlot==='A'?'B':'A'));
+  goodEl.classList.add('is-good');
+  badEl.classList.add('is-bad');
+  $('slot'+slot).classList.add('picked');
+  if(!correct) $('slot'+slot).classList.add('shake');
+  $('pair').classList.add('answered');
+
+  // 解析
+  $('vBadge').textContent = correct ? '看对了' : '差一点';
+  $('vBadge').className = 'badge ' + (correct ? 'ok' : 'no');
+  $('vText').textContent = q.verdict;
+  $('vPoints').innerHTML = q.points.map(p=>`<li>${p}</li>`).join('');
+  if(q.soft){
+    $('vSoft').style.display='block';
+    let label='补充', body=q.soft;
+    const m = q.soft.match(/^(并非定律|练法)[：:]\s*/);
+    if(m){ label=m[1]; body=q.soft.slice(m[0].length); }
+    $('vSoft').innerHTML = '<b>'+label+'</b> · ' + body;
+  }
+  else $('vSoft').style.display='none';
+  $('readout').classList.add('show');
+
+  $('nextBtn').innerHTML = (state.i === RAW.length-1)
+    ? '看成绩 <span class="arrow">→</span>'
+    : '下一张 <span class="arrow">→</span>';
+  $('actions').style.visibility='visible';
+  $('nextBtn').focus();
+}
+
+function next(){
+  if(state.i < RAW.length-1){ state.i++; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else showResult();
+}
+
+function showResult(){
+  $('quizView').style.display='none';
+  $('resultView').style.display='block';
+  $('counter').style.visibility='hidden';
+  $('scoreNum').textContent = state.score;
+  $('scoreOf').textContent = RAW.length;
+
+  const s = state.score, pct = s / RAW.length, gradeEl=$('grade'), blurbEl=$('blurb');
+  let grade, blurb;
+  if(pct>=0.9){ grade='摄影眼 · 满格'; blurb='几乎全中。构图、用光、留白你都拎得清——下一步是带着这套直觉去打破它。'; }
+  else if(pct>=0.7){ grade='眼力很稳'; blurb='大方向都对。回看错的那几题,多半是「视线空间」或「时机」这类需要多按几千次快门才长进的细节。'; }
+  else if(pct>=0.5){ grade='正在开窍'; blurb='基本盘有了。试着每次按快门前默念一遍九宫格,把这些原则从「知道」练成「下意识」。'; }
+  else{ grade='刚上手'; blurb='别灰心——审美是看出来、拍出来的。把下面每条解析当成取景清单,带着它去拍一周再回来。'; }
+  gradeEl.textContent = grade; blurbEl.textContent = blurb;
+
+  $('recap').innerHTML = state.log.map((r,idx)=>`
+    <div class="row">
+      <span class="idx">${String(idx+1).padStart(2,'0')}</span>
+      <span class="dim">${r.q.title.replace(/[？?]/,'')}<small>${r.q.en}</small></span>
+      <span class="mk ${r.correct?'y':'n'}">${r.correct?'对':'错'}</span>
+    </div>`).join('');
+}
+
+function restart(){
+  state.i=0; state.score=0; state.answered=false; state.log=[];
+  buildOrder();
+  $('resultView').style.display='none';
+  $('quizView').style.display='block';
+  $('counter').style.visibility='visible';
+  renderQuestion();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// 事件绑定
+['slotA','slotB'].forEach(s=>{
+  const el=$(s);
+  el.addEventListener('click', ()=> choose(el.dataset.slot));
+  el.addEventListener('keydown', e=>{
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); choose(el.dataset.slot); }
+  });
+});
+$('nextBtn').addEventListener('click', next);
+$('againBtn').addEventListener('click', restart);
+$('gridToggle').addEventListener('click', function(){
+  const on = this.getAttribute('aria-pressed')==='true';
+  this.setAttribute('aria-pressed', String(!on));
+  document.querySelector('.stage').classList.toggle('grids-on', !on);
+});
+
+buildOrder();
+renderQuestion();
+</script>
+</body>
+</html>

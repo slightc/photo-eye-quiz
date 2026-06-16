@@ -1,0 +1,32 @@
+{
+  "id": "pov",
+  "order": 21,
+  "direction": "视角",
+  "category": "视角",
+  "subcategory": "低机位",
+  "en": "LOW ANGLE",
+  "difficulty": "进阶",
+  "tags": [
+    "低机位",
+    "仰拍",
+    "视角",
+    "气势",
+    "树",
+    "机位高度"
+  ],
+  "title": "同一棵树,从哪个高度拍？",
+  "hint": "注意机位的高低和背景。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyNoon)\"/>${tree(300,392,2.8,'#3f3326','#4f6a34',null)}${grain}",
+    "bad": "<rect width=\"600\" height=\"180\" fill=\"url(#skyNoon)\"/><rect y=\"170\" width=\"600\" height=\"230\" fill=\"url(#field)\"/>${tree(300,300,1.0,'#3f3326','#4f6a34',null)}${grain}"
+  },
+  "verdict": "更有气势的是蹲低、仰拍大树的一张。",
+  "points": [
+    "压低机位仰拍,主体顶天立地,背景换成干净的天空,平凡的树也有了纪念碑般的气势。",
+    "站着平视,主体被淹没在大片地面里,像随手一拍的「到此一游」。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "平视更亲切、真实(尤其拍人);仰拍、俯拍是为了夸张某种感觉,看你想说什么。"
+  }
+}

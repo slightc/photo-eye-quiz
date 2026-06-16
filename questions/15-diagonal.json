@@ -1,0 +1,32 @@
+{
+  "id": "diagonal",
+  "order": 15,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "对角线",
+  "en": "DIAGONAL",
+  "difficulty": "进阶",
+  "tags": [
+    "对角线",
+    "动感",
+    "构图",
+    "线条",
+    "张力",
+    "引导"
+  ],
+  "title": "栈桥该怎么摆？",
+  "hint": "注意它是斜的还是平的。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"220\" fill=\"url(#skyNoon)\"/><rect y=\"210\" width=\"600\" height=\"190\" fill=\"#41617c\"/><polygon points=\"0,398 60,398 472,214 430,206\" fill=\"#5b4a39\"/><g fill=\"#4a3c2e\"><rect x=\"120\" y=\"318\" width=\"8\" height=\"20\"/><rect x=\"240\" y=\"276\" width=\"8\" height=\"18\"/><rect x=\"350\" y=\"240\" width=\"7\" height=\"16\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"220\" fill=\"url(#skyNoon)\"/><rect y=\"210\" width=\"600\" height=\"190\" fill=\"#41617c\"/><rect x=\"40\" y=\"250\" width=\"520\" height=\"20\" fill=\"#5b4a39\"/><g fill=\"#4a3c2e\"><rect x=\"120\" y=\"270\" width=\"8\" height=\"22\"/><rect x=\"300\" y=\"270\" width=\"8\" height=\"22\"/><rect x=\"470\" y=\"270\" width=\"8\" height=\"22\"/></g>${grain}"
+  },
+  "verdict": "更有张力的是栈桥斜着伸进画面的一张。",
+  "points": [
+    "对角线天生带张力和方向感,把视线沿着它一路拉向远方,画面立刻有了运动和纵深。",
+    "水平摆放四平八稳,却也静止、平淡,少了那股把人「拉进去」的劲。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "水平、垂直线传达的是平静与秩序;对角线给的是动感与不安——看你要哪种情绪。"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "sky",
+  "order": 25,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "天空占比",
+  "en": "SKY RATIO",
+  "difficulty": "入门",
+  "tags": [
+    "天空占比",
+    "地平线",
+    "风光",
+    "主次",
+    "留白",
+    "构图"
+  ],
+  "title": "天空该给多少？",
+  "hint": "看天空和地面谁占得多。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><circle cx=\"420\" cy=\"120\" r=\"40\" fill=\"#fce6ad\" opacity=\"0.85\"/><g fill=\"#e6a24a\" opacity=\"0.35\"><ellipse cx=\"200\" cy=\"150\" rx=\"160\" ry=\"22\"/><ellipse cx=\"420\" cy=\"210\" rx=\"180\" ry=\"20\"/></g><path d=\"M0 300 Q120 280 240 296 Q400 316 600 292 L600 400 L0 400 Z\" fill=\"#2b2a24\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#3a3a30\"/><rect width=\"600\" height=\"110\" fill=\"url(#skyDusk)\"/><circle cx=\"420\" cy=\"56\" r=\"30\" fill=\"#fce6ad\" opacity=\"0.85\"/>${grain}"
+  },
+  "verdict": "更精彩的是把戏剧化的天空给到三分之二的一张。",
+  "points": [
+    "天空越是戏剧化(火烧云、霞光),越值得多给画面——别让平淡的地面来抢戏。",
+    "把精彩的天压成一条缝,让乏味的地面占满,等于把照片里最好的部分扔掉了。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "当前景才是主角时(花海、街景),反过来压低天空、突出地面才对。"
+  }
+}

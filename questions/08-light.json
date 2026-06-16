@@ -1,0 +1,32 @@
+{
+  "id": "light",
+  "order": 8,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "时机",
+  "en": "GOLDEN HOUR",
+  "difficulty": "进阶",
+  "tags": [
+    "光线时机",
+    "黄金时刻",
+    "侧光",
+    "风光",
+    "氛围",
+    "树"
+  ],
+  "title": "同一棵树,哪束光更动人？",
+  "hint": "一张黄昏,一张正午。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"270\" fill=\"url(#skyDusk)\"/><rect y=\"250\" width=\"600\" height=\"150\" fill=\"url(#goldGround)\"/><circle cx=\"500\" cy=\"120\" r=\"34\" fill=\"#ffe9b0\" opacity=\"0.9\"/><ellipse cx=\"245\" cy=\"300\" rx=\"150\" ry=\"18\" fill=\"#5a431f\" opacity=\"0.55\"/>${tree(300,300,1.4,'#2a211a','#2c2a1f','#e9b25a')}${grain}",
+    "bad": "<rect width=\"600\" height=\"270\" fill=\"url(#skyNoon)\"/><rect y=\"250\" width=\"600\" height=\"150\" fill=\"#9a9f86\"/><circle cx=\"300\" cy=\"60\" r=\"30\" fill=\"#fcfdf5\"/><ellipse cx=\"300\" cy=\"302\" rx=\"46\" ry=\"10\" fill=\"#5c604f\" opacity=\"0.5\"/>${tree(300,300,1.4,'#4a4636','#566042',null)}${grain}"
+  },
+  "verdict": "更有氛围的是黄金时刻、侧逆光的一张。",
+  "points": [
+    "日出日落前后的低角度光,带来长投影、暖色调和立体的明暗,情绪自然就来了。",
+    "正午顶光直打而下,几乎没有影子,层次被压平,画面平淡又生硬。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "正午硬光适合街头、强对比的题材。但论「氛围感」,黄金时刻几乎总是更稳。"
+  }
+}

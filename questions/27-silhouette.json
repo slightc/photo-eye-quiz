@@ -1,0 +1,29 @@
+{
+  "id": "silhouette",
+  "order": 27,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "剪影",
+  "en": "SILHOUETTE",
+  "difficulty": "进阶",
+  "tags": [
+    "剪影",
+    "逆光",
+    "不重叠",
+    "轮廓",
+    "用光",
+    "构图"
+  ],
+  "title": "逆光剪影怎么排？",
+  "hint": "看几个剪影有没有叠在一起。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><circle cx=\"300\" cy=\"150\" r=\"48\" fill=\"#fce6ad\" opacity=\"0.85\"/><rect y=\"330\" width=\"600\" height=\"70\" fill=\"#1a1620\"/>${person(150,330,1.3)}${tree(460,330,1.5,'#1a1620','#1a1620',null)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><circle cx=\"300\" cy=\"150\" r=\"48\" fill=\"#fce6ad\" opacity=\"0.85\"/><rect y=\"330\" width=\"600\" height=\"70\" fill=\"#1a1620\"/>${person(286,330,1.3)}${person(312,330,1.3)}${tree(326,330,1.5,'#1a1620','#1a1620',null)}${grain}"
+  },
+  "verdict": "更清楚的是剪影彼此分开、形状能认出的一张。",
+  "points": [
+    "逆光剪影全靠轮廓说话;让各个主体之间留出空隙、不重叠,形状才清晰、可读。",
+    "剪影叠成一团黑,看不出到底是几个人、几棵树,逆光的妙处也就没了。"
+  ],
+  "soft": null
+}

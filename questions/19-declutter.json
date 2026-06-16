@@ -1,0 +1,29 @@
+{
+  "id": "declutter",
+  "order": 19,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "做减法",
+  "en": "SIMPLICITY",
+  "difficulty": "进阶",
+  "tags": [
+    "做减法",
+    "简化",
+    "干净",
+    "海景",
+    "断舍离",
+    "主次"
+  ],
+  "title": "海面上该留几条船？",
+  "hint": "看画面干净还是热闹。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#mist)\"/><rect y=\"230\" width=\"600\" height=\"170\" fill=\"#8aa0ad\"/>${boat(345,250,2.2)}${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"url(#mist)\"/><rect y=\"230\" width=\"600\" height=\"170\" fill=\"#8aa0ad\"/>${boat(120,250,1.4)}${boat(250,280,1.0)}${boat(345,250,1.6)}${boat(470,300,1.2)}${boat(540,260,0.9)}${gull(160,90,0.8)}${gull(420,70,0.9)}${gull(300,120,0.7)}${grain}"
+  },
+  "verdict": "更耐看的是只留一条船的一张。",
+  "points": [
+    "摄影是减法:每多一样东西,就分走一份注意力。画面越干净,主体越响亮。",
+    "元素一多就互相争抢,看着热闹,却没了重点,过目即忘。"
+  ],
+  "soft": null
+}

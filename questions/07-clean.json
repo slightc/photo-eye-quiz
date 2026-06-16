@@ -1,0 +1,29 @@
+{
+  "id": "clean",
+  "order": 7,
+  "direction": "取景",
+  "category": "用光取景",
+  "subcategory": "背景净化",
+  "en": "CLEAN BG",
+  "difficulty": "进阶",
+  "tags": [
+    "背景净化",
+    "干净背景",
+    "人像",
+    "杂乱",
+    "主体分离",
+    "用光"
+  ],
+  "title": "哪张人像更利落？",
+  "hint": "看看人物头顶上方。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><circle cx=\"300\" cy=\"180\" r=\"120\" fill=\"#e7a24a\" opacity=\"0.25\"/>${person(300,360,1.9)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><g stroke=\"#2a2530\" stroke-width=\"6\"><line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"190\"/><line x1=\"300\" y1=\"60\" x2=\"260\" y2=\"20\"/><line x1=\"300\" y1=\"60\" x2=\"345\" y2=\"25\"/><line x1=\"300\" y1=\"100\" x2=\"270\" y2=\"70\"/></g><line x1=\"0\" y1=\"120\" x2=\"600\" y2=\"132\" stroke=\"#2a2530\" stroke-width=\"3\"/>${person(300,360,1.9)}${grain}"
+  },
+  "verdict": "更利落的是背景干净的一张。",
+  "points": [
+    "背景空出来、主体与之分离,人物清晰,情绪有去处——这是人像的基本功。",
+    "电线杆、枯枝正好从头顶「长」出来,背景杂线和主体重叠,再好的表情也被拖累。"
+  ],
+  "soft": null
+}

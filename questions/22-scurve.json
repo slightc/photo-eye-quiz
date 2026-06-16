@@ -1,0 +1,32 @@
+{
+  "id": "scurve",
+  "order": 22,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "S 形曲线",
+  "en": "S-CURVE",
+  "difficulty": "进阶",
+  "tags": [
+    "S形曲线",
+    "引导线",
+    "河流",
+    "优雅",
+    "构图",
+    "曲线"
+  ],
+  "title": "河流该是直的还是弯的？",
+  "hint": "顺着河看视线怎么走。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"200\" fill=\"url(#mountSky)\"/><rect y=\"180\" width=\"600\" height=\"220\" fill=\"url(#field)\"/><path d=\"M 250 400 C 330 330 200 300 300 250 C 400 200 270 180 330 130\" stroke=\"#9fb8c8\" stroke-width=\"30\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M 250 400 C 330 330 200 300 300 250 C 400 200 270 180 330 130\" stroke=\"#c4d6e0\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"200\" fill=\"url(#mountSky)\"/><rect y=\"180\" width=\"600\" height=\"220\" fill=\"url(#field)\"/><path d=\"M 290 400 L 320 130\" stroke=\"#9fb8c8\" stroke-width=\"30\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M 290 400 L 320 130\" stroke=\"#c4d6e0\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>${grain}"
+  },
+  "verdict": "更优雅的是河流呈 S 形蜿蜒的一张。",
+  "points": [
+    "S 形曲线像一条缎带,引着视线舒缓地绕向深处,既有引导又有柔美的韵律。",
+    "笔直一条则生硬、急促,少了那份从容和回转的余味。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "笔直的线条传达力量与速度;S 形传达柔和与优雅——看你要刚还是柔。"
+  }
+}

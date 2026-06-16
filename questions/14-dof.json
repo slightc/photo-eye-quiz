@@ -1,0 +1,32 @@
+{
+  "id": "dof",
+  "order": 14,
+  "direction": "镜头",
+  "category": "镜头",
+  "subcategory": "景深",
+  "en": "SHALLOW DOF",
+  "difficulty": "进阶",
+  "tags": [
+    "景深",
+    "虚化",
+    "背景虚化",
+    "大光圈",
+    "主体分离",
+    "镜头"
+  ],
+  "title": "背景该清楚还是虚化？",
+  "hint": "看背景,再看主体。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#46583a\"/><g filter=\"url(#dof)\"><circle cx=\"120\" cy=\"120\" r=\"30\" fill=\"#9fae6e\" opacity=\"0.7\"/><circle cx=\"500\" cy=\"90\" r=\"40\" fill=\"#b7c486\" opacity=\"0.6\"/><circle cx=\"430\" cy=\"260\" r=\"26\" fill=\"#d8e0a0\" opacity=\"0.7\"/><circle cx=\"80\" cy=\"320\" r=\"34\" fill=\"#8fa05e\" opacity=\"0.6\"/></g>${person(300,360,1.9)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#46583a\"/><g fill=\"none\" stroke=\"#33402a\" stroke-width=\"4\"><path d=\"M60 400 Q90 240 70 120\"/><path d=\"M540 400 Q520 250 560 110\"/><path d=\"M180 400 Q170 300 200 220\"/><path d=\"M420 400 Q440 300 410 220\"/></g><circle cx=\"120\" cy=\"120\" r=\"14\" fill=\"#c7d488\"/><circle cx=\"500\" cy=\"100\" r=\"14\" fill=\"#c7d488\"/>${person(300,360,1.9)}${grain}"
+  },
+  "verdict": "更突出主体的是背景虚化的一张。",
+  "points": [
+    "浅景深把杂乱的背景化成柔和的光斑,清晰的主体一下从画面里「浮」出来。",
+    "前后景全都清清楚楚,背景争着抢戏,视线不知该落在谁身上。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "风光、纪实常要大景深让一切都清晰;虚化是为了「孤立主体」,看你拍的是什么。"
+  }
+}

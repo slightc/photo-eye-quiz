@@ -1,0 +1,32 @@
+{
+  "id": "panning",
+  "order": 26,
+  "direction": "镜头",
+  "category": "快门",
+  "subcategory": "追拍",
+  "en": "PANNING",
+  "difficulty": "高阶",
+  "tags": [
+    "追拍",
+    "慢门",
+    "动感",
+    "快门",
+    "车",
+    "panning"
+  ],
+  "title": "怎么拍出车在飞驰？",
+  "hint": "看车清楚,还是背景清楚。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#9aa6b0\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#5b626b\"/><g filter=\"url(#motion)\"><rect x=\"40\" y=\"140\" width=\"120\" height=\"120\" fill=\"#7a828c\"/><rect x=\"220\" y=\"120\" width=\"120\" height=\"140\" fill=\"#69707a\"/><rect x=\"400\" y=\"150\" width=\"140\" height=\"110\" fill=\"#7a828c\"/></g>${car(300,300,1.6)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#9aa6b0\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#5b626b\"/><g fill=\"#7a828c\"><rect x=\"40\" y=\"140\" width=\"120\" height=\"120\"/><rect x=\"220\" y=\"120\" width=\"120\" height=\"140\"/><rect x=\"400\" y=\"150\" width=\"140\" height=\"110\"/></g><g stroke=\"#5b626b\" stroke-width=\"3\"><line x1=\"100\" y1=\"140\" x2=\"100\" y2=\"260\"/><line x1=\"280\" y1=\"120\" x2=\"280\" y2=\"260\"/></g>${car(300,300,1.6)}${grain}"
+  },
+  "verdict": "更有动感的是车清晰、背景被拉成线条的一张。",
+  "points": [
+    "跟着运动的主体一起摇镜(追拍),主体清晰、背景拉成流动的线条,静照里就有了风驰电掣。",
+    "一切都凝固清晰,车像停在路边,而不是正在飞驰。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "高速凝固瞬间(飞溅的水花、定格的飞鸟)是另一种震撼——看你要「快」还是要「那一瞬」。"
+  }
+}

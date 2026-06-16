@@ -1,0 +1,32 @@
+{
+  "id": "wb",
+  "order": 28,
+  "direction": "色彩",
+  "category": "色彩",
+  "subcategory": "白平衡",
+  "en": "WHITE BALANCE",
+  "difficulty": "高阶",
+  "tags": [
+    "白平衡",
+    "色温",
+    "冷暖",
+    "黄昏",
+    "色调",
+    "调色"
+  ],
+  "title": "黄昏该是什么色调？",
+  "hint": "感觉一下整体偏暖还是偏冷。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"260\" fill=\"url(#skyDusk)\"/><rect y=\"260\" width=\"600\" height=\"140\" fill=\"url(#goldGround)\"/><circle cx=\"420\" cy=\"150\" r=\"40\" fill=\"#ffe7a6\"/>${tree(170,360,1.4,'#5a3f24','#7a5a2e','#caa05c')}${grain}",
+    "bad": "<rect width=\"600\" height=\"260\" fill=\"#2a3a5a\"/><rect y=\"260\" width=\"600\" height=\"140\" fill=\"#3e4e64\"/><circle cx=\"420\" cy=\"150\" r=\"40\" fill=\"#cdd8e6\"/>${tree(170,360,1.4,'#33394a','#3e4a5e',null)}<rect width=\"600\" height=\"400\" fill=\"#2a5aa0\" opacity=\"0.18\"/>${grain}"
+  },
+  "verdict": "更对味的是白平衡偏暖、符合黄昏的一张。",
+  "points": [
+    "黄昏本就该是暖调:正确的白平衡让金光、暖影都对味,看着舒服又真实。",
+    "整片发蓝,夕阳被「冻」住,人脸、景物都发青,一眼就觉得不对劲。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "刻意压成冷调可以营造清冷、孤寂的情绪——前提是你「故意」这么做,而不是设错了。"
+  }
+}

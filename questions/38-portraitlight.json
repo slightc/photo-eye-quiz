@@ -1,0 +1,32 @@
+{
+  "id": "portraitlight",
+  "order": 38,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "人像光位",
+  "en": "PORTRAIT LIGHT",
+  "difficulty": "高阶",
+  "tags": [
+    "伦勃朗光",
+    "人像光位",
+    "侧光",
+    "立体感",
+    "用光",
+    "人像"
+  ],
+  "title": "哪张人像更立体？",
+  "hint": "看光从哪个方向打在脸上。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#2a2230\"/><g transform=\"translate(300,200)\"><circle cx=\"0\" cy=\"0\" r=\"120\" fill=\"#caa07a\"/><path d=\"M 0 -120 A 120 120 0 0 1 0 120 Z\" fill=\"#6e5340\" opacity=\"0.85\"/><circle cx=\"-22\" cy=\"40\" r=\"10\" fill=\"#e6c79e\" opacity=\"0.9\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#2a2230\"/><g transform=\"translate(300,200)\"><circle cx=\"0\" cy=\"0\" r=\"120\" fill=\"#caa07a\"/></g>${grain}"
+  },
+  "verdict": "更立体的是脸上有侧光、有明暗过渡的一张。",
+  "points": [
+    "光从侧前方来,脸的一侧亮、一侧落入柔和的阴影(经典的「伦勃朗光」),立体感和情绪一下就有了。",
+    "正面平光直打,整张脸均匀一片、没有阴影,五官被压平,像证件照一样寡淡。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "平光也有用处(高调、美妆、需要干净时);但想要立体、有戏的人像,侧光几乎总是更好。"
+  }
+}

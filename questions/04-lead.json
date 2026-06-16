@@ -1,0 +1,29 @@
+{
+  "id": "lead",
+  "order": 4,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "引导线",
+  "en": "LEADING LINE",
+  "difficulty": "入门",
+  "tags": [
+    "引导线",
+    "纵深",
+    "视线引导",
+    "风光",
+    "道路",
+    "透视"
+  ],
+  "title": "哪条路把你带进画里？",
+  "hint": "看视线从哪儿进入、停在哪儿。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"220\" fill=\"url(#mountSky)\"/><rect y=\"200\" width=\"600\" height=\"200\" fill=\"url(#field)\"/><path d=\"M 300 400 C 360 330 240 300 320 250 C 380 215 360 200 372 188\" stroke=\"#c9bb98\" stroke-width=\"26\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.9\"/><path d=\"M 300 400 C 360 330 240 300 320 250 C 380 215 360 200 372 188\" stroke=\"#e3d8ba\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/><g transform=\"translate(372,176)\"><polygon points=\"-14,12 0,-6 14,12\" fill=\"#33272a\"/><rect x=\"-12\" y=\"12\" width=\"24\" height=\"14\" fill=\"#3c2f31\"/><rect x=\"-4\" y=\"16\" width=\"8\" height=\"8\" fill=\"#e6a23c\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"220\" fill=\"url(#mountSky)\"/><rect y=\"200\" width=\"600\" height=\"200\" fill=\"url(#field)\"/><g transform=\"translate(372,176)\"><polygon points=\"-14,12 0,-6 14,12\" fill=\"#33272a\"/><rect x=\"-12\" y=\"12\" width=\"24\" height=\"14\" fill=\"#3c2f31\"/><rect x=\"-4\" y=\"16\" width=\"8\" height=\"8\" fill=\"#e6a23c\"/></g><g fill=\"#6c7644\"><path d=\"M180 300 l4 -16 l4 16 Z\"/><path d=\"M188 300 l4 -20 l4 20 Z\"/><path d=\"M460 320 l4 -16 l4 16 Z\"/></g>${grain}"
+  },
+  "verdict": "更有纵深的是有小路引导的一张。",
+  "points": [
+    "一条蜿蜒的引导线像「钩子」,牵着视线从前景一路走到主体,顺带建立了纵深和故事。",
+    "同一座小屋孤零零地浮在田野里,缺少进入画面的通道,看一眼就滑走了。"
+  ],
+  "soft": null
+}

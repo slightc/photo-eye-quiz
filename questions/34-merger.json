@@ -1,0 +1,29 @@
+{
+  "id": "merger",
+  "order": 34,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "避免相撞",
+  "en": "MERGERS",
+  "difficulty": "进阶",
+  "tags": [
+    "避免相撞",
+    "电线杆",
+    "背景",
+    "人像",
+    "干净",
+    "merger"
+  ],
+  "title": "人该站在哪一边？",
+  "hint": "留意人和那根电线杆的关系。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"250\" fill=\"url(#skyNoon)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"url(#field)\"/><rect x=\"430\" y=\"120\" width=\"10\" height=\"160\" fill=\"#4a3c2e\"/>${person(250,360,1.7)}${grain}",
+    "bad": "<rect width=\"600\" height=\"250\" fill=\"url(#skyNoon)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"url(#field)\"/><rect x=\"296\" y=\"120\" width=\"10\" height=\"150\" fill=\"#4a3c2e\"/>${person(300,360,1.7)}${grain}"
+  },
+  "verdict": "更利落的是人与电线杆错开、互不打架的一张。",
+  "points": [
+    "留意主体和背景里线条、物体的关系:稍微挪一步,别让电线杆「长」在头顶、别让地平线「切」过脖子。",
+    "电线杆正从头顶冒出来,两样东西「撞」在一起,看着别扭又廉价——这叫「相撞(merger)」。"
+  ],
+  "soft": null
+}

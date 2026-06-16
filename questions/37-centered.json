@@ -1,0 +1,32 @@
+{
+  "id": "centered",
+  "order": 37,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "中央对称",
+  "en": "DEAD CENTER",
+  "difficulty": "入门",
+  "tags": [
+    "中央对称",
+    "建筑",
+    "对称构图",
+    "居中",
+    "几何",
+    "对称"
+  ],
+  "title": "这座对称的建筑放哪？",
+  "hint": "看它在画面里偏不偏。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#dfe3e6\"/><g fill=\"#8a7f74\"><rect x=\"240\" y=\"80\" width=\"120\" height=\"280\"/><polygon points=\"300,40 360,90 240,90\"/><rect x=\"262\" y=\"120\" width=\"16\" height=\"40\"/><rect x=\"322\" y=\"120\" width=\"16\" height=\"40\"/><rect x=\"284\" y=\"210\" width=\"32\" height=\"150\"/></g><rect y=\"360\" width=\"600\" height=\"40\" fill=\"#b7afa6\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#dfe3e6\"/><g fill=\"#8a7f74\" transform=\"translate(-150,0)\"><rect x=\"240\" y=\"80\" width=\"120\" height=\"280\"/><polygon points=\"300,40 360,90 240,90\"/><rect x=\"262\" y=\"120\" width=\"16\" height=\"40\"/><rect x=\"322\" y=\"120\" width=\"16\" height=\"40\"/><rect x=\"284\" y=\"210\" width=\"32\" height=\"150\"/></g><rect y=\"360\" width=\"600\" height=\"40\" fill=\"#b7afa6\"/>${grain}"
+  },
+  "verdict": "更有力量的是把这座对称建筑放正中央的一张。",
+  "points": [
+    "当主体本身高度对称(正面建筑、肖像、纹样),把它端端正正放在中央,那份庄严、稳定与气场最足。",
+    "硬把对称的东西挪到一边,既没了对称的庄重,也没换来更好的平衡,只剩一侧的尴尬空白。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "这是三分法的反面:规则是参考不是枷锁。强对称的题材,「死中」往往比三分更对。"
+  }
+}

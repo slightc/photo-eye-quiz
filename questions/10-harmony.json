@@ -1,0 +1,32 @@
+{
+  "id": "harmony",
+  "order": 10,
+  "direction": "色彩",
+  "category": "色彩",
+  "subcategory": "和谐",
+  "en": "COLOR HARMONY",
+  "difficulty": "入门",
+  "tags": [
+    "色彩和谐",
+    "配色",
+    "邻近色",
+    "色调",
+    "舒适",
+    "调色"
+  ],
+  "title": "哪一组配色更舒服？",
+  "hint": "天、地、光,看它们的颜色合不合得来。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"260\" fill=\"url(#skyDusk)\"/><rect y=\"260\" width=\"600\" height=\"140\" fill=\"#7a5a8a\"/><circle cx=\"300\" cy=\"150\" r=\"44\" fill=\"#f2c87a\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"260\" fill=\"#1faf6a\"/><rect y=\"260\" width=\"600\" height=\"140\" fill=\"#c81f8a\"/><circle cx=\"300\" cy=\"150\" r=\"44\" fill=\"#19c5d6\"/>${grain}"
+  },
+  "verdict": "更和谐的是邻近暖色调的一张。",
+  "points": [
+    "天、地、光都落在相邻的色相里(蓝紫到暖橙),天然就和谐、统一,情绪也更浓。",
+    "高饱和的绿、品红、青硬凑在一起互相打架,刺眼又显廉价,看久了眼睛累。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "大胆的撞色(互补色)也能很有张力,但要有意识地控制比例与饱和度,而不是放任。"
+  }
+}

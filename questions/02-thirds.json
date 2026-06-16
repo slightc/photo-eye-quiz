@@ -1,0 +1,32 @@
+{
+  "id": "thirds",
+  "order": 2,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "三分法",
+  "en": "THIRDS",
+  "difficulty": "入门",
+  "tags": [
+    "三分法",
+    "九宫格",
+    "构图",
+    "风光",
+    "落日",
+    "黄金分割"
+  ],
+  "title": "哪一张落日更耐看？",
+  "hint": "打开九宫格,看太阳和地平线落在哪里。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><rect y=\"266\" width=\"600\" height=\"134\" fill=\"url(#seaDusk)\"/><circle cx=\"400\" cy=\"150\" r=\"42\" fill=\"#fce6ad\"/><g stroke=\"#f6cf8a\" stroke-width=\"3\" opacity=\"0.6\"><line x1=\"380\" y1=\"280\" x2=\"420\" y2=\"280\"/><line x1=\"374\" y1=\"300\" x2=\"426\" y2=\"300\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><rect y=\"200\" width=\"600\" height=\"200\" fill=\"url(#seaDusk)\"/><circle cx=\"300\" cy=\"118\" r=\"42\" fill=\"#fce6ad\"/><g stroke=\"#f6cf8a\" stroke-width=\"3\" opacity=\"0.6\"><line x1=\"280\" y1=\"222\" x2=\"320\" y2=\"222\"/><line x1=\"274\" y1=\"244\" x2=\"326\" y2=\"244\"/></g>${grain}"
+  },
+  "verdict": "更耐看的是用三分法的一张。",
+  "points": [
+    "地平线压在下三分线、落日落在三分点,天空与海面有了主次,视线有处可去。",
+    "地平线正中、太阳正中,画面被均匀对半切开,容易显得呆板、没有重点。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "严格对称(如倒影、建筑)也能很美。但开阔的风光里,三分通常比死中更灵动。"
+  }
+}

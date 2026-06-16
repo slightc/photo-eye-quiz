@@ -1,0 +1,32 @@
+{
+  "id": "balance",
+  "order": 24,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "视觉平衡",
+  "en": "BALANCE",
+  "difficulty": "进阶",
+  "tags": [
+    "视觉平衡",
+    "配重",
+    "构图",
+    "对称感",
+    "空间分配",
+    "权重"
+  ],
+  "title": "画面重量该怎么摆平？",
+  "hint": "看左右两边的分量。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#241d2c\"/>${tree(150,320,1.6,'#2e2430','#3a2f44',null)}<circle cx=\"470\" cy=\"120\" r=\"20\" fill=\"#fce6ad\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#241d2c\"/>${tree(90,320,1.6,'#2e2430','#3a2f44',null)}${grain}"
+  },
+  "verdict": "更平衡的是一侧大树、对侧有小月亮配重的一张。",
+  "points": [
+    "大主体放一侧,对角再放一个小元素「配重」,画面像天平一样达成动态平衡,稳而不闷。",
+    "分量全压在一边,另半边空荡荡,画面就往那一侧「倾倒」,失了重心。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "有意的大片留白(极简)是另一回事;这里说的是无意识的「一边倒」。"
+  }
+}

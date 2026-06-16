@@ -1,0 +1,32 @@
+{
+  "id": "odds",
+  "order": 12,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "奇数法则",
+  "en": "RULE OF ODDS",
+  "difficulty": "进阶",
+  "tags": [
+    "奇数法则",
+    "构图",
+    "数量",
+    "树",
+    "耐看",
+    "rule-of-odds"
+  ],
+  "title": "几棵树更耐看？",
+  "hint": "数一数,留意它们的大小和排布。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#mountSky)\"/><rect y=\"220\" width=\"600\" height=\"180\" fill=\"url(#field)\"/>${tree(180,300,1.5,'#4b3a2a','#5f7a3e',null)}${tree(312,290,1.0,'#4b3a2a','#5f7a3e',null)}${tree(440,305,1.9,'#4b3a2a','#5f7a3e',null)}${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"url(#mountSky)\"/><rect y=\"220\" width=\"600\" height=\"180\" fill=\"url(#field)\"/>${tree(212,300,1.3,'#4b3a2a','#5f7a3e',null)}${tree(388,300,1.3,'#4b3a2a','#5f7a3e',null)}${grain}"
+  },
+  "verdict": "更耐看的是三棵、大小错落的一张。",
+  "points": [
+    "奇数个主体不容易被一眼数完,视线会在它们之间游走,画面更活、更有节奏。",
+    "两个等大、左右对称的主体把画面对半分,彼此「对峙」,显得呆板、静止。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "成双成对也有叙事力(呼应、对话);奇数只是更安全的默认倾向。"
+  }
+}

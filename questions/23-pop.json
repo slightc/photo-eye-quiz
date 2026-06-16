@@ -1,0 +1,29 @@
+{
+  "id": "pop",
+  "order": 23,
+  "direction": "色彩",
+  "category": "色彩",
+  "subcategory": "点缀色",
+  "en": "POP OF COLOR",
+  "difficulty": "进阶",
+  "tags": [
+    "点缀色",
+    "跳色",
+    "红伞",
+    "对比色",
+    "视觉焦点",
+    "街拍"
+  ],
+  "title": "哪张里的红伞更抢眼？",
+  "hint": "看看周围其他颜色。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#7b8590\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#5e6671\"/><g fill=\"#6c757f\"><rect x=\"80\" y=\"180\" width=\"60\" height=\"120\"/><rect x=\"170\" y=\"150\" width=\"60\" height=\"150\"/><rect x=\"380\" y=\"160\" width=\"60\" height=\"140\"/><rect x=\"470\" y=\"190\" width=\"60\" height=\"110\"/></g><g transform=\"translate(300,250)\"><path d=\"M -26 0 A 26 26 0 0 1 26 0 Z\" fill=\"#d83b2e\"/><rect x=\"-2\" y=\"0\" width=\"4\" height=\"34\" fill=\"#3a3a3a\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#3aa0d8\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#e08a2a\"/><rect x=\"80\" y=\"180\" width=\"60\" height=\"120\" fill=\"#2fb36a\"/><rect x=\"170\" y=\"150\" width=\"60\" height=\"150\" fill=\"#c83bd0\"/><rect x=\"380\" y=\"160\" width=\"60\" height=\"140\" fill=\"#e0c22a\"/><rect x=\"470\" y=\"190\" width=\"60\" height=\"110\" fill=\"#2f55d0\"/><g transform=\"translate(300,250)\"><path d=\"M -26 0 A 26 26 0 0 1 26 0 Z\" fill=\"#d83b2e\"/><rect x=\"-2\" y=\"0\" width=\"4\" height=\"34\" fill=\"#3a3a3a\"/></g>${grain}"
+  },
+  "verdict": "更抓眼的是灰调里只有一抹红伞的一张。",
+  "points": [
+    "安静、收敛的色调里突然出现一抹高饱和的亮色,像磁铁一样牢牢抓住视线。",
+    "满画面都是鲜艳色块,各自争抢,那抹红伞就泯然众人、失去了焦点。"
+  ],
+  "soft": null
+}
