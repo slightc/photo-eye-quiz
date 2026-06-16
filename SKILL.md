@@ -32,7 +32,7 @@ questions/<order>-<id>.json   ←  题库唯一数据源(每题一个文件)
    node build.mjs                 ←  把所有 JSON 回灌进 HTML
         │
         ▼
-photo-eye-quiz.html               ←  成品(RAW 数组在两个标记注释之间被整体替换)
+index.html                        ←  成品(RAW 数组在两个标记注释之间被整体替换)
 ```
 
 **改题流程永远是:改 JSON → 跑 `node build.mjs` → 完成。**
@@ -223,7 +223,7 @@ JSON 里这些是 **字符串**,所以 `${...}` 以字面文本存储,由 build.
 4. 写 `title` / `hint` / `verdict` / `points`,必要时加 `soft`。
 5. 起 `id`、配 6 个左右 `tags`、定 `order`、填 `category`/`subcategory`/`en`。
 6. 存成 `questions/NN-id.json`,登记进 `index.json`。
-7. **`node build.mjs`** 回灌,在浏览器里打开 `photo-eye-quiz.html` 自测:
+7. **`node build.mjs`** 回灌,在浏览器里打开 `index.html` 自测:
    - good/bad 两张确实 **只差目标变量**;
    - 颗粒、渐变正常渲染,无 SVG 报错;
    - 文案读起来顺、结论无歧义。

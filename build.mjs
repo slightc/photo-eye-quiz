@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ============================================================
-// build.mjs —— 把 questions/*.json 题库回灌进 photo-eye-quiz.html
+// build.mjs —— 把 questions/*.json 题库回灌进 index.html
 //
 //   题库的唯一数据源是 questions/ 下的独立 JSON 文件。
 //   本脚本读取它们,重新生成 HTML 里 <<<QUESTIONS:BEGIN>>> 与
@@ -15,7 +15,7 @@ import { fileURLToPath } from 'url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const QDIR = path.join(here, 'questions');
-const HTML = path.join(here, 'photo-eye-quiz.html');
+const HTML = path.join(here, 'index.html');
 
 // —— 1. 读取并按 order 排序所有题目 ——
 const files = fs.readdirSync(QDIR).filter(f => /^\d+-.*\.json$/.test(f));

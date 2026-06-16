@@ -1,0 +1,32 @@
+{
+  "id": "foreground",
+  "order": 45,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "前景",
+  "en": "FOREGROUND",
+  "difficulty": "进阶",
+  "tags": [
+    "前景",
+    "纵深",
+    "风光",
+    "层次",
+    "立体",
+    "引导"
+  ],
+  "title": "哪张风光更立体？",
+  "hint": "看画面最近处,有没有「抓手」。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"190\" fill=\"url(#mountSky)\"/>${ridge(150,60,\"#9fb0c4\",7)}${ridge(188,50,\"#6c829e\",13)}<rect y=\"240\" width=\"600\" height=\"160\" fill=\"#5b6e86\"/><ellipse cx=\"120\" cy=\"372\" rx=\"80\" ry=\"30\" fill=\"#3a3026\"/><ellipse cx=\"210\" cy=\"384\" rx=\"55\" ry=\"22\" fill=\"#473a2d\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"190\" fill=\"url(#mountSky)\"/>${ridge(150,60,\"#9fb0c4\",7)}${ridge(188,50,\"#6c829e\",13)}<rect y=\"240\" width=\"600\" height=\"160\" fill=\"#5b6e86\"/>${grain}"
+  },
+  "verdict": "更立体的是近处放了石头当前景的一张。",
+  "points": [
+    "近处放一个具体的前景(石头、花、礁岩),借近大远小一下拉开层次,画面有了「能走进去」的纵深和分量。",
+    "只有中远景、近处空着,画面虽干净却显得平、显得「飘」,少了脚下的根。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "极简风会刻意留空前景求干净;但大风光想要纵深和分量,找个前景几乎是万能药。"
+  }
+}

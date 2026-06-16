@@ -1,0 +1,32 @@
+{
+  "id": "clouds",
+  "order": 40,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "天空",
+  "en": "DRAMATIC SKY",
+  "difficulty": "入门",
+  "tags": [
+    "天空",
+    "云",
+    "风光",
+    "氛围",
+    "日落",
+    "基础"
+  ],
+  "title": "哪片天空更有戏？",
+  "hint": "同一片地,抬头看看天。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"270\" fill=\"url(#skyDusk)\"/><rect y=\"250\" width=\"600\" height=\"150\" fill=\"url(#goldGround)\"/><g fill=\"#f4ddba\" opacity=\"0.85\"><ellipse cx=\"160\" cy=\"80\" rx=\"95\" ry=\"24\"/><ellipse cx=\"250\" cy=\"60\" rx=\"55\" ry=\"18\"/><ellipse cx=\"440\" cy=\"120\" rx=\"105\" ry=\"26\"/><ellipse cx=\"380\" cy=\"150\" rx=\"60\" ry=\"16\"/></g><circle cx=\"480\" cy=\"195\" r=\"24\" fill=\"#ffe9b0\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"270\" fill=\"#c7d2d8\"/><rect y=\"250\" width=\"600\" height=\"150\" fill=\"url(#goldGround)\"/><circle cx=\"480\" cy=\"120\" r=\"24\" fill=\"#fcfdf5\"/>${grain}"
+  },
+  "verdict": "更有戏的是天上有云、有层次的一张。",
+  "points": [
+    "有形状、有明暗的云给天空添了戏剧性和方向感,整张照片立刻有了情绪。",
+    "一片惨白或铁灰的「死天空」既不好看,又白占了画面上半部分,像开了天窗。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "拍风光多盯着天气——日出日落前后、雨歇云动时天空最容易出彩;天不给力时就压低地平线、少留天。"
+  }
+}

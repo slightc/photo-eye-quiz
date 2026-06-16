@@ -272,7 +272,7 @@
       <h1>摄影眼<span class="dot">.</span></h1>
       <span class="sub">aesthetic eye test</span>
     </div>
-    <div class="counter" id="counter"><span class="rec"></span><span id="counterText">01 / 38</span></div>
+    <div class="counter" id="counter"><span class="rec"></span><span id="counterText">01 / 58</span></div>
     <button class="gridtoggle" id="gridToggle" aria-pressed="true">
       <span class="led"></span>九宫格
     </button>
@@ -332,7 +332,7 @@
   </section>
 
   <footer class="foot">
-    <div class="mono">VIEWFINDER TEST · 38 FRAMES</div>
+    <div class="mono">VIEWFINDER TEST · 58 FRAMES</div>
     <div>这些是审美的常见倾向,不是铁律 —— 标注「并非定律」的题,反着拍也可能更妙。</div>
   </footer>
 </main>
@@ -684,7 +684,167 @@ const RAW = [
     bad: `<rect width="600" height="400" fill="#2a2230"/><g transform="translate(300,200)"><circle cx="0" cy="0" r="120" fill="#caa07a"/></g>${grain}`,
     verdict: "更立体的是脸上有侧光、有明暗过渡的一张。",
     points: ["光从侧前方来,脸的一侧亮、一侧落入柔和的阴影(经典的「伦勃朗光」),立体感和情绪一下就有了。","正面平光直打,整张脸均匀一片、没有阴影,五官被压平,像证件照一样寡淡。"],
-    soft: "并非定律：平光也有用处(高调、美妆、需要干净时);但想要立体、有戏的人像,侧光几乎总是更好。" }
+    soft: "并非定律：平光也有用处(高调、美妆、需要干净时);但想要立体、有戏的人像,侧光几乎总是更好。" },
+
+  { id: "saturation", eyebrow: "色彩 · 饱和度", en: "SATURATION", title: "哪张颜色更耐看？",
+    hint: "看绿草和天,颜色「劲」不一样。",
+    good: `<rect width="600" height="240" fill="url(#skyNoon)"/><rect y="230" width="600" height="170" fill="url(#field)"/><circle cx="490" cy="80" r="30" fill="#f7e6a8"/>${tree(300,300,1.6,"#4b3a2a","#5f7a3e",null)}${grain}`,
+    bad: `<rect width="600" height="240" fill="#10c8ff"/><rect y="230" width="600" height="170" fill="#15e600"/><circle cx="490" cy="80" r="30" fill="#ffd400"/>${tree(300,300,1.6,"#8a2c00","#1bff2a","#fff000")}${grain}`,
+    verdict: "更耐看的是颜色自然、不刺眼的一张。",
+    points: ["适度的饱和留住了空气感和细节,颜色舒服、可信,越看越顺眼。","一味把饱和度拉满,草绿得发荧光、天蓝得发假,颜色糊成一块,又廉价又刺眼。"],
+    soft: "并非定律：也有题材(霓虹、波普、商业海报)就要高饱和的冲击力——关键是「有意为之」,而不是滑块拉过了头。" },
+
+  { id: "clouds", eyebrow: "取景 · 天空", en: "DRAMATIC SKY", title: "哪片天空更有戏？",
+    hint: "同一片地,抬头看看天。",
+    good: `<rect width="600" height="270" fill="url(#skyDusk)"/><rect y="250" width="600" height="150" fill="url(#goldGround)"/><g fill="#f4ddba" opacity="0.85"><ellipse cx="160" cy="80" rx="95" ry="24"/><ellipse cx="250" cy="60" rx="55" ry="18"/><ellipse cx="440" cy="120" rx="105" ry="26"/><ellipse cx="380" cy="150" rx="60" ry="16"/></g><circle cx="480" cy="195" r="24" fill="#ffe9b0"/>${grain}`,
+    bad: `<rect width="600" height="270" fill="#c7d2d8"/><rect y="250" width="600" height="150" fill="url(#goldGround)"/><circle cx="480" cy="120" r="24" fill="#fcfdf5"/>${grain}`,
+    verdict: "更有戏的是天上有云、有层次的一张。",
+    points: ["有形状、有明暗的云给天空添了戏剧性和方向感,整张照片立刻有了情绪。","一片惨白或铁灰的「死天空」既不好看,又白占了画面上半部分,像开了天窗。"],
+    soft: "练法：拍风光多盯着天气——日出日落前后、雨歇云动时天空最容易出彩;天不给力时就压低地平线、少留天。" },
+
+  { id: "complement", eyebrow: "色彩 · 补色", en: "COMPLEMENTARY", title: "哪顶帐篷更跳？",
+    hint: "冷蓝的山野里,帐篷的颜色不一样。",
+    good: `<rect width="600" height="280" fill="#3a5f86"/>${ridge(170,50,"#2f4d6e",7)}${ridge(210,46,"#243a55",13)}<rect y="280" width="600" height="120" fill="#1b3047"/><path d="M 300 282 L 250 360 L 350 360 Z" fill="#e8742a"/><rect x="296" y="304" width="8" height="56" fill="#b9531a"/>${grain}`,
+    bad: `<rect width="600" height="280" fill="#3a5f86"/>${ridge(170,50,"#2f4d6e",7)}${ridge(210,46,"#243a55",13)}<rect y="280" width="600" height="120" fill="#1b3047"/><path d="M 300 282 L 250 360 L 350 360 Z" fill="#3f6a90"/><rect x="296" y="304" width="8" height="56" fill="#2f5273"/>${grain}`,
+    verdict: "更跳的是橙色帐篷那张——冷蓝配暖橙,正好是补色。",
+    points: ["色轮上相对的补色(橙↔蓝、红↔绿、黄↔紫)凑在一起对比最强,一小块暖橙就能从大片冷蓝里「炸」出来。","帐篷和环境都是蓝,颜色糊在一起,主体没了着落,画面也闷。"],
+    soft: "并非定律：同类色的低对比能出宁静、高级的氛围;补色是想要「冲击力」时的杀手锏,看你要「跳」还是要「静」。" },
+
+  { id: "mono", eyebrow: "色彩 · 统一色调", en: "MONOCHROME", title: "哪张色调更统一？",
+    hint: "一张只有一个调子,一张混进了别的颜色。",
+    good: `<rect width="600" height="400" fill="#e7d3b0"/>${ridge(220,50,"#d9be92",7)}${ridge(260,44,"#caa978",13)}${tree(170,330,1.3,"#9c7c4c","#c2a064",null)}${tree(440,330,1.3,"#9c7c4c","#c2a064",null)}${grain}`,
+    bad: `<rect width="600" height="400" fill="#e7d3b0"/>${ridge(220,50,"#5a93c8",7)}${ridge(260,44,"#caa978",13)}${tree(170,330,1.3,"#9c7c4c","#3fb24a",null)}${tree(440,330,1.3,"#9c7c4c","#c2a064",null)}<rect x="40" y="296" width="64" height="64" fill="#d63f8a"/>${grain}`,
+    verdict: "更耐看的是统一在一个暖色调里的一张。",
+    points: ["把整张画面收在相近的色调里(同一色相的深浅变化),气质统一、情绪明确,照片立刻「高级」起来。","东一块蓝、西一块绿地乱入,颜色各说各话,画面散、廉价、没有主心骨。"],
+    soft: "练法：拍前先定一个主色调,或后期统一白平衡与色调;现场杂色多时,靠近、改取景把它们排除掉。" },
+
+  { id: "symmetry", eyebrow: "构图 · 对称", en: "SYMMETRY", title: "哪张更端庄？",
+    hint: "同一座拱门,站位不一样。",
+    good: `<rect width="600" height="400" fill="#d9cdb8"/><rect y="330" width="600" height="70" fill="#b0a282"/><path d="M 220 330 L 220 150 Q 300 92 380 150 L 380 330 Z" fill="#6e6149"/><path d="M 250 330 L 250 175 Q 300 138 350 175 L 350 330 Z" fill="#cdbf9f"/><rect x="292" y="200" width="16" height="130" fill="#4a4036"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#d9cdb8"/><g transform="rotate(-5 300 240) translate(-70 8)"><rect x="-80" y="330" width="820" height="90" fill="#b0a282"/><path d="M 220 330 L 220 150 Q 300 92 380 150 L 380 330 Z" fill="#6e6149"/><path d="M 250 330 L 250 175 Q 300 138 350 175 L 350 330 Z" fill="#cdbf9f"/><rect x="292" y="200" width="16" height="130" fill="#4a4036"/></g>${grain}`,
+    verdict: "更端庄的是正中、左右对称的一张。",
+    points: ["拱门、走廊、倒影这类天生对称的题材,把它摆正、放在正中央,秩序感和仪式感最强。","同样的拱门拍歪了、偏了,对称的美感全被破坏,只剩「没站稳」的别扭。"],
+    soft: "并非定律：完美对称也容易呆板,所以才有「打破规律」一招;但面对对称的建筑,老老实实对称往往最稳。" },
+
+  { id: "vanishing", eyebrow: "构图 · 透视纵深", en: "VANISHING POINT", title: "哪张更有纵深感？",
+    hint: "看路和树,是「进去」还是「摊平」。",
+    good: `<rect width="600" height="220" fill="url(#skyNoon)"/><rect y="210" width="600" height="190" fill="#6f7e4e"/><polygon points="278,210 322,210 470,400 130,400" fill="#9a9482"/><line x1="300" y1="214" x2="300" y2="400" stroke="#d9d3ba" stroke-width="4" stroke-dasharray="18 16"/>${tree(150,330,1.7,"#4b3a2a","#5f7a3e",null)}${tree(228,250,0.9,"#4b3a2a","#5f7a3e",null)}${tree(450,330,1.7,"#4b3a2a","#5f7a3e",null)}${tree(372,250,0.9,"#4b3a2a","#5f7a3e",null)}${grain}`,
+    bad: `<rect width="600" height="220" fill="url(#skyNoon)"/><rect y="210" width="600" height="190" fill="#6f7e4e"/><rect x="40" y="252" width="520" height="38" fill="#9a9482"/>${tree(120,250,1.2,"#4b3a2a","#5f7a3e",null)}${tree(300,250,1.2,"#4b3a2a","#5f7a3e",null)}${tree(480,250,1.2,"#4b3a2a","#5f7a3e",null)}${grain}`,
+    verdict: "更有纵深的是路面和树列向远方汇聚的一张。",
+    points: ["平行的线条(路、栏杆、树列)向远处一点汇聚,配上近大远小,眼睛被「吸」进画面深处,二维平面立刻有了三维空间。","把同样的元素拍成平行的横带、一样大小,画面被压扁成一张贴纸,没了进深。"],
+    soft: "练法：找路、桥、走廊、栏杆这类汇聚线,蹲低些、把灭点放进画面里,纵深感最强。" },
+
+  { id: "foreground", eyebrow: "构图 · 前景", en: "FOREGROUND", title: "哪张风光更立体？",
+    hint: "看画面最近处,有没有「抓手」。",
+    good: `<rect width="600" height="190" fill="url(#mountSky)"/>${ridge(150,60,"#9fb0c4",7)}${ridge(188,50,"#6c829e",13)}<rect y="240" width="600" height="160" fill="#5b6e86"/><ellipse cx="120" cy="372" rx="80" ry="30" fill="#3a3026"/><ellipse cx="210" cy="384" rx="55" ry="22" fill="#473a2d"/>${grain}`,
+    bad: `<rect width="600" height="190" fill="url(#mountSky)"/>${ridge(150,60,"#9fb0c4",7)}${ridge(188,50,"#6c829e",13)}<rect y="240" width="600" height="160" fill="#5b6e86"/>${grain}`,
+    verdict: "更立体的是近处放了石头当前景的一张。",
+    points: ["近处放一个具体的前景(石头、花、礁岩),借近大远小一下拉开层次,画面有了「能走进去」的纵深和分量。","只有中远景、近处空着,画面虽干净却显得平、显得「飘」,少了脚下的根。"],
+    soft: "并非定律：极简风会刻意留空前景求干净;但大风光想要纵深和分量,找个前景几乎是万能药。" },
+
+  { id: "edges", eyebrow: "取景 · 边缘", en: "CHECK THE EDGES", title: "哪张更讲究？",
+    hint: "别盯着主体——沿着画面四条边看一圈。",
+    good: `<rect width="600" height="400" fill="url(#portraitSky)"/><rect y="320" width="600" height="80" fill="#2a2233"/>${person(300,330,2.4)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#portraitSky)"/><rect y="320" width="600" height="80" fill="#2a2233"/><rect x="0" y="70" width="44" height="250" fill="#2f2620"/><circle cx="588" cy="110" r="40" fill="#34302a"/><rect x="96" y="392" width="40" height="8" fill="#1d1a16"/>${person(300,330,2.4)}${grain}`,
+    verdict: "更讲究的是画面四边都干净、没有杂物探进来的一张。",
+    points: ["按快门前让目光沿着取景框的四条边「巡逻」一圈——探进来的树枝、半截电线杆、切了一半的路人,都在悄悄拉低画面。","主体再好,边缘钻进来的杂物也会分走注意力,显得随手、不收拾。"],
+    soft: "练法：构图时先看主体,再专门检查一遍四个边角;挪半步、变个焦或回避一下,就能把边缘清干净。" },
+
+  { id: "mood", eyebrow: "取景 · 空气透视", en: "AERIAL PERSPECTIVE", title: "哪张山景更有氛围？",
+    hint: "看一层层的山,颜色「退」得一样吗。",
+    good: `<rect width="600" height="400" fill="url(#mist)"/>${ridge(170,70,"#c4d0dd",7)}${ridge(220,62,"#a6b6c8",13)}${ridge(272,56,"#8295ab",5)}${ridge(326,50,"#5f7488",9)}${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#mist)"/>${ridge(170,70,"#74879c",7)}${ridge(220,62,"#74879c",13)}${ridge(272,56,"#74879c",5)}${ridge(326,50,"#74879c",9)}${grain}`,
+    verdict: "更有氛围的是远山一层层变淡的一张。",
+    points: ["越远的山越淡、越偏冷——这种「空气透视」把重叠的山峦拉出深远的层次,薄雾也添了情绪和高级感。","远近一个色,山叠在一起糊成一片,又平又闷,既没纵深也没氛围。"],
+    soft: "练法：清晨、雨后、逆光时空气里水汽最浓,层次最容易拉开,是出氛围片的黄金条件。" },
+
+  { id: "vignette", eyebrow: "影调 · 暗角", en: "VIGNETTE", title: "哪张更聚焦人物？",
+    hint: "注意看四个角的明暗。",
+    good: `<rect width="600" height="400" fill="#7d6a5e"/>${bust(300,70,2.4)}<path fill-rule="evenodd" fill="#140f0c" opacity="0.5" d="M0 0H600V400H0Z M40 200 a260 200 0 1 0 520 0 a260 200 0 1 0 -520 0Z"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#7d6a5e"/>${bust(300,70,2.4)}${grain}`,
+    verdict: "更聚焦的是四角压暗、像有一圈光晕的一张。",
+    points: ["把四个角轻轻压暗(暗角/晕影),等于给画面加了一圈无形的隧道,目光被收束着推向中间的主体。","角落和中心一样亮,眼睛容易往边上溜,主体的吸引力被稀释了。"],
+    soft: "练法：暗角要「轻」——重了就显脏、显假;它是收一下视线的调味,不是主菜。" },
+
+  { id: "brightest", eyebrow: "影调 · 亮部引导", en: "TONAL FOCUS", title: "眼睛先看哪儿？",
+    hint: "找画面里最亮的地方,它落在主体上了吗。",
+    good: `<rect width="600" height="260" fill="#2b2a22"/><rect y="250" width="600" height="150" fill="#1f2418"/><ellipse cx="300" cy="250" rx="150" ry="120" fill="#e9d49a" opacity="0.22"/>${tree(300,300,1.7,"#2a2118","#5a6a3a","#e9d49a")}${grain}`,
+    bad: `<rect width="600" height="260" fill="#2b2a22"/><rect y="250" width="600" height="150" fill="#1f2418"/><ellipse cx="520" cy="90" rx="120" ry="90" fill="#f2e3ad" opacity="0.5"/>${tree(300,300,1.7,"#2a2118","#3a4528",null)}${grain}`,
+    verdict: "更聚焦的是最亮处正好打在主体(树)上的一张。",
+    points: ["眼睛天生先奔向画面里最亮的区域——让光落在主体上,观者第一眼就「对」了。","主体压在暗处,最亮的却是角落一块空地,眼睛被勾去看了配角,主体反而被冷落。"],
+    soft: "练法：拍前眯起眼看画面,最先「跳」出来的亮块就是观众第一眼看的地方;让它和你的主体重合。" },
+
+  { id: "eyelevel", eyebrow: "视角 · 平视", en: "EYE LEVEL", title: "拍小孩该蹲下还是站着拍？",
+    hint: "看相机和人物「眼睛」的高低。",
+    good: `<rect width="600" height="240" fill="url(#portraitSky)"/><rect y="240" width="600" height="160" fill="#8a7a5a"/>${person(300,330,2.0)}${grain}`,
+    bad: `<rect width="600" height="70" fill="url(#portraitSky)"/><rect y="60" width="600" height="340" fill="#8a7a5a"/>${person(300,300,1.2)}<ellipse cx="300" cy="306" rx="60" ry="14" fill="#000" opacity="0.18"/>${grain}`,
+    verdict: "更亲切的是蹲到对方视线高度、平视拍的一张。",
+    points: ["蹲到孩子、宠物的眼睛高度平视,画面平等、亲切,能进到对方的世界里。","大人站着居高临下地俯拍,对方显得矮小、疏远,背景全是地面,像在「检阅」而不是「相处」。"],
+    soft: "并非定律：俯拍也有它的用处(下一题的平面构成、或表现渺小感);但拍人、拍宠物想要亲近感,平视几乎总更好。" },
+
+  { id: "topdown", eyebrow: "视角 · 俯拍", en: "FLAT LAY", title: "摆好的小物该怎么拍？",
+    hint: "一张正上方俯拍,一张斜着拍。",
+    good: `<rect width="600" height="400" fill="#cabfa8"/>${flower(180,150,2.2,"#e7badd","#caa23a")}${flower(420,255,2.0,"#e7badd","#caa23a")}<circle cx="430" cy="120" r="40" fill="#7a9a55"/><rect x="120" y="280" width="120" height="70" rx="10" fill="#9a6a4a"/>${grain}`,
+    bad: `<rect width="600" height="250" fill="#cabfa8"/><rect y="240" width="600" height="160" fill="#b3a585"/><g transform="skewY(-8)"><ellipse cx="200" cy="270" rx="62" ry="22" fill="#e7badd"/><ellipse cx="410" cy="300" rx="56" ry="20" fill="#e7badd"/><circle cx="430" cy="248" r="30" fill="#7a9a55"/><rect x="150" y="320" width="110" height="40" rx="8" fill="#9a6a4a"/></g>${grain}`,
+    verdict: "更利落的是从正上方垂直俯拍、摆成平面构成的一张。",
+    points: ["平铺的食物、文具、小物,从正上方拍能把它们压成干净的「平面构成」,形状、间距、配色一目了然,秩序感极强。","斜着拍,近大远小加上互相遮挡,东西挤成一团还带着透视变形,摆放的心思全乱了。"],
+    soft: "并非定律：想表现立体感、空间感时,平视或低角度更好;正上方俯拍是为「平面感、秩序感」服务的。" },
+
+  { id: "backlight", eyebrow: "用光 · 逆光", en: "BACKLIGHT", title: "哪张人像更通透？",
+    hint: "看人物的轮廓边缘,有没有一圈光。",
+    good: `<rect width="600" height="400" fill="url(#goldGround)"/><circle cx="300" cy="150" r="130" fill="#ffe9b0" opacity="0.5"/><circle cx="300" cy="150" r="24" fill="#171318" stroke="#ffe9b0" stroke-width="4"/><path d="M 272 360 Q 270 200 300 178 Q 330 200 328 360 Z" fill="#171318" stroke="#ffe9b0" stroke-width="4"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#b7ad9a"/><circle cx="300" cy="150" r="24" fill="#4a4640"/><path d="M 272 360 Q 270 200 300 178 Q 330 200 328 360 Z" fill="#4a4640"/>${grain}`,
+    verdict: "更通透的是逆光、发丝和肩头被勾了一圈金边的一张。",
+    points: ["让光从主体背后打来,会在头发、肩膀的轮廓上勾出一圈明亮的「轮廓光」,主体一下从背景里分离、浮起来,还自带温暖通透的空气感。","正面平光把人照得平板板的,轮廓和背景黏在一起,既没立体感也没氛围。"],
+    soft: "练法：逆光拍人记得对脸部测光或补一点正面光,别让脸黑成一团;黄金时刻低角度的阳光最容易出轮廓光。" },
+
+  { id: "sepsilhouette", eyebrow: "用光 · 剪影", en: "CLEAN SILHOUETTE", title: "哪张剪影更精彩？",
+    hint: "同一个人逆光成剪影,姿势不一样。",
+    good: `<rect width="600" height="280" fill="url(#skyDusk)"/><rect y="270" width="600" height="130" fill="#2a2238"/><g fill="#171318" transform="translate(300,150)"><circle cx="0" cy="-14" r="14"/><path d="M -10 0 Q 0 -6 10 0 L 8 30 L -8 30 Z"/><path d="M -8 4 L -34 -16 M 8 4 L 34 -16" stroke="#171318" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M -5 30 L -24 78 M 5 30 L 24 78" stroke="#171318" stroke-width="9" stroke-linecap="round" fill="none"/></g>${grain}`,
+    bad: `<rect width="600" height="280" fill="url(#skyDusk)"/><rect y="270" width="600" height="130" fill="#2a2238"/><g fill="#171318" transform="translate(300,150)"><circle cx="0" cy="-14" r="14"/><path d="M -15 0 Q 0 -6 15 0 L 15 78 L -15 78 Z"/></g>${grain}`,
+    verdict: "更精彩的是手脚都和身体分开、轮廓清楚的一张。",
+    points: ["剪影只剩轮廓,读不读得懂全靠外形——手脚张开、和身体之间留出缝隙,姿态一眼就清楚、还有张力。","胳膊贴着身、两腿并拢,整个人糊成一团黑影,看不出在干嘛,剪影就废了。"],
+    soft: "练法：拍剪影时让主体侧身、四肢和道具都「离开身体」、在身后透出天空的缝隙,轮廓才会利落。" },
+
+  { id: "shadowplay", eyebrow: "用光 · 光影", en: "SHADOWS", title: "哪张更有故事？",
+    hint: "看看地上的影子。",
+    good: `<rect width="600" height="300" fill="url(#goldGround)"/><rect y="290" width="600" height="110" fill="#c79a55"/><polygon points="180,300 560,300 470,320 200,320" fill="#5a3f1f" opacity="0.55"/>${person(180,300,1.5)}${grain}`,
+    bad: `<rect width="600" height="300" fill="#b3a585"/><rect y="290" width="600" height="110" fill="#9a8b6e"/><ellipse cx="180" cy="304" rx="30" ry="8" fill="#000" opacity="0.25"/>${person(180,300,1.5)}${grain}`,
+    verdict: "更有故事的是把长长的影子也当成主角的一张。",
+    points: ["清晨或傍晚低角度的光会把影子拉得很长——让影子入画、甚至成为主角,画面立刻多了线条、纵深和故事感。","正午顶光下影子缩成一小团又被忽略,画面只剩一个干巴巴的人,平淡无奇。"],
+    soft: "练法：早晚「黄金时刻」影子最长最有戏;试着以影子为主体来构图,人反而退成点缀。" },
+
+  { id: "bluehour", eyebrow: "用光 · 蓝调时刻", en: "BLUE HOUR", title: "拍夜景城市,几点按快门？",
+    hint: "看天空的颜色——是深蓝还是死黑。",
+    good: `<rect width="600" height="300" fill="#243a63"/><rect y="290" width="600" height="110" fill="#16243f"/><g fill="#1d2c4a"><rect x="80" y="120" width="70" height="180"/><rect x="180" y="80" width="60" height="220"/><rect x="280" y="150" width="80" height="150"/><rect x="390" y="100" width="55" height="200"/><rect x="470" y="140" width="70" height="160"/></g><g fill="#ffd27a"><rect x="96" y="150" width="12" height="16"/><rect x="120" y="200" width="12" height="16"/><rect x="198" y="120" width="12" height="16"/><rect x="300" y="184" width="12" height="16"/><rect x="408" y="140" width="12" height="16"/><rect x="490" y="172" width="12" height="16"/></g>${grain}`,
+    bad: `<rect width="600" height="300" fill="#0a0c12"/><rect y="290" width="600" height="110" fill="#070809"/><g fill="#0e1118"><rect x="80" y="120" width="70" height="180"/><rect x="180" y="80" width="60" height="220"/><rect x="280" y="150" width="80" height="150"/><rect x="390" y="100" width="55" height="200"/><rect x="470" y="140" width="70" height="160"/></g><g fill="#ffd27a"><rect x="96" y="150" width="12" height="16"/><rect x="300" y="184" width="12" height="16"/><rect x="490" y="172" width="12" height="16"/></g>${grain}`,
+    verdict: "更漂亮的是天还留着一抹深蓝的「蓝调时刻」那张。",
+    points: ["日落后约 20—30 分钟的「蓝调时刻」,天空是通透的深蓝,正好衬出建筑轮廓和暖黄的窗光,冷暖相映、层次丰富。","等天彻底黑透才拍,天空成了一块死黑,建筑融进背景,只剩几个孤零零的亮点,画面又空又脏。"],
+    soft: "练法：蓝调时刻很短,提前架好三脚架、卡着日落后那二三十分钟连拍;冷蓝配暖灯是城市夜景最稳的配方。" },
+
+  { id: "silkwater", eyebrow: "镜头 · 慢门", en: "LONG EXPOSURE", title: "拍瀑布,水该是丝绸还是颗粒？",
+    hint: "一张水是雾化的,一张是凝固的水珠。",
+    good: `<rect width="600" height="400" fill="#3a4738"/><rect x="40" y="60" width="120" height="50" fill="#5a6a4a"/><rect x="440" y="60" width="120" height="50" fill="#5a6a4a"/><g filter="url(#dof)"><path d="M 250 70 Q 245 220 230 340 L 370 340 Q 355 220 350 70 Z" fill="#eef3f0" opacity="0.92"/></g><rect y="338" width="600" height="62" fill="#46583a"/><ellipse cx="300" cy="346" rx="120" ry="20" fill="#dfe7e1" opacity="0.7" filter="url(#dof)"/>${grain}`,
+    bad: `<rect width="600" height="400" fill="#3a4738"/><rect x="40" y="60" width="120" height="50" fill="#5a6a4a"/><rect x="440" y="60" width="120" height="50" fill="#5a6a4a"/><g fill="#dfe7e1"><circle cx="250" cy="120" r="6"/><circle cx="280" cy="170" r="5"/><circle cx="320" cy="150" r="7"/><circle cx="300" cy="220" r="6"/><circle cx="260" cy="262" r="5"/><circle cx="340" cy="250" r="6"/><circle cx="290" cy="300" r="7"/><circle cx="330" cy="320" r="5"/><circle cx="255" cy="330" r="6"/></g><rect y="338" width="600" height="62" fill="#46583a"/>${grain}`,
+    verdict: "更梦幻的是用慢门把水流拍成丝绸般顺滑的一张。",
+    points: ["放慢快门(配三脚架、减光镜),流动的水被「抹」成柔顺的丝绸或薄雾,画面立刻有了诗意和时间的流动感。","高速快门把水凝成一堆杂乱的水珠,瀑布显得碎、显得吵,少了那股仙气。"],
+    soft: "并非定律：想表现浪花炸裂的力量、瞬间的张力时,反而要用高速快门凝固水花——慢门是为「柔顺、梦幻」服务的。" },
+
+  { id: "verticals", eyebrow: "取景 · 竖线", en: "VERTICALS", title: "哪张建筑更挺拔？",
+    hint: "看楼房的竖直边线,是平行还是「往后倒」。",
+    good: `<rect width="600" height="400" fill="url(#skyNoon)"/><rect x="180" y="60" width="240" height="340" fill="#8a7d68"/><g fill="#5a4f3c"><rect x="200" y="90" width="30" height="50"/><rect x="270" y="90" width="30" height="50"/><rect x="340" y="90" width="30" height="50"/><rect x="200" y="170" width="30" height="50"/><rect x="270" y="170" width="30" height="50"/><rect x="340" y="170" width="30" height="50"/><rect x="200" y="250" width="30" height="50"/><rect x="270" y="250" width="30" height="50"/><rect x="340" y="250" width="30" height="50"/></g>${grain}`,
+    bad: `<rect width="600" height="400" fill="url(#skyNoon)"/><polygon points="230,60 370,60 420,400 180,400" fill="#8a7d68"/><g fill="#5a4f3c"><polygon points="250,92 280,92 282,138 248,138"/><polygon points="320,92 350,92 352,138 318,138"/><polygon points="244,172 286,172 288,222 242,222"/><polygon points="314,172 356,172 358,222 312,222"/><polygon points="238,256 290,256 292,310 236,310"/><polygon points="310,256 362,256 364,310 308,310"/></g>${grain}`,
+    verdict: "更挺拔的是竖线笔直、左右平行的一张。",
+    points: ["仰拍时镜头一抬,建筑的竖线就会向上汇聚,楼像要往后仰倒——把相机端平、或用移轴/后期校正,让竖线保持笔直,建筑才稳重、专业。","竖线明显往里收,楼显得变形、要倒,这是新手最容易忽略的「透视畸变」。"],
+    soft: "并非定律：极度夸张的仰拍汇聚也能营造压迫感、张力(一种刻意的表达);但端正记录建筑时,竖直就是稳。" },
+
+  { id: "lightpatch", eyebrow: "时机 · 等光", en: "WAIT FOR LIGHT", title: "这一步该等他走到哪儿再拍？",
+    hint: "看那束光斑,人站进去了吗。",
+    good: `<rect width="600" height="400" fill="#1f1c24"/><rect y="320" width="600" height="80" fill="#16141a"/><polygon points="250,0 350,0 400,360 200,360" fill="#f1e0a8" opacity="0.18"/><ellipse cx="300" cy="360" rx="110" ry="22" fill="#f1e0a8" opacity="0.12"/>${person(300,360,2.0)}${grain}`,
+    bad: `<rect width="600" height="400" fill="#1f1c24"/><rect y="320" width="600" height="80" fill="#16141a"/><polygon points="250,0 350,0 400,360 200,360" fill="#f1e0a8" opacity="0.18"/><ellipse cx="300" cy="360" rx="110" ry="22" fill="#f1e0a8" opacity="0.12"/>${person(120,360,2.0)}${grain}`,
+    verdict: "更妙的是等人正好走进光斑里那一刻按下的一张。",
+    points: ["街头、室内常有一束打在地上的光——耐心等主体走进那片光里再按快门,光替你把主角「点亮」、从暗背景里拎出来。","早按了一拍,人还在阴影里,最亮的光斑空着没人,主体淹没在暗处,白白可惜了那束光。"],
+    soft: "练法：这是「守株待兔」式的拍法:先找到好光、构好图,再耐心等人入框——决定性瞬间常常是「等」来的。" }
 ];
 // <<<QUESTIONS:END>>>
 

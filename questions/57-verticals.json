@@ -1,0 +1,32 @@
+{
+  "id": "verticals",
+  "order": 57,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "竖线",
+  "en": "VERTICALS",
+  "difficulty": "高阶",
+  "tags": [
+    "竖线",
+    "建筑",
+    "畸变",
+    "透视校正",
+    "移轴",
+    "端正"
+  ],
+  "title": "哪张建筑更挺拔？",
+  "hint": "看楼房的竖直边线,是平行还是「往后倒」。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyNoon)\"/><rect x=\"180\" y=\"60\" width=\"240\" height=\"340\" fill=\"#8a7d68\"/><g fill=\"#5a4f3c\"><rect x=\"200\" y=\"90\" width=\"30\" height=\"50\"/><rect x=\"270\" y=\"90\" width=\"30\" height=\"50\"/><rect x=\"340\" y=\"90\" width=\"30\" height=\"50\"/><rect x=\"200\" y=\"170\" width=\"30\" height=\"50\"/><rect x=\"270\" y=\"170\" width=\"30\" height=\"50\"/><rect x=\"340\" y=\"170\" width=\"30\" height=\"50\"/><rect x=\"200\" y=\"250\" width=\"30\" height=\"50\"/><rect x=\"270\" y=\"250\" width=\"30\" height=\"50\"/><rect x=\"340\" y=\"250\" width=\"30\" height=\"50\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#skyNoon)\"/><polygon points=\"230,60 370,60 420,400 180,400\" fill=\"#8a7d68\"/><g fill=\"#5a4f3c\"><polygon points=\"250,92 280,92 282,138 248,138\"/><polygon points=\"320,92 350,92 352,138 318,138\"/><polygon points=\"244,172 286,172 288,222 242,222\"/><polygon points=\"314,172 356,172 358,222 312,222\"/><polygon points=\"238,256 290,256 292,310 236,310\"/><polygon points=\"310,256 362,256 364,310 308,310\"/></g>${grain}"
+  },
+  "verdict": "更挺拔的是竖线笔直、左右平行的一张。",
+  "points": [
+    "仰拍时镜头一抬,建筑的竖线就会向上汇聚,楼像要往后仰倒——把相机端平、或用移轴/后期校正,让竖线保持笔直,建筑才稳重、专业。",
+    "竖线明显往里收,楼显得变形、要倒,这是新手最容易忽略的「透视畸变」。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "极度夸张的仰拍汇聚也能营造压迫感、张力(一种刻意的表达);但端正记录建筑时,竖直就是稳。"
+  }
+}

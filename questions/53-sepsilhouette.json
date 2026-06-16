@@ -1,0 +1,32 @@
+{
+  "id": "sepsilhouette",
+  "order": 53,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "剪影",
+  "en": "CLEAN SILHOUETTE",
+  "difficulty": "高阶",
+  "tags": [
+    "剪影",
+    "逆光",
+    "轮廓",
+    "姿态",
+    "留缝",
+    "用光"
+  ],
+  "title": "哪张剪影更精彩？",
+  "hint": "同一个人逆光成剪影,姿势不一样。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"280\" fill=\"url(#skyDusk)\"/><rect y=\"270\" width=\"600\" height=\"130\" fill=\"#2a2238\"/><g fill=\"#171318\" transform=\"translate(300,150)\"><circle cx=\"0\" cy=\"-14\" r=\"14\"/><path d=\"M -10 0 Q 0 -6 10 0 L 8 30 L -8 30 Z\"/><path d=\"M -8 4 L -34 -16 M 8 4 L 34 -16\" stroke=\"#171318\" stroke-width=\"8\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M -5 30 L -24 78 M 5 30 L 24 78\" stroke=\"#171318\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"280\" fill=\"url(#skyDusk)\"/><rect y=\"270\" width=\"600\" height=\"130\" fill=\"#2a2238\"/><g fill=\"#171318\" transform=\"translate(300,150)\"><circle cx=\"0\" cy=\"-14\" r=\"14\"/><path d=\"M -15 0 Q 0 -6 15 0 L 15 78 L -15 78 Z\"/></g>${grain}"
+  },
+  "verdict": "更精彩的是手脚都和身体分开、轮廓清楚的一张。",
+  "points": [
+    "剪影只剩轮廓,读不读得懂全靠外形——手脚张开、和身体之间留出缝隙,姿态一眼就清楚、还有张力。",
+    "胳膊贴着身、两腿并拢,整个人糊成一团黑影,看不出在干嘛,剪影就废了。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "拍剪影时让主体侧身、四肢和道具都「离开身体」、在身后透出天空的缝隙,轮廓才会利落。"
+  }
+}

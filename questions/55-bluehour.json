@@ -1,0 +1,32 @@
+{
+  "id": "bluehour",
+  "order": 55,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "蓝调时刻",
+  "en": "BLUE HOUR",
+  "difficulty": "高阶",
+  "tags": [
+    "蓝调时刻",
+    "夜景",
+    "城市",
+    "冷暖",
+    "时机",
+    "日落"
+  ],
+  "title": "拍夜景城市,几点按快门？",
+  "hint": "看天空的颜色——是深蓝还是死黑。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"300\" fill=\"#243a63\"/><rect y=\"290\" width=\"600\" height=\"110\" fill=\"#16243f\"/><g fill=\"#1d2c4a\"><rect x=\"80\" y=\"120\" width=\"70\" height=\"180\"/><rect x=\"180\" y=\"80\" width=\"60\" height=\"220\"/><rect x=\"280\" y=\"150\" width=\"80\" height=\"150\"/><rect x=\"390\" y=\"100\" width=\"55\" height=\"200\"/><rect x=\"470\" y=\"140\" width=\"70\" height=\"160\"/></g><g fill=\"#ffd27a\"><rect x=\"96\" y=\"150\" width=\"12\" height=\"16\"/><rect x=\"120\" y=\"200\" width=\"12\" height=\"16\"/><rect x=\"198\" y=\"120\" width=\"12\" height=\"16\"/><rect x=\"300\" y=\"184\" width=\"12\" height=\"16\"/><rect x=\"408\" y=\"140\" width=\"12\" height=\"16\"/><rect x=\"490\" y=\"172\" width=\"12\" height=\"16\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"300\" fill=\"#0a0c12\"/><rect y=\"290\" width=\"600\" height=\"110\" fill=\"#070809\"/><g fill=\"#0e1118\"><rect x=\"80\" y=\"120\" width=\"70\" height=\"180\"/><rect x=\"180\" y=\"80\" width=\"60\" height=\"220\"/><rect x=\"280\" y=\"150\" width=\"80\" height=\"150\"/><rect x=\"390\" y=\"100\" width=\"55\" height=\"200\"/><rect x=\"470\" y=\"140\" width=\"70\" height=\"160\"/></g><g fill=\"#ffd27a\"><rect x=\"96\" y=\"150\" width=\"12\" height=\"16\"/><rect x=\"300\" y=\"184\" width=\"12\" height=\"16\"/><rect x=\"490\" y=\"172\" width=\"12\" height=\"16\"/></g>${grain}"
+  },
+  "verdict": "更漂亮的是天还留着一抹深蓝的「蓝调时刻」那张。",
+  "points": [
+    "日落后约 20—30 分钟的「蓝调时刻」,天空是通透的深蓝,正好衬出建筑轮廓和暖黄的窗光,冷暖相映、层次丰富。",
+    "等天彻底黑透才拍,天空成了一块死黑,建筑融进背景,只剩几个孤零零的亮点,画面又空又脏。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "蓝调时刻很短,提前架好三脚架、卡着日落后那二三十分钟连拍;冷蓝配暖灯是城市夜景最稳的配方。"
+  }
+}

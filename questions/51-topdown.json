@@ -1,0 +1,32 @@
+{
+  "id": "topdown",
+  "order": 51,
+  "direction": "视角",
+  "category": "视角",
+  "subcategory": "俯拍",
+  "en": "FLAT LAY",
+  "difficulty": "进阶",
+  "tags": [
+    "俯拍",
+    "平面构成",
+    "flat-lay",
+    "美食",
+    "静物",
+    "秩序"
+  ],
+  "title": "摆好的小物该怎么拍？",
+  "hint": "一张正上方俯拍,一张斜着拍。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#cabfa8\"/>${flower(180,150,2.2,\"#e7badd\",\"#caa23a\")}${flower(420,255,2.0,\"#e7badd\",\"#caa23a\")}<circle cx=\"430\" cy=\"120\" r=\"40\" fill=\"#7a9a55\"/><rect x=\"120\" y=\"280\" width=\"120\" height=\"70\" rx=\"10\" fill=\"#9a6a4a\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"250\" fill=\"#cabfa8\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#b3a585\"/><g transform=\"skewY(-8)\"><ellipse cx=\"200\" cy=\"270\" rx=\"62\" ry=\"22\" fill=\"#e7badd\"/><ellipse cx=\"410\" cy=\"300\" rx=\"56\" ry=\"20\" fill=\"#e7badd\"/><circle cx=\"430\" cy=\"248\" r=\"30\" fill=\"#7a9a55\"/><rect x=\"150\" y=\"320\" width=\"110\" height=\"40\" rx=\"8\" fill=\"#9a6a4a\"/></g>${grain}"
+  },
+  "verdict": "更利落的是从正上方垂直俯拍、摆成平面构成的一张。",
+  "points": [
+    "平铺的食物、文具、小物,从正上方拍能把它们压成干净的「平面构成」,形状、间距、配色一目了然,秩序感极强。",
+    "斜着拍,近大远小加上互相遮挡,东西挤成一团还带着透视变形,摆放的心思全乱了。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "想表现立体感、空间感时,平视或低角度更好;正上方俯拍是为「平面感、秩序感」服务的。"
+  }
+}
