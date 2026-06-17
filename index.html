@@ -851,12 +851,25 @@ const RAW = [
 /* ============================================================
    逻辑
    ============================================================ */
-const state = { i:0, score:0, answered:false, log:[], order:[] };
+const QUIZ_SIZE = 20;             // 每卷题量
+const state = { i:0, score:0, answered:false, log:[], order:[], deck:[] };
 const $ = id => document.getElementById(id);
 
+function shuffle(arr){
+  // Fisher–Yates 洗牌,返回新数组
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
 function buildOrder(){
+  // 从题库随机抽 QUIZ_SIZE 道,顺序随机
+  state.deck = shuffle(RAW).slice(0, Math.min(QUIZ_SIZE, RAW.length));
   // 每题随机决定 good 放 A 还是 B
-  state.order = RAW.map(()=> Math.random() < 0.5 ? 'A' : 'B');
+  state.order = state.deck.map(()=> Math.random() < 0.5 ? 'A' : 'B');
 }
 
 function svgWrap(inner){
@@ -864,11 +877,11 @@ function svgWrap(inner){
 }
 
 function renderQuestion(){
-  const q = RAW[state.i];
+  const q = state.deck[state.i];
   const goodSlot = state.order[state.i];
   state.answered = false;
 
-  $('counterText').textContent = String(state.i+1).padStart(2,'0') + ' / ' + String(RAW.length).padStart(2,'0');
+  $('counterText').textContent = String(state.i+1).padStart(2,'0') + ' / ' + String(state.deck.length).padStart(2,'0');
   $('eyebrow').textContent = q.eyebrow;
   $('qTitle').textContent = q.title;
   $('qHint').textContent = q.hint;
@@ -889,7 +902,7 @@ function renderQuestion(){
 function choose(slot){
   if(state.answered) return;
   state.answered = true;
-  const q = RAW[state.i];
+  const q = state.deck[state.i];
   const goodSlot = state.order[state.i];
   const correct = slot === goodSlot;
   if(correct) state.score++;
@@ -918,7 +931,7 @@ function choose(slot){
   else $('vSoft').style.display='none';
   $('readout').classList.add('show');
 
-  $('nextBtn').innerHTML = (state.i === RAW.length-1)
+  $('nextBtn').innerHTML = (state.i === state.deck.length-1)
     ? '看成绩 <span class="arrow">→</span>'
     : '下一张 <span class="arrow">→</span>';
   $('actions').style.visibility='visible';
@@ -926,7 +939,7 @@ function choose(slot){
 }
 
 function next(){
-  if(state.i < RAW.length-1){ state.i++; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }
+  if(state.i < state.deck.length-1){ state.i++; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); }
   else showResult();
 }
 
@@ -935,9 +948,9 @@ function showResult(){
   $('resultView').style.display='block';
   $('counter').style.visibility='hidden';
   $('scoreNum').textContent = state.score;
-  $('scoreOf').textContent = RAW.length;
+  $('scoreOf').textContent = state.deck.length;
 
-  const s = state.score, pct = s / RAW.length, gradeEl=$('grade'), blurbEl=$('blurb');
+  const s = state.score, pct = s / state.deck.length, gradeEl=$('grade'), blurbEl=$('blurb');
   let grade, blurb;
   if(pct>=0.9){ grade='摄影眼 · 满格'; blurb='几乎全中。构图、用光、留白你都拎得清——下一步是带着这套直觉去打破它。'; }
   else if(pct>=0.7){ grade='眼力很稳'; blurb='大方向都对。回看错的那几题,多半是「视线空间」或「时机」这类需要多按几千次快门才长进的细节。'; }
