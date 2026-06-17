@@ -1,0 +1,32 @@
+{
+  "id": "blackwhite",
+  "order": 78,
+  "direction": "色彩",
+  "category": "色彩",
+  "subcategory": "黑白取舍",
+  "en": "BLACK & WHITE",
+  "difficulty": "高阶",
+  "tags": [
+    "黑白",
+    "去色",
+    "明暗",
+    "形状",
+    "质感",
+    "色彩"
+  ],
+  "title": "这张该彩色还是黑白？",
+  "hint": "当颜色帮倒忙时,试试拿掉它。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#c9c9c9\"/><rect x=\"60\" y=\"120\" width=\"90\" height=\"240\" fill=\"#6a6a6a\"/><rect x=\"200\" y=\"70\" width=\"90\" height=\"290\" fill=\"#3f3f3f\"/><rect x=\"340\" y=\"150\" width=\"90\" height=\"210\" fill=\"#8a8a8a\"/><rect x=\"470\" y=\"100\" width=\"90\" height=\"260\" fill=\"#555555\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#b7c9a0\"/><rect x=\"60\" y=\"120\" width=\"90\" height=\"240\" fill=\"#d65a4f\"/><rect x=\"200\" y=\"70\" width=\"90\" height=\"290\" fill=\"#4f8fd6\"/><rect x=\"340\" y=\"150\" width=\"90\" height=\"210\" fill=\"#e8b23a\"/><rect x=\"470\" y=\"100\" width=\"90\" height=\"260\" fill=\"#8a5fb0\"/>${grain}"
+  },
+  "verdict": "这种情况更高级的是转成黑白、突出明暗与形状的一张。",
+  "points": [
+    "当颜色又杂又冲、互相打架时,它们会盖过构图本身;去掉颜色,注意力回到光影、形状和质感上,画面反而更纯粹有力。",
+    "保留这堆各说各话的颜色,视线被花花绿绿扯散,主次和结构全乱了。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "黑白不是「万能救场」——当颜色本身就是主角(晚霞、撞色街拍)时,转黑白反而把好东西丢了。"
+  }
+}

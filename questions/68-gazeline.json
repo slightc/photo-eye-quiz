@@ -1,0 +1,32 @@
+{
+  "id": "gazeline",
+  "order": 68,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "视线呼应",
+  "en": "GAZE LINE",
+  "difficulty": "进阶",
+  "tags": [
+    "视线呼应",
+    "朝向",
+    "隐含线",
+    "互动",
+    "双主体",
+    "构图"
+  ],
+  "title": "两个人该怎么站？",
+  "hint": "看两人是面对面还是背对背。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#9a8a6a\"/>${person(210,340,1.9)}<g transform=\"translate(780,0) scale(-1,1)\">${person(390,340,1.9)}</g>${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#9a8a6a\"/><g transform=\"translate(420,0) scale(-1,1)\">${person(210,340,1.9)}</g>${person(390,340,1.9)}${grain}"
+  },
+  "verdict": "更有关系的是两人朝向彼此、视线连成一线的一张。",
+  "points": [
+    "两个主体的朝向、视线会在他们之间拉出一条看不见的「线」,面对面时这条线把两人连成一个整体,画面有了交流和故事。",
+    "背对背各看各的,这条线断了,两个人像被随手摆在一起的路人,毫无关系。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "背对背也能用来表达疏离、决裂——朝向是叙事工具,看你想说「在一起」还是「分开」。"
+  }
+}

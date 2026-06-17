@@ -1,0 +1,32 @@
+{
+  "id": "motionroom",
+  "order": 67,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "活动空间",
+  "en": "LEAD ROOM",
+  "difficulty": "进阶",
+  "tags": [
+    "活动空间",
+    "运动留白",
+    "速度感",
+    "构图",
+    "车",
+    "lead-room"
+  ],
+  "title": "飞驰的车该放哪边？",
+  "hint": "看车头前面留了多少地方。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"260\" fill=\"url(#skyNoon)\"/><rect y=\"250\" width=\"600\" height=\"150\" fill=\"#6a6a66\"/><rect y=\"250\" width=\"600\" height=\"6\" fill=\"#d9c98a\"/>${car(180,332,1.1)}${grain}",
+    "bad": "<rect width=\"600\" height=\"260\" fill=\"url(#skyNoon)\"/><rect y=\"250\" width=\"600\" height=\"150\" fill=\"#6a6a66\"/><rect y=\"250\" width=\"600\" height=\"6\" fill=\"#d9c98a\"/>${car(470,332,1.1)}${grain}"
+  },
+  "verdict": "更舒服的是车头前方留了空间的一张。",
+  "points": [
+    "运动的主体要在它前进的方向留出「活动空间」,视线跟着车头有地方可去,画面就有了速度感和余地。",
+    "车贴着它要去的那条边,像下一秒就要撞出画框,看着憋屈、被「卡住」。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "同理也适用于看向某处的人、奔跑的动物——朝向/去向的那一侧多留点白,几乎总没错。"
+  }
+}

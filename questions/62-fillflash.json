@@ -1,0 +1,32 @@
+{
+  "id": "fillflash",
+  "order": 62,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "逆光补光",
+  "en": "FILL FLASH",
+  "difficulty": "高阶",
+  "tags": [
+    "补光",
+    "逆光",
+    "反光板",
+    "闪光灯",
+    "人像",
+    "用光"
+  ],
+  "title": "逆光拍人,脸黑了怎么办？",
+  "hint": "光从背后来,看脸还看不看得清。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#goldGround)\"/><circle cx=\"300\" cy=\"120\" r=\"130\" fill=\"#ffe9b0\" opacity=\"0.5\"/><circle cx=\"300\" cy=\"150\" r=\"48\" fill=\"#d8b48c\"/><rect x=\"258\" y=\"194\" width=\"84\" height=\"150\" rx=\"22\" fill=\"#8a9a6a\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#goldGround)\"/><circle cx=\"300\" cy=\"120\" r=\"130\" fill=\"#ffe9b0\" opacity=\"0.5\"/><circle cx=\"300\" cy=\"150\" r=\"48\" fill=\"#272019\"/><rect x=\"258\" y=\"194\" width=\"84\" height=\"150\" rx=\"22\" fill=\"#272019\"/>${grain}"
+  },
+  "verdict": "更好的是给脸补了光、五官看得清的一张。",
+  "points": [
+    "逆光下背景很亮,相机一压曝光脸就黑成一团;补一支闪光灯或反光板把脸提亮,既保住了通透的逆光氛围,人脸也清楚了。",
+    "不补光直接拍,脸陷进死黑——除非你本就要拍剪影,否则就是张失败的逆光照。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "逆光顺光差太大时,用机顶闪/外拍灯做「平衡补光」,或拉个反光板把环境光弹回脸上。"
+  }
+}

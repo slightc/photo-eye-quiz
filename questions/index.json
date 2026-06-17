@@ -1,6 +1,6 @@
 {
   "title": "摄影审美对比测验 · 题库",
-  "count": 58,
+  "count": 78,
   "schema": "questions/<order>-<id>.json",
   "directions": [
     "取景",
@@ -1061,6 +1061,366 @@
         "用光"
       ],
       "title": "这一步该等他走到哪儿再拍？"
+    },
+    {
+      "order": 59,
+      "id": "focus",
+      "file": "59-focus.json",
+      "direction": "镜头",
+      "category": "镜头",
+      "subcategory": "对焦",
+      "difficulty": "入门",
+      "tags": [
+        "对焦",
+        "清晰",
+        "跑焦",
+        "锐度",
+        "基础",
+        "新手必看"
+      ],
+      "title": "哪张对上焦了？"
+    },
+    {
+      "order": 60,
+      "id": "softlight",
+      "file": "60-softlight.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "光质",
+      "difficulty": "进阶",
+      "tags": [
+        "柔光",
+        "硬光",
+        "光质",
+        "阴影",
+        "人像",
+        "用光"
+      ],
+      "title": "哪张的光更柔？"
+    },
+    {
+      "order": 61,
+      "id": "catchlight",
+      "file": "61-catchlight.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "眼神光",
+      "difficulty": "高阶",
+      "tags": [
+        "眼神光",
+        "catchlight",
+        "人像",
+        "眼睛",
+        "用光",
+        "神采"
+      ],
+      "title": "哪双眼睛更有神？"
+    },
+    {
+      "order": 62,
+      "id": "fillflash",
+      "file": "62-fillflash.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "逆光补光",
+      "difficulty": "高阶",
+      "tags": [
+        "补光",
+        "逆光",
+        "反光板",
+        "闪光灯",
+        "人像",
+        "用光"
+      ],
+      "title": "逆光拍人,脸黑了怎么办？"
+    },
+    {
+      "order": 63,
+      "id": "focallength",
+      "file": "63-focallength.json",
+      "direction": "镜头",
+      "category": "镜头",
+      "subcategory": "焦段透视",
+      "difficulty": "高阶",
+      "tags": [
+        "焦段",
+        "透视压缩",
+        "长焦",
+        "广角",
+        "人像",
+        "镜头"
+      ],
+      "title": "拍人像,背景该大还是该小？"
+    },
+    {
+      "order": 64,
+      "id": "starburst",
+      "file": "64-starburst.json",
+      "direction": "镜头",
+      "category": "镜头",
+      "subcategory": "星芒",
+      "difficulty": "高阶",
+      "tags": [
+        "星芒",
+        "小光圈",
+        "点光源",
+        "太阳",
+        "夜景",
+        "镜头"
+      ],
+      "title": "哪张的光点更出彩？"
+    },
+    {
+      "order": 65,
+      "id": "shootthrough",
+      "file": "65-shootthrough.json",
+      "direction": "镜头",
+      "category": "镜头",
+      "subcategory": "前景虚化",
+      "difficulty": "进阶",
+      "tags": [
+        "前景虚化",
+        "shoot-through",
+        "氛围",
+        "纵深",
+        "大光圈",
+        "镜头"
+      ],
+      "title": "哪张更有朦胧的氛围？"
+    },
+    {
+      "order": 66,
+      "id": "colorecho",
+      "file": "66-colorecho.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "色彩呼应",
+      "difficulty": "进阶",
+      "tags": [
+        "色彩呼应",
+        "重复色",
+        "和谐",
+        "节奏",
+        "配色",
+        "整体感"
+      ],
+      "title": "哪张的颜色更「成一气」？"
+    },
+    {
+      "order": 67,
+      "id": "motionroom",
+      "file": "67-motionroom.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "活动空间",
+      "difficulty": "进阶",
+      "tags": [
+        "活动空间",
+        "运动留白",
+        "速度感",
+        "构图",
+        "车",
+        "lead-room"
+      ],
+      "title": "飞驰的车该放哪边？"
+    },
+    {
+      "order": 68,
+      "id": "gazeline",
+      "file": "68-gazeline.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "视线呼应",
+      "difficulty": "进阶",
+      "tags": [
+        "视线呼应",
+        "朝向",
+        "隐含线",
+        "互动",
+        "双主体",
+        "构图"
+      ],
+      "title": "两个人该怎么站？"
+    },
+    {
+      "order": 69,
+      "id": "juxtapose",
+      "file": "69-juxtapose.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "对比并置",
+      "difficulty": "进阶",
+      "tags": [
+        "对比并置",
+        "新旧",
+        "大小",
+        "故事感",
+        "张力",
+        "构图"
+      ],
+      "title": "哪张更有看头？"
+    },
+    {
+      "order": 70,
+      "id": "overlap",
+      "file": "70-overlap.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "主体分离",
+      "difficulty": "进阶",
+      "tags": [
+        "主体分离",
+        "不重叠",
+        "留缝",
+        "多主体",
+        "干净",
+        "取景"
+      ],
+      "title": "两个人该挨多近？"
+    },
+    {
+      "order": 71,
+      "id": "environmental",
+      "file": "71-environmental.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "环境人像",
+      "difficulty": "进阶",
+      "tags": [
+        "环境人像",
+        "语境",
+        "故事感",
+        "取景",
+        "人像",
+        "景别"
+      ],
+      "title": "拍「人和他的地方」,该多近？"
+    },
+    {
+      "order": 72,
+      "id": "shoulderangle",
+      "file": "72-shoulderangle.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "侧身",
+      "difficulty": "进阶",
+      "tags": [
+        "侧身",
+        "姿态",
+        "肩线",
+        "人像",
+        "显瘦",
+        "取景"
+      ],
+      "title": "拍半身,身体该正对镜头吗？"
+    },
+    {
+      "order": 73,
+      "id": "expression",
+      "file": "73-expression.json",
+      "direction": "时机",
+      "category": "时机",
+      "subcategory": "表情",
+      "difficulty": "高阶",
+      "tags": [
+        "表情",
+        "瞬间",
+        "抓拍",
+        "情绪",
+        "人像",
+        "时机"
+      ],
+      "title": "该在哪一刻按下快门？"
+    },
+    {
+      "order": 74,
+      "id": "flare",
+      "file": "74-flare.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "眩光",
+      "difficulty": "高阶",
+      "tags": [
+        "眩光",
+        "雾霾",
+        "遮光罩",
+        "对比",
+        "逆光",
+        "用光"
+      ],
+      "title": "逆光拍,画面发灰怎么破？"
+    },
+    {
+      "order": 75,
+      "id": "highlightclip",
+      "file": "75-highlightclip.json",
+      "direction": "影调",
+      "category": "影调",
+      "subcategory": "高光",
+      "difficulty": "高阶",
+      "tags": [
+        "高光",
+        "过曝",
+        "死白",
+        "曝光",
+        "天空",
+        "影调"
+      ],
+      "title": "哪张天空没拍「死」？"
+    },
+    {
+      "order": 76,
+      "id": "dutchangle",
+      "file": "76-dutchangle.json",
+      "direction": "视角",
+      "category": "视角",
+      "subcategory": "倾斜",
+      "difficulty": "进阶",
+      "tags": [
+        "荷兰角",
+        "倾斜",
+        "张力",
+        "动感",
+        "视角",
+        "刻意"
+      ],
+      "title": "要斜,就该斜多少？"
+    },
+    {
+      "order": 77,
+      "id": "spotpool",
+      "file": "77-spotpool.json",
+      "direction": "影调",
+      "category": "影调",
+      "subcategory": "聚光",
+      "difficulty": "进阶",
+      "tags": [
+        "聚光",
+        "一束光",
+        "压暗",
+        "戏剧性",
+        "主体突出",
+        "影调"
+      ],
+      "title": "哪张主体更被「打亮」了？"
+    },
+    {
+      "order": 78,
+      "id": "blackwhite",
+      "file": "78-blackwhite.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "黑白取舍",
+      "difficulty": "高阶",
+      "tags": [
+        "黑白",
+        "去色",
+        "明暗",
+        "形状",
+        "质感",
+        "色彩"
+      ],
+      "title": "这张该彩色还是黑白？"
     }
   ]
 }

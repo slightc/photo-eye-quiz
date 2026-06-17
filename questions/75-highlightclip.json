@@ -1,0 +1,32 @@
+{
+  "id": "highlightclip",
+  "order": 75,
+  "direction": "影调",
+  "category": "影调",
+  "subcategory": "高光",
+  "en": "HIGHLIGHTS",
+  "difficulty": "高阶",
+  "tags": [
+    "高光",
+    "过曝",
+    "死白",
+    "曝光",
+    "天空",
+    "影调"
+  ],
+  "title": "哪张天空没拍「死」？",
+  "hint": "看天空是有层次还是一片白。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"260\" fill=\"url(#skyDusk)\"/><ellipse cx=\"180\" cy=\"90\" rx=\"110\" ry=\"34\" fill=\"#ffd9a6\" opacity=\"0.5\"/><ellipse cx=\"420\" cy=\"140\" rx=\"130\" ry=\"36\" fill=\"#f2b27a\" opacity=\"0.45\"/><rect y=\"258\" width=\"600\" height=\"142\" fill=\"url(#field)\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"260\" fill=\"#ffffff\"/><ellipse cx=\"180\" cy=\"90\" rx=\"110\" ry=\"34\" fill=\"#ffffff\"/><ellipse cx=\"420\" cy=\"140\" rx=\"130\" ry=\"36\" fill=\"#ffffff\"/><rect y=\"258\" width=\"600\" height=\"142\" fill=\"url(#field)\"/>${grain}"
+  },
+  "verdict": "更耐看的是天空还留着颜色和层次、没拍成死白的一张。",
+  "points": [
+    "高光一旦「过曝溢出」就变成纯白,云彩、晚霞的层次彻底没了、再也救不回来,画面顶上像破了个洞。",
+    "宁可稍欠一点曝光保住高光:天空留住颜色和云的层次,整张照片才完整、有空气。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "开启高光警告(闪烁的「斑马纹」),看到天空闪了就减曝光;暗部还能后期提,纯白高光提不回来。"
+  }
+}

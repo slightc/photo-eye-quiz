@@ -1,0 +1,32 @@
+{
+  "id": "starburst",
+  "order": 64,
+  "direction": "镜头",
+  "category": "镜头",
+  "subcategory": "星芒",
+  "en": "STARBURST",
+  "difficulty": "高阶",
+  "tags": [
+    "星芒",
+    "小光圈",
+    "点光源",
+    "太阳",
+    "夜景",
+    "镜头"
+  ],
+  "title": "哪张的光点更出彩？",
+  "hint": "看那个亮光点是一团还是带芒。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#2a2230\"/><circle cx=\"300\" cy=\"200\" r=\"18\" fill=\"#fff6d8\"/><g stroke=\"#fff6d8\" stroke-width=\"3\" stroke-linecap=\"round\" opacity=\"0.9\"><line x1=\"300\" y1=\"150\" x2=\"300\" y2=\"250\"/><line x1=\"250\" y1=\"200\" x2=\"350\" y2=\"200\"/><line x1=\"266\" y1=\"166\" x2=\"334\" y2=\"234\"/><line x1=\"334\" y1=\"166\" x2=\"266\" y2=\"234\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#skyDusk)\"/><rect y=\"300\" width=\"600\" height=\"100\" fill=\"#2a2230\"/><circle cx=\"300\" cy=\"200\" r=\"40\" fill=\"#fff6d8\" opacity=\"0.45\"/><circle cx=\"300\" cy=\"200\" r=\"18\" fill=\"#fff6d8\"/>${grain}"
+  },
+  "verdict": "更出彩的是光点炸出一圈星芒的一张。",
+  "points": [
+    "把光圈收小(f/11–f/16),画面里的点光源(太阳、路灯)会绽放出清晰的星芒,精致、有仪式感。",
+    "光圈开太大时点光源只是一团软软的光晕,平淡、没看头。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "想要星芒就用小光圈,并让光源被物体边缘「半遮挡」一下(树梢、屋檐),芒会更利落。"
+  }
+}
