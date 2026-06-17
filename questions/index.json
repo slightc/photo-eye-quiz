@@ -1,6 +1,6 @@
 {
   "title": "摄影审美对比测验 · 题库",
-  "count": 38,
+  "count": 58,
   "schema": "questions/<order>-<id>.json",
   "directions": [
     "取景",
@@ -701,6 +701,366 @@
         "人像"
       ],
       "title": "哪张人像更立体？"
+    },
+    {
+      "order": 39,
+      "id": "saturation",
+      "file": "39-saturation.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "饱和度",
+      "difficulty": "入门",
+      "tags": [
+        "饱和度",
+        "色彩",
+        "自然",
+        "后期",
+        "新手必看",
+        "耐看"
+      ],
+      "title": "哪张颜色更耐看？"
+    },
+    {
+      "order": 40,
+      "id": "clouds",
+      "file": "40-clouds.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "天空",
+      "difficulty": "入门",
+      "tags": [
+        "天空",
+        "云",
+        "风光",
+        "氛围",
+        "日落",
+        "基础"
+      ],
+      "title": "哪片天空更有戏？"
+    },
+    {
+      "order": 41,
+      "id": "complement",
+      "file": "41-complement.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "补色",
+      "difficulty": "进阶",
+      "tags": [
+        "补色",
+        "互补色",
+        "色彩对比",
+        "冷暖",
+        "点缀",
+        "色轮"
+      ],
+      "title": "哪顶帐篷更跳？"
+    },
+    {
+      "order": 42,
+      "id": "mono",
+      "file": "42-mono.json",
+      "direction": "色彩",
+      "category": "色彩",
+      "subcategory": "统一色调",
+      "difficulty": "进阶",
+      "tags": [
+        "统一色调",
+        "单色",
+        "色调",
+        "氛围",
+        "高级",
+        "配色"
+      ],
+      "title": "哪张色调更统一？"
+    },
+    {
+      "order": 43,
+      "id": "symmetry",
+      "file": "43-symmetry.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "对称",
+      "difficulty": "进阶",
+      "tags": [
+        "对称",
+        "居中",
+        "建筑",
+        "秩序",
+        "仪式感",
+        "构图"
+      ],
+      "title": "哪张更端庄？"
+    },
+    {
+      "order": 44,
+      "id": "vanishing",
+      "file": "44-vanishing.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "透视纵深",
+      "difficulty": "进阶",
+      "tags": [
+        "透视",
+        "灭点",
+        "汇聚线",
+        "纵深",
+        "纵线",
+        "空间感"
+      ],
+      "title": "哪张更有纵深感？"
+    },
+    {
+      "order": 45,
+      "id": "foreground",
+      "file": "45-foreground.json",
+      "direction": "构图",
+      "category": "构图",
+      "subcategory": "前景",
+      "difficulty": "进阶",
+      "tags": [
+        "前景",
+        "纵深",
+        "风光",
+        "层次",
+        "立体",
+        "引导"
+      ],
+      "title": "哪张风光更立体？"
+    },
+    {
+      "order": 46,
+      "id": "edges",
+      "file": "46-edges.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "边缘",
+      "difficulty": "进阶",
+      "tags": [
+        "边缘",
+        "取景",
+        "干扰物",
+        "干净",
+        "细节",
+        "检查四边"
+      ],
+      "title": "哪张更讲究？"
+    },
+    {
+      "order": 47,
+      "id": "mood",
+      "file": "47-mood.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "空气透视",
+      "difficulty": "进阶",
+      "tags": [
+        "空气透视",
+        "薄雾",
+        "远山",
+        "氛围",
+        "层次",
+        "风光"
+      ],
+      "title": "哪张山景更有氛围？"
+    },
+    {
+      "order": 48,
+      "id": "vignette",
+      "file": "48-vignette.json",
+      "direction": "影调",
+      "category": "影调",
+      "subcategory": "暗角",
+      "difficulty": "进阶",
+      "tags": [
+        "暗角",
+        "晕影",
+        "影调",
+        "聚焦",
+        "后期",
+        "氛围"
+      ],
+      "title": "哪张更聚焦人物？"
+    },
+    {
+      "order": 49,
+      "id": "brightest",
+      "file": "49-brightest.json",
+      "direction": "影调",
+      "category": "影调",
+      "subcategory": "亮部引导",
+      "difficulty": "进阶",
+      "tags": [
+        "亮部",
+        "视线引导",
+        "影调",
+        "主体",
+        "用光",
+        "聚焦"
+      ],
+      "title": "眼睛先看哪儿？"
+    },
+    {
+      "order": 50,
+      "id": "eyelevel",
+      "file": "50-eyelevel.json",
+      "direction": "视角",
+      "category": "视角",
+      "subcategory": "平视",
+      "difficulty": "进阶",
+      "tags": [
+        "平视",
+        "机位",
+        "儿童",
+        "宠物",
+        "亲切",
+        "视角"
+      ],
+      "title": "拍小孩该蹲下还是站着拍？"
+    },
+    {
+      "order": 51,
+      "id": "topdown",
+      "file": "51-topdown.json",
+      "direction": "视角",
+      "category": "视角",
+      "subcategory": "俯拍",
+      "difficulty": "进阶",
+      "tags": [
+        "俯拍",
+        "平面构成",
+        "flat-lay",
+        "美食",
+        "静物",
+        "秩序"
+      ],
+      "title": "摆好的小物该怎么拍？"
+    },
+    {
+      "order": 52,
+      "id": "backlight",
+      "file": "52-backlight.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "逆光",
+      "difficulty": "高阶",
+      "tags": [
+        "逆光",
+        "轮廓光",
+        "发际光",
+        "通透",
+        "人像",
+        "黄金时刻"
+      ],
+      "title": "哪张人像更通透？"
+    },
+    {
+      "order": 53,
+      "id": "sepsilhouette",
+      "file": "53-sepsilhouette.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "剪影",
+      "difficulty": "高阶",
+      "tags": [
+        "剪影",
+        "逆光",
+        "轮廓",
+        "姿态",
+        "留缝",
+        "用光"
+      ],
+      "title": "哪张剪影更精彩？"
+    },
+    {
+      "order": 54,
+      "id": "shadowplay",
+      "file": "54-shadowplay.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "光影",
+      "difficulty": "高阶",
+      "tags": [
+        "影子",
+        "长投影",
+        "光影",
+        "黄金时刻",
+        "故事感",
+        "用光"
+      ],
+      "title": "哪张更有故事？"
+    },
+    {
+      "order": 55,
+      "id": "bluehour",
+      "file": "55-bluehour.json",
+      "direction": "用光",
+      "category": "用光",
+      "subcategory": "蓝调时刻",
+      "difficulty": "高阶",
+      "tags": [
+        "蓝调时刻",
+        "夜景",
+        "城市",
+        "冷暖",
+        "时机",
+        "日落"
+      ],
+      "title": "拍夜景城市,几点按快门？"
+    },
+    {
+      "order": 56,
+      "id": "silkwater",
+      "file": "56-silkwater.json",
+      "direction": "镜头",
+      "category": "镜头",
+      "subcategory": "慢门",
+      "difficulty": "高阶",
+      "tags": [
+        "慢门",
+        "长曝光",
+        "瀑布",
+        "流水",
+        "三脚架",
+        "快门"
+      ],
+      "title": "拍瀑布,水该是丝绸还是颗粒？"
+    },
+    {
+      "order": 57,
+      "id": "verticals",
+      "file": "57-verticals.json",
+      "direction": "取景",
+      "category": "取景",
+      "subcategory": "竖线",
+      "difficulty": "高阶",
+      "tags": [
+        "竖线",
+        "建筑",
+        "畸变",
+        "透视校正",
+        "移轴",
+        "端正"
+      ],
+      "title": "哪张建筑更挺拔？"
+    },
+    {
+      "order": 58,
+      "id": "lightpatch",
+      "file": "58-lightpatch.json",
+      "direction": "时机",
+      "category": "时机",
+      "subcategory": "等光",
+      "difficulty": "高阶",
+      "tags": [
+        "时机",
+        "光斑",
+        "街拍",
+        "等待",
+        "决定性瞬间",
+        "用光"
+      ],
+      "title": "这一步该等他走到哪儿再拍？"
     }
   ]
 }

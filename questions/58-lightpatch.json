@@ -1,0 +1,32 @@
+{
+  "id": "lightpatch",
+  "order": 58,
+  "direction": "时机",
+  "category": "时机",
+  "subcategory": "等光",
+  "en": "WAIT FOR LIGHT",
+  "difficulty": "高阶",
+  "tags": [
+    "时机",
+    "光斑",
+    "街拍",
+    "等待",
+    "决定性瞬间",
+    "用光"
+  ],
+  "title": "这一步该等他走到哪儿再拍？",
+  "hint": "看那束光斑,人站进去了吗。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#1f1c24\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#16141a\"/><polygon points=\"250,0 350,0 400,360 200,360\" fill=\"#f1e0a8\" opacity=\"0.18\"/><ellipse cx=\"300\" cy=\"360\" rx=\"110\" ry=\"22\" fill=\"#f1e0a8\" opacity=\"0.12\"/>${person(300,360,2.0)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#1f1c24\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#16141a\"/><polygon points=\"250,0 350,0 400,360 200,360\" fill=\"#f1e0a8\" opacity=\"0.18\"/><ellipse cx=\"300\" cy=\"360\" rx=\"110\" ry=\"22\" fill=\"#f1e0a8\" opacity=\"0.12\"/>${person(120,360,2.0)}${grain}"
+  },
+  "verdict": "更妙的是等人正好走进光斑里那一刻按下的一张。",
+  "points": [
+    "街头、室内常有一束打在地上的光——耐心等主体走进那片光里再按快门,光替你把主角「点亮」、从暗背景里拎出来。",
+    "早按了一拍,人还在阴影里,最亮的光斑空着没人,主体淹没在暗处,白白可惜了那束光。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "这是「守株待兔」式的拍法:先找到好光、构好图,再耐心等人入框——决定性瞬间常常是「等」来的。"
+  }
+}

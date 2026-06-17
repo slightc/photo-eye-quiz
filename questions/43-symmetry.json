@@ -1,0 +1,32 @@
+{
+  "id": "symmetry",
+  "order": 43,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "对称",
+  "en": "SYMMETRY",
+  "difficulty": "进阶",
+  "tags": [
+    "对称",
+    "居中",
+    "建筑",
+    "秩序",
+    "仪式感",
+    "构图"
+  ],
+  "title": "哪张更端庄？",
+  "hint": "同一座拱门,站位不一样。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#d9cdb8\"/><rect y=\"330\" width=\"600\" height=\"70\" fill=\"#b0a282\"/><path d=\"M 220 330 L 220 150 Q 300 92 380 150 L 380 330 Z\" fill=\"#6e6149\"/><path d=\"M 250 330 L 250 175 Q 300 138 350 175 L 350 330 Z\" fill=\"#cdbf9f\"/><rect x=\"292\" y=\"200\" width=\"16\" height=\"130\" fill=\"#4a4036\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#d9cdb8\"/><g transform=\"rotate(-5 300 240) translate(-70 8)\"><rect x=\"-80\" y=\"330\" width=\"820\" height=\"90\" fill=\"#b0a282\"/><path d=\"M 220 330 L 220 150 Q 300 92 380 150 L 380 330 Z\" fill=\"#6e6149\"/><path d=\"M 250 330 L 250 175 Q 300 138 350 175 L 350 330 Z\" fill=\"#cdbf9f\"/><rect x=\"292\" y=\"200\" width=\"16\" height=\"130\" fill=\"#4a4036\"/></g>${grain}"
+  },
+  "verdict": "更端庄的是正中、左右对称的一张。",
+  "points": [
+    "拱门、走廊、倒影这类天生对称的题材,把它摆正、放在正中央,秩序感和仪式感最强。",
+    "同样的拱门拍歪了、偏了,对称的美感全被破坏,只剩「没站稳」的别扭。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "完美对称也容易呆板,所以才有「打破规律」一招;但面对对称的建筑,老老实实对称往往最稳。"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "eyelevel",
+  "order": 50,
+  "direction": "视角",
+  "category": "视角",
+  "subcategory": "平视",
+  "en": "EYE LEVEL",
+  "difficulty": "进阶",
+  "tags": [
+    "平视",
+    "机位",
+    "儿童",
+    "宠物",
+    "亲切",
+    "视角"
+  ],
+  "title": "拍小孩该蹲下还是站着拍？",
+  "hint": "看相机和人物「眼睛」的高低。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#8a7a5a\"/>${person(300,330,2.0)}${grain}",
+    "bad": "<rect width=\"600\" height=\"70\" fill=\"url(#portraitSky)\"/><rect y=\"60\" width=\"600\" height=\"340\" fill=\"#8a7a5a\"/>${person(300,300,1.2)}<ellipse cx=\"300\" cy=\"306\" rx=\"60\" ry=\"14\" fill=\"#000\" opacity=\"0.18\"/>${grain}"
+  },
+  "verdict": "更亲切的是蹲到对方视线高度、平视拍的一张。",
+  "points": [
+    "蹲到孩子、宠物的眼睛高度平视,画面平等、亲切,能进到对方的世界里。",
+    "大人站着居高临下地俯拍,对方显得矮小、疏远,背景全是地面,像在「检阅」而不是「相处」。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "俯拍也有它的用处(下一题的平面构成、或表现渺小感);但拍人、拍宠物想要亲近感,平视几乎总更好。"
+  }
+}

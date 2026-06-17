@@ -1,0 +1,32 @@
+{
+  "id": "saturation",
+  "order": 39,
+  "direction": "色彩",
+  "category": "色彩",
+  "subcategory": "饱和度",
+  "en": "SATURATION",
+  "difficulty": "入门",
+  "tags": [
+    "饱和度",
+    "色彩",
+    "自然",
+    "后期",
+    "新手必看",
+    "耐看"
+  ],
+  "title": "哪张颜色更耐看？",
+  "hint": "看绿草和天,颜色「劲」不一样。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#skyNoon)\"/><rect y=\"230\" width=\"600\" height=\"170\" fill=\"url(#field)\"/><circle cx=\"490\" cy=\"80\" r=\"30\" fill=\"#f7e6a8\"/>${tree(300,300,1.6,\"#4b3a2a\",\"#5f7a3e\",null)}${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"#10c8ff\"/><rect y=\"230\" width=\"600\" height=\"170\" fill=\"#15e600\"/><circle cx=\"490\" cy=\"80\" r=\"30\" fill=\"#ffd400\"/>${tree(300,300,1.6,\"#8a2c00\",\"#1bff2a\",\"#fff000\")}${grain}"
+  },
+  "verdict": "更耐看的是颜色自然、不刺眼的一张。",
+  "points": [
+    "适度的饱和留住了空气感和细节,颜色舒服、可信,越看越顺眼。",
+    "一味把饱和度拉满,草绿得发荧光、天蓝得发假,颜色糊成一块,又廉价又刺眼。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "也有题材(霓虹、波普、商业海报)就要高饱和的冲击力——关键是「有意为之」,而不是滑块拉过了头。"
+  }
+}

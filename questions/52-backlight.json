@@ -1,0 +1,32 @@
+{
+  "id": "backlight",
+  "order": 52,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "逆光",
+  "en": "BACKLIGHT",
+  "difficulty": "高阶",
+  "tags": [
+    "逆光",
+    "轮廓光",
+    "发际光",
+    "通透",
+    "人像",
+    "黄金时刻"
+  ],
+  "title": "哪张人像更通透？",
+  "hint": "看人物的轮廓边缘,有没有一圈光。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#goldGround)\"/><circle cx=\"300\" cy=\"150\" r=\"130\" fill=\"#ffe9b0\" opacity=\"0.5\"/><circle cx=\"300\" cy=\"150\" r=\"24\" fill=\"#171318\" stroke=\"#ffe9b0\" stroke-width=\"4\"/><path d=\"M 272 360 Q 270 200 300 178 Q 330 200 328 360 Z\" fill=\"#171318\" stroke=\"#ffe9b0\" stroke-width=\"4\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#b7ad9a\"/><circle cx=\"300\" cy=\"150\" r=\"24\" fill=\"#4a4640\"/><path d=\"M 272 360 Q 270 200 300 178 Q 330 200 328 360 Z\" fill=\"#4a4640\"/>${grain}"
+  },
+  "verdict": "更通透的是逆光、发丝和肩头被勾了一圈金边的一张。",
+  "points": [
+    "让光从主体背后打来,会在头发、肩膀的轮廓上勾出一圈明亮的「轮廓光」,主体一下从背景里分离、浮起来,还自带温暖通透的空气感。",
+    "正面平光把人照得平板板的,轮廓和背景黏在一起,既没立体感也没氛围。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "逆光拍人记得对脸部测光或补一点正面光,别让脸黑成一团;黄金时刻低角度的阳光最容易出轮廓光。"
+  }
+}

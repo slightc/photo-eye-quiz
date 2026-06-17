@@ -1,0 +1,32 @@
+{
+  "id": "vanishing",
+  "order": 44,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "透视纵深",
+  "en": "VANISHING POINT",
+  "difficulty": "进阶",
+  "tags": [
+    "透视",
+    "灭点",
+    "汇聚线",
+    "纵深",
+    "纵线",
+    "空间感"
+  ],
+  "title": "哪张更有纵深感？",
+  "hint": "看路和树,是「进去」还是「摊平」。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"220\" fill=\"url(#skyNoon)\"/><rect y=\"210\" width=\"600\" height=\"190\" fill=\"#6f7e4e\"/><polygon points=\"278,210 322,210 470,400 130,400\" fill=\"#9a9482\"/><line x1=\"300\" y1=\"214\" x2=\"300\" y2=\"400\" stroke=\"#d9d3ba\" stroke-width=\"4\" stroke-dasharray=\"18 16\"/>${tree(150,330,1.7,\"#4b3a2a\",\"#5f7a3e\",null)}${tree(228,250,0.9,\"#4b3a2a\",\"#5f7a3e\",null)}${tree(450,330,1.7,\"#4b3a2a\",\"#5f7a3e\",null)}${tree(372,250,0.9,\"#4b3a2a\",\"#5f7a3e\",null)}${grain}",
+    "bad": "<rect width=\"600\" height=\"220\" fill=\"url(#skyNoon)\"/><rect y=\"210\" width=\"600\" height=\"190\" fill=\"#6f7e4e\"/><rect x=\"40\" y=\"252\" width=\"520\" height=\"38\" fill=\"#9a9482\"/>${tree(120,250,1.2,\"#4b3a2a\",\"#5f7a3e\",null)}${tree(300,250,1.2,\"#4b3a2a\",\"#5f7a3e\",null)}${tree(480,250,1.2,\"#4b3a2a\",\"#5f7a3e\",null)}${grain}"
+  },
+  "verdict": "更有纵深的是路面和树列向远方汇聚的一张。",
+  "points": [
+    "平行的线条(路、栏杆、树列)向远处一点汇聚,配上近大远小,眼睛被「吸」进画面深处,二维平面立刻有了三维空间。",
+    "把同样的元素拍成平行的横带、一样大小,画面被压扁成一张贴纸,没了进深。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "找路、桥、走廊、栏杆这类汇聚线,蹲低些、把灭点放进画面里,纵深感最强。"
+  }
+}

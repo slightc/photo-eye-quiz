@@ -1,0 +1,32 @@
+{
+  "id": "edges",
+  "order": 46,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "边缘",
+  "en": "CHECK THE EDGES",
+  "difficulty": "进阶",
+  "tags": [
+    "边缘",
+    "取景",
+    "干扰物",
+    "干净",
+    "细节",
+    "检查四边"
+  ],
+  "title": "哪张更讲究？",
+  "hint": "别盯着主体——沿着画面四条边看一圈。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#2a2233\"/>${person(300,330,2.4)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#2a2233\"/><rect x=\"0\" y=\"70\" width=\"44\" height=\"250\" fill=\"#2f2620\"/><circle cx=\"588\" cy=\"110\" r=\"40\" fill=\"#34302a\"/><rect x=\"96\" y=\"392\" width=\"40\" height=\"8\" fill=\"#1d1a16\"/>${person(300,330,2.4)}${grain}"
+  },
+  "verdict": "更讲究的是画面四边都干净、没有杂物探进来的一张。",
+  "points": [
+    "按快门前让目光沿着取景框的四条边「巡逻」一圈——探进来的树枝、半截电线杆、切了一半的路人,都在悄悄拉低画面。",
+    "主体再好,边缘钻进来的杂物也会分走注意力,显得随手、不收拾。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "构图时先看主体,再专门检查一遍四个边角;挪半步、变个焦或回避一下,就能把边缘清干净。"
+  }
+}

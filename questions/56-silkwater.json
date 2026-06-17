@@ -1,0 +1,32 @@
+{
+  "id": "silkwater",
+  "order": 56,
+  "direction": "镜头",
+  "category": "镜头",
+  "subcategory": "慢门",
+  "en": "LONG EXPOSURE",
+  "difficulty": "高阶",
+  "tags": [
+    "慢门",
+    "长曝光",
+    "瀑布",
+    "流水",
+    "三脚架",
+    "快门"
+  ],
+  "title": "拍瀑布,水该是丝绸还是颗粒？",
+  "hint": "一张水是雾化的,一张是凝固的水珠。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#3a4738\"/><rect x=\"40\" y=\"60\" width=\"120\" height=\"50\" fill=\"#5a6a4a\"/><rect x=\"440\" y=\"60\" width=\"120\" height=\"50\" fill=\"#5a6a4a\"/><g filter=\"url(#dof)\"><path d=\"M 250 70 Q 245 220 230 340 L 370 340 Q 355 220 350 70 Z\" fill=\"#eef3f0\" opacity=\"0.92\"/></g><rect y=\"338\" width=\"600\" height=\"62\" fill=\"#46583a\"/><ellipse cx=\"300\" cy=\"346\" rx=\"120\" ry=\"20\" fill=\"#dfe7e1\" opacity=\"0.7\" filter=\"url(#dof)\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#3a4738\"/><rect x=\"40\" y=\"60\" width=\"120\" height=\"50\" fill=\"#5a6a4a\"/><rect x=\"440\" y=\"60\" width=\"120\" height=\"50\" fill=\"#5a6a4a\"/><g fill=\"#dfe7e1\"><circle cx=\"250\" cy=\"120\" r=\"6\"/><circle cx=\"280\" cy=\"170\" r=\"5\"/><circle cx=\"320\" cy=\"150\" r=\"7\"/><circle cx=\"300\" cy=\"220\" r=\"6\"/><circle cx=\"260\" cy=\"262\" r=\"5\"/><circle cx=\"340\" cy=\"250\" r=\"6\"/><circle cx=\"290\" cy=\"300\" r=\"7\"/><circle cx=\"330\" cy=\"320\" r=\"5\"/><circle cx=\"255\" cy=\"330\" r=\"6\"/></g><rect y=\"338\" width=\"600\" height=\"62\" fill=\"#46583a\"/>${grain}"
+  },
+  "verdict": "更梦幻的是用慢门把水流拍成丝绸般顺滑的一张。",
+  "points": [
+    "放慢快门(配三脚架、减光镜),流动的水被「抹」成柔顺的丝绸或薄雾,画面立刻有了诗意和时间的流动感。",
+    "高速快门把水凝成一堆杂乱的水珠,瀑布显得碎、显得吵,少了那股仙气。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "想表现浪花炸裂的力量、瞬间的张力时,反而要用高速快门凝固水花——慢门是为「柔顺、梦幻」服务的。"
+  }
+}

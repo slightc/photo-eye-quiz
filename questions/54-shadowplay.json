@@ -1,0 +1,32 @@
+{
+  "id": "shadowplay",
+  "order": 54,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "光影",
+  "en": "SHADOWS",
+  "difficulty": "高阶",
+  "tags": [
+    "影子",
+    "长投影",
+    "光影",
+    "黄金时刻",
+    "故事感",
+    "用光"
+  ],
+  "title": "哪张更有故事？",
+  "hint": "看看地上的影子。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"300\" fill=\"url(#goldGround)\"/><rect y=\"290\" width=\"600\" height=\"110\" fill=\"#c79a55\"/><polygon points=\"180,300 560,300 470,320 200,320\" fill=\"#5a3f1f\" opacity=\"0.55\"/>${person(180,300,1.5)}${grain}",
+    "bad": "<rect width=\"600\" height=\"300\" fill=\"#b3a585\"/><rect y=\"290\" width=\"600\" height=\"110\" fill=\"#9a8b6e\"/><ellipse cx=\"180\" cy=\"304\" rx=\"30\" ry=\"8\" fill=\"#000\" opacity=\"0.25\"/>${person(180,300,1.5)}${grain}"
+  },
+  "verdict": "更有故事的是把长长的影子也当成主角的一张。",
+  "points": [
+    "清晨或傍晚低角度的光会把影子拉得很长——让影子入画、甚至成为主角,画面立刻多了线条、纵深和故事感。",
+    "正午顶光下影子缩成一小团又被忽略,画面只剩一个干巴巴的人,平淡无奇。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "早晚「黄金时刻」影子最长最有戏;试着以影子为主体来构图,人反而退成点缀。"
+  }
+}
