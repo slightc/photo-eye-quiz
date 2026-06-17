@@ -1,0 +1,32 @@
+{
+  "id": "juxtapose",
+  "order": 69,
+  "direction": "构图",
+  "category": "构图",
+  "subcategory": "对比并置",
+  "en": "JUXTAPOSITION",
+  "difficulty": "进阶",
+  "tags": [
+    "对比并置",
+    "新旧",
+    "大小",
+    "故事感",
+    "张力",
+    "构图"
+  ],
+  "title": "哪张更有看头？",
+  "hint": "看画面里有没有「对比」的东西。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#mountSky)\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#6a6258\"/><rect x=\"330\" y=\"70\" width=\"90\" height=\"250\" fill=\"#7e8aa0\"/><g fill=\"#9aa6bc\"><rect x=\"344\" y=\"90\" width=\"18\" height=\"24\"/><rect x=\"388\" y=\"90\" width=\"18\" height=\"24\"/><rect x=\"344\" y=\"140\" width=\"18\" height=\"24\"/><rect x=\"388\" y=\"140\" width=\"18\" height=\"24\"/><rect x=\"344\" y=\"190\" width=\"18\" height=\"24\"/><rect x=\"388\" y=\"190\" width=\"18\" height=\"24\"/></g><rect x=\"150\" y=\"262\" width=\"86\" height=\"58\" fill=\"#b08968\"/><polygon points=\"144,262 242,262 193,228\" fill=\"#8a5a3c\"/><rect x=\"182\" y=\"288\" width=\"22\" height=\"32\" fill=\"#5a3d28\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#mountSky)\"/><rect y=\"320\" width=\"600\" height=\"80\" fill=\"#6a6258\"/><rect x=\"330\" y=\"70\" width=\"90\" height=\"250\" fill=\"#7e8aa0\"/><g fill=\"#9aa6bc\"><rect x=\"344\" y=\"90\" width=\"18\" height=\"24\"/><rect x=\"388\" y=\"90\" width=\"18\" height=\"24\"/><rect x=\"344\" y=\"140\" width=\"18\" height=\"24\"/><rect x=\"388\" y=\"140\" width=\"18\" height=\"24\"/><rect x=\"344\" y=\"190\" width=\"18\" height=\"24\"/><rect x=\"388\" y=\"190\" width=\"18\" height=\"24\"/></g><rect x=\"180\" y=\"70\" width=\"90\" height=\"250\" fill=\"#7e8aa0\"/><g fill=\"#9aa6bc\"><rect x=\"194\" y=\"90\" width=\"18\" height=\"24\"/><rect x=\"238\" y=\"90\" width=\"18\" height=\"24\"/><rect x=\"194\" y=\"140\" width=\"18\" height=\"24\"/><rect x=\"238\" y=\"140\" width=\"18\" height=\"24\"/><rect x=\"194\" y=\"190\" width=\"18\" height=\"24\"/><rect x=\"238\" y=\"190\" width=\"18\" height=\"24\"/></g>${grain}"
+  },
+  "verdict": "更有看头的是高楼旁边并置了一间小老屋的一张。",
+  "points": [
+    "把两个反差强烈的东西(高与矮、新与旧、大与小)放进同一画面,它们互相「比」着,故事和张力就出来了——这叫并置。",
+    "两座一模一样的高楼并排,只有重复没有对比,画面平淡,没什么可「读」的。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "并置的关键是反差要有意义(新旧、贫富、刚柔);纯粹凑两个不同的东西并不会自动产生故事。"
+  }
+}

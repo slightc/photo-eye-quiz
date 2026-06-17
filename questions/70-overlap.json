@@ -1,0 +1,32 @@
+{
+  "id": "overlap",
+  "order": 70,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "主体分离",
+  "en": "SEPARATION",
+  "difficulty": "进阶",
+  "tags": [
+    "主体分离",
+    "不重叠",
+    "留缝",
+    "多主体",
+    "干净",
+    "取景"
+  ],
+  "title": "两个人该挨多近？",
+  "hint": "看两人有没有黏成一团。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#9a8a6a\"/>${person(210,340,1.9)}${person(390,340,1.9)}${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#9a8a6a\"/>${person(280,340,1.9)}${person(335,340,1.9)}${grain}"
+  },
+  "verdict": "更清楚的是两人之间留了缝、没有黏在一起的一张。",
+  "points": [
+    "让主体之间留一道清楚的「缝」,各自的轮廓都完整,画面干净、谁是谁一目了然。",
+    "两人挤在一起、轮廓互相啃咬、糊成一团分不清边界,看着别扭——这叫「相撞(merger)」。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "挪半步、或换个机位错开,就能让重叠的主体分开;同理也要留意主体和背景物之间的相撞。"
+  }
+}

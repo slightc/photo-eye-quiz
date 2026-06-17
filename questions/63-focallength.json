@@ -1,0 +1,32 @@
+{
+  "id": "focallength",
+  "order": 63,
+  "direction": "镜头",
+  "category": "镜头",
+  "subcategory": "焦段透视",
+  "en": "FOCAL LENGTH",
+  "difficulty": "高阶",
+  "tags": [
+    "焦段",
+    "透视压缩",
+    "长焦",
+    "广角",
+    "人像",
+    "镜头"
+  ],
+  "title": "拍人像,背景该大还是该小？",
+  "hint": "人一样大,看背景的山有多大。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#mountSky)\"/>${ridge(110,90,'#7d93a6',3)}${ridge(150,80,'#5f7588',9)}<rect y=\"300\" width=\"600\" height=\"100\" fill=\"#4a5a4a\"/>${person(300,360,2.0)}${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#mountSky)\"/>${ridge(235,28,'#9fb0bf',3)}<rect y=\"300\" width=\"600\" height=\"100\" fill=\"#4a5a4a\"/>${person(300,360,2.0)}${grain}"
+  },
+  "verdict": "拍人像更耐看的,通常是用中长焦、背景被「拉近放大」的一张。",
+  "points": [
+    "中长焦(85mm 以上)会压缩空间,背景的山显得又大又近,人和环境的关系更紧凑、更有气势,脸部透视也自然不变形。",
+    "广角凑近拍人,背景被推得又小又远、空空荡荡,人脸还容易被拉变形(大鼻子),不适合正经人像。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "广角不是不能拍人——环境人像、想要夸张张力时正好用;只是「标准好看的脸」更适合中长焦。"
+  }
+}

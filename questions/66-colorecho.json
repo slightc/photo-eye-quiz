@@ -1,0 +1,32 @@
+{
+  "id": "colorecho",
+  "order": 66,
+  "direction": "色彩",
+  "category": "色彩",
+  "subcategory": "色彩呼应",
+  "en": "COLOR ECHO",
+  "difficulty": "进阶",
+  "tags": [
+    "色彩呼应",
+    "重复色",
+    "和谐",
+    "节奏",
+    "配色",
+    "整体感"
+  ],
+  "title": "哪张的颜色更「成一气」？",
+  "hint": "看红色在画面里出现了几次。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#mountSky)\"/><rect y=\"230\" width=\"600\" height=\"170\" fill=\"url(#field)\"/>${flower(140,300,1.6,'#d6453f','#f3d24e')}${flower(300,250,1.9,'#d6453f','#f3d24e')}${flower(460,310,1.6,'#d6453f','#f3d24e')}${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"url(#mountSky)\"/><rect y=\"230\" width=\"600\" height=\"170\" fill=\"url(#field)\"/>${flower(140,300,1.6,'#4f8fd6','#f3d24e')}${flower(300,250,1.9,'#d6453f','#f3d24e')}${flower(460,310,1.6,'#8a5fb0','#f3d24e')}${grain}"
+  },
+  "verdict": "更协调的是同一种红在画面里重复呼应的一张。",
+  "points": [
+    "让一个颜色在画面里出现两三次(这里的红),它们会彼此「呼应」,把零散的元素串成一个整体,画面更有秩序和节奏。",
+    "三朵花各是一个颜色,谁也不挨着谁,视线被扯得到处跑,画面显得乱、没有重心。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "色彩呼应不必是同一种物体——衣服的红和远处的红灯笼互相呼应,一样能串联起整个画面。"
+  }
+}

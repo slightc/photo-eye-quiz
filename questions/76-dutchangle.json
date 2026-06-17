@@ -1,0 +1,32 @@
+{
+  "id": "dutchangle",
+  "order": 76,
+  "direction": "视角",
+  "category": "视角",
+  "subcategory": "倾斜",
+  "en": "DUTCH ANGLE",
+  "difficulty": "进阶",
+  "tags": [
+    "荷兰角",
+    "倾斜",
+    "张力",
+    "动感",
+    "视角",
+    "刻意"
+  ],
+  "title": "要斜,就该斜多少？",
+  "hint": "同一条街,两张都歪了,但歪法不同。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#skyNoon)\"/><g transform=\"rotate(20 300 200)\"><rect x=\"-50\" y=\"300\" width=\"700\" height=\"60\" fill=\"#55504a\"/><rect x=\"120\" y=\"80\" width=\"120\" height=\"260\" fill=\"#8a7a66\"/><rect x=\"360\" y=\"60\" width=\"120\" height=\"280\" fill=\"#6f6354\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#skyNoon)\"/><g transform=\"rotate(5 300 200)\"><rect x=\"-50\" y=\"300\" width=\"700\" height=\"60\" fill=\"#55504a\"/><rect x=\"120\" y=\"80\" width=\"120\" height=\"260\" fill=\"#8a7a66\"/><rect x=\"360\" y=\"60\" width=\"120\" height=\"280\" fill=\"#6f6354\"/></g>${grain}"
+  },
+  "verdict": "更成立的是斜得果断、一看就是「故意」的那张(荷兰角)。",
+  "points": [
+    "要用倾斜制造紧张、动感,就得斜得足够狠(15°以上),让人一眼看出这是刻意的「荷兰角」,有态度。",
+    "只歪个三五度,既不像水平、又不像风格,观者只会觉得「这人没端平相机」,像失误。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "和「地平线端平」那题并不矛盾:要么端平、要么斜到底,最忌讳的就是不上不下的小歪。"
+  }
+}

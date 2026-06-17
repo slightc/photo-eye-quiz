@@ -1,0 +1,32 @@
+{
+  "id": "shootthrough",
+  "order": 65,
+  "direction": "镜头",
+  "category": "镜头",
+  "subcategory": "前景虚化",
+  "en": "SHOOT THROUGH",
+  "difficulty": "进阶",
+  "tags": [
+    "前景虚化",
+    "shoot-through",
+    "氛围",
+    "纵深",
+    "大光圈",
+    "镜头"
+  ],
+  "title": "哪张更有朦胧的氛围？",
+  "hint": "看画面边缘有没有虚化的前景。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#field)\"/>${flower(300,220,2.4,'#e8557a','#f4d35e')}<g filter=\"url(#dof)\"><ellipse cx=\"70\" cy=\"320\" rx=\"120\" ry=\"90\" fill=\"#3f6a34\" opacity=\"0.8\"/><ellipse cx=\"540\" cy=\"90\" rx=\"130\" ry=\"100\" fill=\"#4f7a3e\" opacity=\"0.75\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#field)\"/>${flower(300,220,2.4,'#e8557a','#f4d35e')}${grain}"
+  },
+  "verdict": "更有氛围的是隔着虚化前景拍的一张。",
+  "points": [
+    "故意让镜头贴着前景的花草、枝叶,它们会化成大块柔和的色斑,像给画面蒙了层「纱」,纵深和氛围一下就有了。",
+    "干干净净没有前景,主体是清楚,但画面扁平,少了那层「偷看进去」的呼吸感。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "用大光圈、镜头尽量贴近前景物,让它彻底糊成色块;前景颜色挑得和主体呼应会更高级。"
+  }
+}

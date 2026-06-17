@@ -1,0 +1,32 @@
+{
+  "id": "shoulderangle",
+  "order": 72,
+  "direction": "取景",
+  "category": "取景",
+  "subcategory": "侧身",
+  "en": "BODY ANGLE",
+  "difficulty": "进阶",
+  "tags": [
+    "侧身",
+    "姿态",
+    "肩线",
+    "人像",
+    "显瘦",
+    "取景"
+  ],
+  "title": "拍半身,身体该正对镜头吗？",
+  "hint": "看肩膀是正对镜头还是侧了一点。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><g transform=\"translate(300,250)\"><g transform=\"rotate(22)\"><rect x=\"-58\" y=\"-30\" width=\"116\" height=\"170\" rx=\"30\" fill=\"#7b6f86\"/></g><circle cx=\"0\" cy=\"-86\" r=\"46\" fill=\"#caa07a\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"url(#portraitSky)\"/><g transform=\"translate(300,250)\"><rect x=\"-58\" y=\"-30\" width=\"116\" height=\"170\" rx=\"30\" fill=\"#7b6f86\"/><circle cx=\"0\" cy=\"-86\" r=\"46\" fill=\"#caa07a\"/></g>${grain}"
+  },
+  "verdict": "更利落的是肩膀转了个角度、不正对镜头的一张。",
+  "points": [
+    "让身体相对镜头转 30°左右,肩线变窄、有了立体的纵深,人显得更挺拔、更有姿态。",
+    "肩膀正对镜头平铺过去,人显得又宽又板,像在拍证件照或通缉令。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "口诀「身子侧、脸转回」:身体转开、脸再带回镜头,既显瘦又有交流感。"
+  }
+}

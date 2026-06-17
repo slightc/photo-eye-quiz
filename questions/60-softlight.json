@@ -1,0 +1,32 @@
+{
+  "id": "softlight",
+  "order": 60,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "光质",
+  "en": "SOFT LIGHT",
+  "difficulty": "进阶",
+  "tags": [
+    "柔光",
+    "硬光",
+    "光质",
+    "阴影",
+    "人像",
+    "用光"
+  ],
+  "title": "哪张的光更柔？",
+  "hint": "看影子的边缘是硬还是软。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#c9b48a\"/>${person(270,330,2.0)}<g filter=\"url(#dof)\"><ellipse cx=\"370\" cy=\"338\" rx=\"78\" ry=\"18\" fill=\"#000\" opacity=\"0.32\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"240\" fill=\"url(#portraitSky)\"/><rect y=\"240\" width=\"600\" height=\"160\" fill=\"#c9b48a\"/>${person(270,330,2.0)}<ellipse cx=\"370\" cy=\"338\" rx=\"78\" ry=\"18\" fill=\"#000\" opacity=\"0.32\"/>${grain}"
+  },
+  "verdict": "更柔和的是影子边缘虚化、过渡自然的一张。",
+  "points": [
+    "柔光(阴天、窗纱、反光板)下影子边缘是软的,明暗过渡平滑,人脸的瑕疵被抚平,氛围温润讨喜。",
+    "硬光(正午直射、裸灯)下影子边缘刀切一样硬、对比生猛,容易在脸上留下难看的死黑块。"
+  ],
+  "soft": {
+    "label": "并非定律",
+    "text": "硬光也有力量感、戏剧性(时尚大片就爱用);但柔光更安全,更适合大多数人像和日常题材。"
+  }
+}

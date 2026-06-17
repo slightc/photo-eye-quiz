@@ -1,0 +1,32 @@
+{
+  "id": "flare",
+  "order": 74,
+  "direction": "用光",
+  "category": "用光",
+  "subcategory": "眩光",
+  "en": "FLARE",
+  "difficulty": "高阶",
+  "tags": [
+    "眩光",
+    "雾霾",
+    "遮光罩",
+    "对比",
+    "逆光",
+    "用光"
+  ],
+  "title": "逆光拍,画面发灰怎么破？",
+  "hint": "看暗部是通透还是蒙了层雾。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"230\" fill=\"url(#goldGround)\"/><rect y=\"220\" width=\"600\" height=\"180\" fill=\"#5e4d30\"/>${tree(330,350,1.5,'#332a1f','#4f6030',null)}<circle cx=\"150\" cy=\"120\" r=\"30\" fill=\"#fff2c2\" opacity=\"0.85\"/>${grain}",
+    "bad": "<rect width=\"600\" height=\"230\" fill=\"url(#goldGround)\"/><rect y=\"220\" width=\"600\" height=\"180\" fill=\"#5e4d30\"/>${tree(330,350,1.5,'#332a1f','#4f6030',null)}<circle cx=\"150\" cy=\"120\" r=\"30\" fill=\"#fff2c2\" opacity=\"0.85\"/><rect width=\"600\" height=\"400\" fill=\"#fff7e6\" opacity=\"0.3\"/><circle cx=\"330\" cy=\"250\" r=\"26\" fill=\"#fff\" opacity=\"0.3\"/><circle cx=\"420\" cy=\"310\" r=\"16\" fill=\"#fff\" opacity=\"0.28\"/>${grain}"
+  },
+  "verdict": "更通透的是没有被眩光「冲」得发灰的一张。",
+  "points": [
+    "强光直射镜头会产生「眩光/雾霾」:画面整体发灰、对比下降,还冒出一串光斑鬼影,暗部细节都被冲没了。",
+    "用遮光罩、或用手/帽檐在镜头前挡掉直射的杂光,黑色就能黑下去,画面恢复通透扎实。"
+  ],
+  "soft": {
+    "label": "补充",
+    "text": "眩光也能是创意——刻意留点光斑能出梦幻、回忆感;关键是「你要的」还是「失控的」。"
+  }
+}

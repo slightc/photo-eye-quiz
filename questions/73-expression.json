@@ -1,0 +1,32 @@
+{
+  "id": "expression",
+  "order": 73,
+  "direction": "时机",
+  "category": "时机",
+  "subcategory": "表情",
+  "en": "EXPRESSION",
+  "difficulty": "高阶",
+  "tags": [
+    "表情",
+    "瞬间",
+    "抓拍",
+    "情绪",
+    "人像",
+    "时机"
+  ],
+  "title": "该在哪一刻按下快门？",
+  "hint": "看人物的表情,是松还是僵。",
+  "svg": {
+    "good": "<rect width=\"600\" height=\"400\" fill=\"#cdbf9a\"/><g transform=\"translate(300,200)\"><circle r=\"130\" fill=\"#caa07a\"/><circle cx=\"-46\" cy=\"-24\" r=\"11\" fill=\"#3a2f2a\"/><circle cx=\"46\" cy=\"-24\" r=\"11\" fill=\"#3a2f2a\"/><path d=\"M -44 36 Q 0 86 44 36\" stroke=\"#7a4a3a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></g>${grain}",
+    "bad": "<rect width=\"600\" height=\"400\" fill=\"#cdbf9a\"/><g transform=\"translate(300,200)\"><circle r=\"130\" fill=\"#caa07a\"/><circle cx=\"-46\" cy=\"-24\" r=\"11\" fill=\"#3a2f2a\"/><circle cx=\"46\" cy=\"-24\" r=\"11\" fill=\"#3a2f2a\"/><path d=\"M -44 50 L 44 50\" stroke=\"#7a4a3a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></g>${grain}"
+  },
+  "verdict": "更打动人的是抓到自然笑容那一刻的一张。",
+  "points": [
+    "人像的灵魂在表情:一个真实的笑、一个放松的瞬间,胜过一切完美的构图和用光。",
+    "僵着脸、摆好的「茄子」笑,表情是死的,再清楚也只是一张「证明到此一游」的记录。"
+  ],
+  "soft": {
+    "label": "练法",
+    "text": "多和被拍的人聊天、逗他笑,连拍抓那 0.5 秒的自然反应,别喊「一二三」等他摆。"
+  }
+}
